@@ -9,9 +9,20 @@ class Input extends Component {
         }
     }
 
+    handleInputChange(value) {
+        this.setState({userInput: value})
+    }
+
+    // handleClick() {
+
+    // }
+
     render() {
         return (
-            <div>Input</div>
+            <div>
+                <div>Make Your Own</div>
+                <input placeholder='Make Your Own!' value={this.state.userInput} onChange={e => this.handleInputChange(e.target.value)}/>
+            </div>
         )
     }
 }
