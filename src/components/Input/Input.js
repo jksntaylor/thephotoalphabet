@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import InputPhoto from '../InputPhoto/InputPhoto';
 
 class Input extends Component {
     constructor() {
@@ -20,6 +21,7 @@ class Input extends Component {
     render() {
         return (
             <div>
+                <InputPhoto/>
                 <div>Make Your Own</div>
                 <input placeholder='Make Your Own!' value={this.state.userInput} onChange={e => this.handleInputChange(e.target.value)}/>
             </div>
