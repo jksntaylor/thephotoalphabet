@@ -19,9 +19,19 @@ class Input extends Component {
     // }
 
     render() {
+        let inputArray = this.state.userInput.split('');
+        let photos = inputArray.map(letter => {
+            return (
+                <div className='input-photo'>
+                  <InputPhoto letter={letter}/>
+                </div>
+            )
+        })
+
+
         return (
             <div>
-                <InputPhoto/>
+                {photos}
                 <div>Make Your Own</div>
                 <input placeholder='Make Your Own!' value={this.state.userInput} onChange={e => this.handleInputChange(e.target.value)}/>
             </div>

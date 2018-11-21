@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 class InputPhoto extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state={
-            letter: 'A',
+            letter: props.letter,
             letterCount: 1,
             url: ''
         }
@@ -25,6 +26,11 @@ class InputPhoto extends Component {
         } else {
             this.setState({letterCount: this.state.letterCount-1})
         }
+    }
+
+    getPhoto() {
+        let {letter, letterCount} = this.state;
+        axios.get(`/photos/${letter}${letterCount}`)
     }
 
     render() {
