@@ -17,6 +17,7 @@ CREATE TABLE Users (
 CREATE TABLE Orders (
     id SERIAL PRIMARY KEY,
     user_id REFERENCES Users,
-    photos INTEGER[],
+    photo_ids INTEGER[] REFERENCES Photos,
+    date DATE,
     price DECIMAL
 );
