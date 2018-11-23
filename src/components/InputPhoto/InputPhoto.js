@@ -12,7 +12,6 @@ class InputPhoto extends Component {
     }
 
     handleUpButton = () => {
-        console.log('hello');
         if (this.state.letterCount===10) {
             this.setState({letterCount: 1})
         } else {
@@ -37,7 +36,7 @@ class InputPhoto extends Component {
         return (
             <div>
                 <button onClick={this.handleUpButton}>^</button>
-                <h1>{this.state.letterCount}</h1>
+                <h1>{this.state.letter}{this.state.letterCount}</h1>
                 <button onClick={this.handleDownButton}>v</button>
             </div>
         )

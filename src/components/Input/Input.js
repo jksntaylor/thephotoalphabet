@@ -6,9 +6,11 @@ class Input extends Component {
         super();
         this.state = {
             userInput: '',
-            pictures: [],
+            pictureIDs: [],
         }
     }
+
+    
 
     handleInputChange(value) {
         this.setState({userInput: value})
@@ -19,10 +21,10 @@ class Input extends Component {
     // }
 
     render() {
-        let inputArray = this.state.userInput.split('');
+        let inputArray = this.state.userInput.toLowerCase().split('');
         let photos = inputArray.map(letter => {
             return (
-                <div className='input-photo'>
+                <div>
                   <InputPhoto letter={letter}/>
                 </div>
             )
