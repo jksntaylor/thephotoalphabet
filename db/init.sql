@@ -2,11 +2,12 @@
 --     id SERIAL PRIMARY KEY,
 --     letter VARCHAR(1),
 --     letterCount INTEGER,
---     photo_url TEXT
+--     photoUrl VARCHAR
 -- );
 
 -- CREATE TABLE Users (
 --     id SERIAL PRIMARY KEY,
+--     name VARCHAR,
 --     email VARCHAR,
 --     hash VARCHAR,
 --     address VARCHAR,
@@ -17,8 +18,12 @@
 
 -- CREATE TABLE Orders (
 --     id SERIAL PRIMARY KEY,
---     user_id REFERENCES Users,
---     photo_ids INTEGER[] REFERENCES Photos,
+--     userID INTEGER REFERENCES Users,
+--     photoIDs VARCHAR[],
 --     date DATE,
---     price DECIMAL
+--     price DECIMAL,
+--     processed BOOLEAN,
+--     paid BOOLEAN,
+--     shipped BOOLEAN,
+--     delivered BOOLEAN
 -- );
