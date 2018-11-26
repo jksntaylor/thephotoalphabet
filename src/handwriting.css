@@ -1,0 +1,117 @@
+@keyframes handwriting {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+#The-T-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: handwriting 2.5s linear forwards;
+    animation-delay: 1s;
+}
+#The-h-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: handwriting 3s linear forwards;
+    animation-delay: 1s;
+    /* animation-delay: .3s;  */
+}
+#The-e-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: handwriting 3s linear forwards;
+    animation-delay: 1s;
+    /* animation-delay: .6s;  */
+}
+#Photo-P-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: handwriting 2s linear forwards;
+    animation-delay: 1s;
+    /* animation-delay: .9s;  */
+}
+#Photo-h-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: handwriting 3s linear forwards;
+    animation-delay: 1s;
+    /* animation-delay: 1.3s;  */
+}
+#Photo-o1-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: handwriting 3s linear forwards;
+    animation-delay: 1s;
+    /* animation-delay: 1.5s;  */
+}
+#Photo-t-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: handwriting 3s linear forwards;
+    animation-delay: 1s;
+    /* animation-delay: 1.8s;  */
+}
+#Photo-o2-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: handwriting 3s linear forwards;
+    animation-delay: 1s;
+    /* animation-delay: 2.1s;  */
+}
+#Alphabet-A-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: handwriting 1.5s linear forwards;
+    animation-delay: 1s;
+    /* animation-delay: 2.3s;  */
+}
+#Alphabet-l-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: handwriting 3s linear forwards;
+    animation-delay: 1s;
+    /* animation-delay: 2.6s;  */
+}
+#Alphabet-p-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: handwriting 3s linear forwards;
+    animation-delay: 1s;
+    /* animation-delay: 2.9s;  */
+}
+#Alphabet-h-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: handwriting 3s linear forwards;
+    animation-delay: 1s;
+    /* animation-delay: 3.2s;  */
+}
+#Alphabet-a2-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: handwriting 3s linear forwards;
+    animation-delay: 1s;
+    /* animation-delay: 3.5s;  */
+}
+#Alphabet-b-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: handwriting 3s linear forwards;
+    animation-delay: 1s;
+    /* animation-delay: 3.8s;  */
+}
+#Alphabet-e-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: handwriting 3s linear forwards;
+    animation-delay: 1s;
+    /* animation-delay: 4.1s;  */
+}
+#Alphabet-t-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: handwriting 3s linear forwards;
+    animation-delay: 1s;
+    /* animation-delay: 4.3s;  */
+}
