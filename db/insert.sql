@@ -1,4 +1,6 @@
--- INSERT INTO Photos (letter, lettercount, photourl)
+-- USED ONCE TO INSERT PERMANENT DATA, SHOULDN'T BE ACCESSED IN PROGRAM 
+
+--INSERT INTO Photos (letter, lettercount, photourl)
 -- VALUES 
 -- ('A', 1, 'https://imgur.com/tIH2rdp'),
 -- ('A', 2, 'https://imgur.com/AFhUwHI'),

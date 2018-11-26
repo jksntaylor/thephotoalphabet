@@ -13,7 +13,13 @@ class Input extends Component {
     
 
     handleInputChange(value) {
+        if (this.state.userInput.length<10) {
         this.setState({userInput: value})
+        } else if(value.length<11) {
+            this.setState({userInput: value})
+        } else {
+            alert('10 Letter Limit')
+        }
     }
 
     // handleClick() {
@@ -21,7 +27,7 @@ class Input extends Component {
     // }
 
     render() {
-        let inputArray = this.state.userInput.toLowerCase().split('');
+        let inputArray = this.state.userInput.toUpperCase().split('');
         let photos = inputArray.map(letter => {
             return (
                 <div>

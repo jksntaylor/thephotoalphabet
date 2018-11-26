@@ -3,6 +3,7 @@ const session = require('express-session');
 const massive = require('massive');
 const bodyParser = require('body-parser');
 require('dotenv').config();
+const pc = require('./controllers/photosController');
 
 const app = express();
 
@@ -20,6 +21,8 @@ app.use(session({
     resave: true,
     saveUninitialized: false
 }))
+
+app.get('/api/photos/:letter/:letterCount', pc.getPhoto)
 
 app.listen(PORT, () => {
     console.log('never go full retard', PORT)
