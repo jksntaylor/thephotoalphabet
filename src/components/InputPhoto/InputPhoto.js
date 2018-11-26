@@ -13,7 +13,7 @@ class InputPhoto extends Component {
     }
 
     componentDidMount() {
-        return this.getPhoto();
+        this.getPhoto();
     }
 
     handleUpButton = () => {
@@ -22,6 +22,7 @@ class InputPhoto extends Component {
         } else {
             this.setState({letterCount: this.state.letterCount+1})
         }
+        this.getPhoto();
     }
 
     handleDownButton = () => {
@@ -30,12 +31,14 @@ class InputPhoto extends Component {
         } else {
             this.setState({letterCount: this.state.letterCount-1})
         }
+        this.getPhoto();
     }
 
     getPhoto() {
         let {letter, letterCount} = this.state;
         axios.get(`/api/photos/${letter}/${letterCount}`).then(response => {
-            this.setState({url: response.data})
+            console.log(response);
+            this.setState({url: response.data[0].photourl})
             }
         )
         console.log(this.state.url);
@@ -45,8 +48,7 @@ class InputPhoto extends Component {
         return (
             <div>
                 <button onClick={this.handleUpButton}>^</button>
-                <h1>{this.state.letter}{this.state.letterCount}</h1>
-                <img src={this.state.url} alt=''/>
+                <img src={this.state.url} alt='' height='90' width='60'/>
                 <button onClick={this.handleDownButton}>v</button>
             </div>
         )
