@@ -37,11 +37,9 @@ class InputPhoto extends Component {
     getPhoto() {
         let {letter, letterCount} = this.state;
         axios.get(`/api/photos/${letter}/${letterCount}`).then(response => {
-            console.log(response);
             this.setState({url: response.data[0].photourl})
             }
         )
-        console.log(this.state.url);
     }
 
     render() {
