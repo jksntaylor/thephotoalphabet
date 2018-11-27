@@ -1,4 +1,8 @@
-const initialState = {};
+const initialState = {
+    isGuest: true,
+    isLoggedIn: false,
+    isAdmin: false
+};
 
 const DEMO = 'DEMO'
 

@@ -6,23 +6,35 @@ import Input from './components/Input/Input';
 // import Menu from './components/Menu/Menu';
 import Checkout from './components/Checkout/Checkout';
 import Cart from './components/Cart/Cart';
-import Login from './components/Login/Login';
+import Auth from './components/Auth/Auth';
 import User from './components/User/User';
 import Admin from './components/Admin/Admin';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      user: {}
+    }
+    this.updateUser = this.updateUser.bind(this);
+  }
+
+  updateUser (user) {
+    this.setState({user})
+  }
+
   render() {
     return (
       <div>
         {/* <Menu/> */}
         <Switch>
-          <Route exact path='/' component={Home}/>
-          <Route path='/make' component={Input}/>
-          <Route path='/cart' component={Cart}/>
-          <Route path='/checkout' component={Checkout}/>
-          <Route path='/auth' component={Login}/>
-          <Route path='/user' component={User}/>
-          <Route path='/admin' component={Admin}/>
+          <Route exact path='/' render={(props) => <Home {...props} user={this.state.user} updateUser={this.updateUser} /> } />
+          <Route path='/make' render={(props) => <Input {...props} user={this.state.user} updateUser={this.updateUser} /> } />
+          <Route path='/cart' render={(props) => <Cart {...props} user={this.state.user} updateUser={this.updateUser} /> } />
+          <Route path='/checkout' render={(props) => <Checkout {...props} user={this.state.user} updateUser={this.updateUser} /> } />
+          <Route path='/auth' render={(props) => <Auth {...props} user={this.state.user} updateUser={this.updateUser} /> } />
+          <Route path='/user' render={(props) => <User {...props} user={this.state.user} updateUser={this.updateUser} /> } />
+          <Route path='/admin' render={(props) => <Admin {...props} user={this.state.user} updateUser={this.updateUser} /> } />
         </Switch>
       </div>
     );

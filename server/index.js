@@ -4,6 +4,7 @@ const massive = require('massive');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 const pc = require('./controllers/photosController');
+const ac = require('./controllers/authController.js');
 
 const app = express();
 
@@ -23,6 +24,9 @@ app.use(session({
 }))
 
 app.get('/api/photos/:letter/:letterCount', pc.getPhoto)
+
+app.post('/auth/register', ac.register);
+app.post('/auth/login', ac.login);
 
 app.listen(PORT, () => {
     console.log('never go full retard', PORT)
