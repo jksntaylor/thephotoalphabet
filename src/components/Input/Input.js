@@ -15,9 +15,7 @@ class Input extends Component {
     
 
     handleInputChange(value) {
-        if (this.state.userInput.length<10) {
-        this.setState({userInput: value})
-        } else if(value.length<11) {
+        if (value.length<=10) {
             this.setState({userInput: value})
         } else {
             alert('10 Letter Limit')
@@ -32,9 +30,7 @@ class Input extends Component {
         let inputArray = this.state.userInput.toUpperCase().split('');
         let photos = inputArray.map(letter => {
             return (
-                <div className='individual-photo'>
                   <InputPhoto letter={letter}/>
-                </div>
             )
         })
 
@@ -45,13 +41,13 @@ class Input extends Component {
                 <div className='photosContainer'>
                     {photos}
                 </div>
-                <div>Make Your Own</div>
-                <input placeholder='Make Your Own!' value={this.state.userInput} onChange={e => this.handleInputChange(e.target.value)} type="text" />
+                    <i className="fas fa-random fa-2x"></i>
+                <div className='inputContainer'>
+                    <input className='input' placeholder='Make Your Own!' value={this.state.userInput} onChange={e => this.handleInputChange(e.target.value)} type="text" />
+                </div>
             </div>
         )
     }
 }
 
 export default Input;
-
-//input with have children components for each letter in input (map through the input string and render a component for each)

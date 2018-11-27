@@ -45,9 +45,11 @@ class InputPhoto extends Component {
     render() {
         return (
             <div className='photo-container'>
-                <button onClick={this.handleUpButton}>^</button>
+                {/* <button onClick={this.handleUpButton}>^</button> */}
+                <i onClick={this.handleUpButton} className="fas fa-angle-up"></i>
                 <img src={this.state.url} alt=''/>
-                <button onClick={this.handleDownButton}>v</button>
+                <i  onClick={this.handleDownButton} className="fas fa-angle-down"></i>
+                {/* <button onClick={this.handleDownButton}>v</button> */}
             </div>
         )
     }
