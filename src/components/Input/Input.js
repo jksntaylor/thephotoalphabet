@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import InputPhoto from '../InputPhoto/InputPhoto';
+import Menu from '../Menu/Menu';
+import './input.css';
 
 class Input extends Component {
     constructor() {
@@ -30,7 +32,7 @@ class Input extends Component {
         let inputArray = this.state.userInput.toUpperCase().split('');
         let photos = inputArray.map(letter => {
             return (
-                <div>
+                <div className='individual-photo'>
                   <InputPhoto letter={letter}/>
                 </div>
             )
@@ -39,9 +41,12 @@ class Input extends Component {
 
         return (
             <div>
-                {photos}
+                <Menu/>
+                <div className='photosContainer'>
+                    {photos}
+                </div>
                 <div>Make Your Own</div>
-                <input placeholder='Make Your Own!' value={this.state.userInput} onChange={e => this.handleInputChange(e.target.value)}/>
+                <input placeholder='Make Your Own!' value={this.state.userInput} onChange={e => this.handleInputChange(e.target.value)} type="text" />
             </div>
         )
     }

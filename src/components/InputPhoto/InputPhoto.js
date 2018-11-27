@@ -44,9 +44,9 @@ class InputPhoto extends Component {
 
     render() {
         return (
-            <div>
+            <div className='photo-container'>
                 <button onClick={this.handleUpButton}>^</button>
-                <img src={this.state.url} alt='' height='90' width='60'/>
+                <img src={this.state.url} alt=''/>
                 <button onClick={this.handleDownButton}>v</button>
             </div>
         )

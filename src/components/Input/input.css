@@ -1,0 +1,15 @@
+.photosContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.photo-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.photo-container img {
+    width: 100%;
+}
