@@ -7,7 +7,7 @@ class Input extends Component {
     constructor() {
         super();
         this.state = {
-            userInput: '',
+            userInput: [],
             pictureIDs: [],
         }
     }
@@ -16,21 +16,29 @@ class Input extends Component {
 
     handleInputChange(value) {
         if (value.length<=10) {
-            this.setState({userInput: value})
+            // this.setState({userInput: value})
+            this.setState({
+                userInput: value.split('').reduce((acc, letter) => {
+                    return [ ...acc, { letter: letter.toUpperCase(), count: 1 }]
+                }, [])
+            })
         } else {
             alert('10 Letter Limit')
         }
     }
 
-    // handleClick() {
-
-    // }
+    handleRandomize = () => {
+        this.setState({
+            userInput: this.state.userInput.map(obj => {
+                return { ...obj, count: Math.floor(Math.random() * 3)+1 }
+            })
+        })
+    }
 
     render() {
-        let inputArray = this.state.userInput.toUpperCase().split('');
-        let photos = inputArray.map(letter => {
+        let photos = this.state.userInput.map((obj, index) => {
             return (
-                  <InputPhoto letter={letter}/>
+                  <InputPhoto count={obj.count} letter={obj.letter} key={`${obj.letter}${obj.count}${index}`}/>
             )
         })
 
@@ -41,9 +49,9 @@ class Input extends Component {
                 <div className='photosContainer'>
                     {photos}
                 </div>
-                    <i className="fas fa-random fa-2x"></i>
+                    <i className="fas fa-random fa-2x" onClick={this.handleRandomize}></i>
                 <div className='inputContainer'>
-                    <input className='input' placeholder='Make Your Own!' value={this.state.userInput} onChange={e => this.handleInputChange(e.target.value)} type="text" />
+                    <input className='input' placeholder='Make Your Own!' value={this.state.userInput.reduce((acc, obj) => acc + obj.letter, '')} onChange={e => this.handleInputChange(e.target.value)} type="text" />
                 </div>
             </div>
         )

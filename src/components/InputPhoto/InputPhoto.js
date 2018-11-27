@@ -6,7 +6,7 @@ class InputPhoto extends Component {
         super(props);
         this.state={
             letter: props.letter,
-            letterCount: Math.floor(Math.random() * 3)+1,
+            letterCount: +props.count,
             url: ''
         }
         this.getPhoto = this.getPhoto.bind(this);
