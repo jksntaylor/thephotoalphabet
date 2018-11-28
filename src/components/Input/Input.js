@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import InputPhoto from '../InputPhoto/InputPhoto';
-import Menu from '../Menu/Menu';
 import './input.css';
 
 class Input extends Component {
@@ -45,11 +45,12 @@ class Input extends Component {
 
         return (
             <div>
-                <Menu/>
+                <Link to='/auth'>Auth</Link>
+                <Link to='/cart'>Cart</Link>
                 <div className='photosContainer'>
                     {photos}
                 </div>
-                    <i className="fas fa-random fa-2x" onClick={this.handleRandomize}></i>
+                <i className="fas fa-random fa-2x" onClick={this.handleRandomize}></i>
                 <div className='inputContainer'>
                     <input className='input' placeholder='Make Your Own!' value={this.state.userInput.reduce((acc, obj) => acc + obj.letter, '')} onChange={e => this.handleInputChange(e.target.value)} type="text" />
                 </div>

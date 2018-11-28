@@ -34,7 +34,8 @@ class Auth extends Component {
                 password: '',
                 confirmedpassword: ''
             });
-           this.props.updateUser({fullName, email}) 
+           this.props.updateUser({fullName, email});
+           alert('sucessfully registered'); 
         })
     }
 
@@ -46,6 +47,7 @@ class Auth extends Component {
                 loginPassword: ''
             });
             this.props.updateUser({loginEmail})
+            alert('logged in');
         })
     }
 
