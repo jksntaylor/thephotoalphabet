@@ -29,8 +29,8 @@ module.exports = {
     },
 
     getCart(req, res) {
-        if (!res.session.cart) {
-            res.status(200).send('Cart Empty');
+        if (!req.session.cart) {
+            req.session.cart = [];
         }
 
         return res.status(200).send(req.session.cart);

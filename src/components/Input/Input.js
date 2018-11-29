@@ -51,14 +51,14 @@ class Input extends Component {
 
     render() {
         if (this.state.userInput) {
-        var photos = this.state.userInput.map((obj, index) => {
-            return (
-                  <InputPhoto count={obj.count} letter={obj.letter} key={`${obj.letter}${obj.count}${index}`}/>
-            )
-        })
-        var inputValue = this.state.userInput.reduce((acc, obj) => acc + obj.letter, '')
+            var photos = this.state.userInput.map((obj, index) => {
+                return (
+                    <InputPhoto count={obj.count} letter={obj.letter} key={`${obj.letter}${obj.count}${index}`}/>
+                )
+            })
+            var inputValue = this.state.userInput.reduce((acc, obj) => acc + obj.letter, '')
         } else {
-            var inputValue = '';
+            inputValue = '';
         }
 
 
