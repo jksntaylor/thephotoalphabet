@@ -28,6 +28,7 @@ class Input extends Component {
     }
 
     handleRandomize = () => {
+        console.log(this.state.userInput);
         this.setState({
             userInput: this.state.userInput.map(obj => {
                 return { ...obj, count: Math.floor(Math.random() * 3)+1 }
@@ -54,6 +55,7 @@ class Input extends Component {
                 <div className='inputContainer'>
                     <input className='input' placeholder='Make Your Own!' value={this.state.userInput.reduce((acc, obj) => acc + obj.letter, '')} onChange={e => this.handleInputChange(e.target.value)} type="text" />
                 </div>
+                {this.state.userInput.length>=3 ? <div><button>Add To Cart</button></div> : <div><h6>Word Must be At Least 3 Letters</h6></div>}
             </div>
         )
     }

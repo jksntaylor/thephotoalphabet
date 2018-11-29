@@ -17,7 +17,7 @@ export default function reducer(state = initialState, action) {
         case IS_ADMIN:
             return {...state, isAdmin: true};
         case ADD_TO_CART:
-            return {...state, cart: [...cart, action.payload]};
+            return {...state, cart: [...state.cart, action.payload]};
         case REMOVE_FROM_CART:
             let index = state.cart.findIndex(item => +item.id === +action.payload);
             let copy = state.cart.slice();

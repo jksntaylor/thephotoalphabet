@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 class Auth extends Component {
     constructor() {
@@ -54,6 +55,7 @@ class Auth extends Component {
     render() {
         return (
             <div className='auth-container'>
+                <Link to='/make'>Back</Link>
                 <div className='registration-form'>
                     <h1>Register</h1>
                     <input onChange={e => {this.handleChange('fullName', e.target.value)}} value={this.state.fullName} className='register-name-input' placeholder='Name'/>
