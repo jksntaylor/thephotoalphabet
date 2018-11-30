@@ -22,10 +22,13 @@ class Cart extends Component {
     }
 
     deleteFromCart = (id) => {
+        console.log(id);
         axios.delete(`/cart/${id}`).then(response => {
+            console.log(response);
             this.setState({
-                cart: response
+                cart: response.data
             })
+            this.getCart();
         })
     }
 
@@ -37,7 +40,10 @@ class Cart extends Component {
         
         let orders = this.state.cart.map(item => {
             return (
-                <Order pictureIDs={item.pictureIDs}/>
+                <div key={item.cartID} className='orderContainer'>
+                    <button onClick={() => {this.deleteFromCart(+item.cartID)}}>X</button>
+                    <Order pictureIDs={item.pictureIDs}/>
+                </div>
             )
         })
 
@@ -45,6 +51,7 @@ class Cart extends Component {
             <div>
                 <Link to='/make'><h5>Make More</h5></Link>
                 <Link to='/auth'><h5>Log In</h5></Link>
+                <h6>Cart is not saved on User Profile</h6>
                 {this.state.cart.length !== 0 ? orders : <h2>No Orders in Cart</h2>}
                 <Link to='/checkout'>Checkout</Link>
             </div>

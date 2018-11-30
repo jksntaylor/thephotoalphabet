@@ -31,6 +31,7 @@ app.post('/auth/login', ac.login);
 
 app.post('/cart', cc.addToCart);
 app.get('/cart', cc.getCart);
+app.delete('/cart/:id', cc.deleteFromCart);
 
 app.listen(PORT, () => {
     console.log('never go full retard', PORT)

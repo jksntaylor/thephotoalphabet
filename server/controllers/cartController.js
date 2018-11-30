@@ -19,13 +19,22 @@ module.exports = {
 
     deleteFromCart(req, res) {
         const {id} = req.params;
+        console.log('params id', id);
 
-        let target = req.session.cart.map(obj => obj.cartId === id);
-        let index = req.session.cart.findIndex(() => target);
-        let newCart = req.session.splice(index, 1);
-        req.session.cart = newCart;
+        // let targetArray = req.session.cart.slice();
+        // let target = targetArray.filter(obj => obj.cartID === +id)[0];
+        // console.log('target', target);
+        // let index = req.session.cart.indexOf(target);
+        // console.log('index', index);
+        // let newCart = req.session.cart.slice();
+        // newCart.splice(index, 1);
+        // req.session.cart = newCart;
 
-        res.status(200).send(req.session)
+        let filtered = req.session.cart.filter(obj => obj.cartID !== +id);
+        console.log(11111, filtered);
+        req.session.cart = filtered;
+
+        res.status(200).send(filtered);
     },
 
     getCart(req, res) {
