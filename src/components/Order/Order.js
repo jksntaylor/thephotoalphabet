@@ -3,9 +3,10 @@ import InputPhoto from '../InputPhoto/InputPhoto';
 
 function Order (props) {
     let array = props.pictureIDs;
-
+    let i=0;
     let photos = array.map(photo => {
-        return <InputPhoto count={photo.count} letter={photo.letter}/>
+        i--
+        return <InputPhoto key={i} count={photo.count} letter={photo.letter}/>
     })
 
     return (

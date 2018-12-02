@@ -37,12 +37,13 @@ class Cart extends Component {
     }
 
     render() {
-        
+        let i = 0;
         let orders = this.state.cart.map(item => {
+            i++;
             return (
                 <div key={item.cartID} className='orderContainer'>
                     <button onClick={() => {this.deleteFromCart(+item.cartID)}}>X</button>
-                    <Order pictureIDs={item.pictureIDs}/>
+                    <Order key={i} pictureIDs={item.pictureIDs}/>
                 </div>
             )
         })
