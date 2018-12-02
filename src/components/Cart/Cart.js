@@ -52,7 +52,6 @@ class Cart extends Component {
             <div>
                 <Link to='/make'><h5>Make More</h5></Link>
                 <Link to='/auth'><h5>Log In</h5></Link>
-                <h6>Cart is not saved on User Profile</h6>
                 {this.state.cart.length !== 0 ? orders : <h2>No Orders in Cart</h2>}
                 <Link to='/checkout'>Checkout</Link>
             </div>
