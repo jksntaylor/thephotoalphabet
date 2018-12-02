@@ -65,17 +65,21 @@ class Input extends Component {
 
 
         return (
-            <div>
-                <Link to='/auth'>Auth</Link>
-                <Link to='/cart'>Cart</Link>
-                <div className='photosContainer'>
-                    {photos}
+            <div className='inputPageContainer'>
+                <div className='inputNavContainer'>
+                    <Link to='/auth'>Auth</Link>
+                    <Link to='/cart'>Cart</Link>
                 </div>
-                <i className="fas fa-random fa-2x" onClick={this.handleRandomize}></i>
+                <div className='randomContainer'>
+                    <div className='photosContainer'>
+                        {photos}
+                    </div>
+                    <i className="fas fa-random fa-2x" onClick={this.handleRandomize}></i>
+                </div>
                 <div className='inputContainer'>
-                    <input className='input' placeholder='Make Your Own!' value={inputValue} onChange={e => this.handleInputChange(e.target.value)} type="text" />
+                    <input className='input' placeholder='Type Here!' value={inputValue} onChange={e => this.handleInputChange(e.target.value)} type="text" />
+                    {this.state.userInput.length>=3 ? <div><button onClick={this.addToCart} className='addToCartButton'>Add To Cart</button></div> : <div className='inputMinLength'><h6 >Word Must be At Least 3 Letters</h6></div>}
                 </div>
-                {this.state.userInput.length>=3 ? <div><button onClick={this.addToCart}>Add To Cart</button></div> : <div><h6>Word Must be At Least 3 Letters</h6></div>}
             </div>
         )
     }

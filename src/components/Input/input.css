@@ -7,14 +7,18 @@
     min-height: 10vh;
     max-height: 30vh;
     width: 95%;
-    margin-left: 2.5%;
+    margin: 10% 2.5%;
+    margin-bottom: 0;
+    position: absolute;
+    top: 15%;
 }
 
 .photo-container {
     display: flex;
     flex-direction: column;
-    max-height: 90%;
+    height: 100%;
     max-width: 30%;
+    min-width: 7%;
     margin: 1%;
 }
 
@@ -28,18 +32,62 @@
     justify-content: center;
     color: #ccc;
     margin: 2px;
+    width: 100%;
 }
+
+/* .fas.fa-angle-up::before,
+.fas.fa-angle-down::before {
+    width: 100%;
+    justify-content: center;
+} */
 
 .fa-random {
     margin-top: 20px;
     display: flex;
     justify-content: center;
     width: 100%;
+    position: absolute;
+    top: 50%;
 }
 
 .input {
-    font-size: 20px;
-    width: 80%;
-    margin-left: 10%;
-    margin-top: 10%;
+    font-size: 35px;
+    width: 65%;
+    margin: 10% 17.5%;
+    margin-bottom: 0;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 5px;
+}
+
+.inputPageContainer {
+    height: 100vh;
+    width: 100vw;
+}
+
+.inputMinLength h6 {
+    margin: 0;
+    margin-top: 1%;
+    text-align: center;
+    font-size: 16px;
+    color: #aaa
+}
+
+.inputContainer {
+    position: absolute;
+    bottom: 25%;
+}
+
+.addToCartButton {
+    background: none;
+    border: none;
+    width: 30%;
+    margin: 2% 35%;
+    height: 4vh;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    box-shadow: #ddd 2px 3px 5px;
 }

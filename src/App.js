@@ -7,8 +7,6 @@ import Input from './components/Input/Input';
 import Checkout from './components/Checkout/Checkout';
 import Cart from './components/Cart/Cart';
 import Auth from './components/Auth/Auth';
-import User from './components/User/User';
-import Admin from './components/Admin/Admin';
 
 class App extends Component {
   constructor() {
@@ -33,8 +31,6 @@ class App extends Component {
           <Route path='/cart' render={(props) => <Cart {...props} user={this.state.user} updateUser={this.updateUser} /> } />
           <Route path='/checkout' render={(props) => <Checkout {...props} user={this.state.user} updateUser={this.updateUser} /> } />
           <Route path='/auth' render={(props) => <Auth {...props} user={this.state.user} updateUser={this.updateUser} /> } />
-          <Route path='/user' render={(props) => <User {...props} user={this.state.user} updateUser={this.updateUser} /> } />
-          <Route path='/admin' render={(props) => <Admin {...props} user={this.state.user} updateUser={this.updateUser} /> } />
         </Switch>
       </div>
     );
