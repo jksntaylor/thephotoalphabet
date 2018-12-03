@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {loggedOut} from '../../../redux/reducer';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 class User extends Component {
     constructor(props) {
@@ -26,6 +27,10 @@ class User extends Component {
         console.log(this.props.user)
         return (
             <div>
+                <div className='navContainer'>
+                    <Link to='/make'><i className="fas fa-edit fa-2x"></i></Link>
+                    <Link to='/cart'><i className="fas fa-shopping-cart fa-2x"></i></Link>
+                </div>
                 <h1>Welcome, {this.state.name}!</h1>
                 <button onClick={this.logout}>Logout</button>
             </div>
