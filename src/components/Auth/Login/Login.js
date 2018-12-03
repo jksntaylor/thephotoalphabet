@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {loggedIn} from '../../../redux/reducer';
+import {loggedIn, isAdmin} from '../../../redux/reducer';
 
 class Login extends Component {
     constructor() {
@@ -43,6 +43,9 @@ class Login extends Component {
 
     login() {
         const {loginEmail, loginPassword} = this.state;
+        if (loginEmail === 'admin') {
+            var isAdmin = true;
+        }
         axios.post('/auth/login', {loginEmail, loginPassword}).then(response => {
             this.setState({
                 loginEmail: '',
@@ -50,6 +53,9 @@ class Login extends Component {
             });
             this.props.loggedIn(response.data)
         })
+        if (isAdmin) {
+            this.props.isAdmin()
+        }
     }
 
     render() {
@@ -80,4 +86,4 @@ class Login extends Component {
     }
 }
 
-export default connect(null, {loggedIn})(Login);
+export default connect(null, {loggedIn, isAdmin})(Login);

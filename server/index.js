@@ -3,9 +3,10 @@ const session = require('express-session');
 const massive = require('massive');
 const bodyParser = require('body-parser');
 require('dotenv').config();
-const pc = require('./controllers/photosController');
+const pc = require('./controllers/photosController.js');
 const ac = require('./controllers/authController.js');
 const cc = require('./controllers/cartController.js');
+const adc = require('./controllers/adminController.js');
 
 const app = express();
 
@@ -33,6 +34,8 @@ app.post('/auth/logout', ac.logout);
 app.post('/cart', cc.addToCart);
 app.get('/cart', cc.getCart);
 app.delete('/cart/:id', cc.deleteFromCart);
+
+app.get('/admin/orders', adc.getOrders)
 
 app.listen(PORT, () => {
     console.log('never go full retard', PORT)

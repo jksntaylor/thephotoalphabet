@@ -15,15 +15,28 @@ class Input extends Component {
     
 
     handleInputChange(value) {
-        if (value.length<=10) {
-            // this.setState({userInput: value})
-            this.setState({
-                userInput: value.split('').reduce((acc, letter) => {
-                    return [ ...acc, { letter: letter.toUpperCase(), count: 1 }]
-                }, [])
-            })
+        function letterChecker(val) {
+            if (!val) {
+                return true;
+            } else if (val.match(/[a-z]/i)){
+                return true;
+            } else {
+                return false;
+            }
+        }
+        if (letterChecker(value[value.length-1])) {
+            if (value.length<=10) {
+                // this.setState({userInput: value})
+                this.setState({
+                    userInput: value.split('').reduce((acc, letter) => {
+                        return [ ...acc, { letter: letter.toUpperCase(), count: 1 }]
+                    }, [])
+                })
+            } else {
+                alert('10 Letter Limit')
+            }
         } else {
-            alert('10 Letter Limit')
+            return;
         }
     }
 
