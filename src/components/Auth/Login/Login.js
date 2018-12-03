@@ -30,15 +30,14 @@ class Login extends Component {
         if (password!==confirmedpassword) {
             return alert("passwords don't match")  
         }
-        axios.post('/auth/register', {fullName, email, password}).then(() => {
+        axios.post('/auth/register', {fullName, email, password}).then(response => {
             this.setState({
                 fullName: '',
                 email: '',
                 password: '',
                 confirmedpassword: ''
             });
-           this.props.updateUser({fullName, email});
-           alert('sucessfully registered'); 
+           this.props.loggedIn(response.data);
         })
     }
 

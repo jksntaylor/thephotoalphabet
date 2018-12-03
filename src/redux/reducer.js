@@ -6,6 +6,7 @@ const initialState = {
 
 const LOGGED_IN = 'LOGGED_IN';
 const IS_ADMIN = 'IS_ADMIN';
+const LOGGED_OUT = 'LOGGED_OUT';
 const ADD_TO_CART = 'ADD_TO_CART';
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 
@@ -15,6 +16,8 @@ export default function reducer(state = initialState, action) {
            return {...state, isLoggedIn: true, user: action.payload};
         case IS_ADMIN:
             return {...state, isAdmin: true};
+        case LOGGED_OUT: 
+            return {...state, isLoggedIn: false, isAdmin: false};
         case ADD_TO_CART:
             return {...state, cart: [...state.cart, action.payload]};
         case REMOVE_FROM_CART:
@@ -37,6 +40,12 @@ export function loggedIn (user) {
 export function isAdmin () {
     return {
         type: IS_ADMIN
+    }
+}
+
+export function loggedOut () {
+    return {
+        type: LOGGED_OUT
     }
 }
 

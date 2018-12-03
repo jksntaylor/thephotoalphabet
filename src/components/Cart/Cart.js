@@ -50,8 +50,8 @@ class Cart extends Component {
 
         return (
             <div>
-                <Link to='/make'><i class="fas fa-edit fa-2x"></i></Link>
-                <Link to='/auth'><h5><i class="fas fa-user fa-2x"></i></h5></Link>
+                <Link to='/make'><i className="fas fa-edit fa-2x"></i></Link>
+                <Link to='/auth'><h5><i className="fas fa-user fa-2x"></i></h5></Link>
                 {this.state.cart.length !== 0 ? orders : <h2>No Orders in Cart</h2>}
                 <Link to='/checkout'>Checkout</Link>
             </div>

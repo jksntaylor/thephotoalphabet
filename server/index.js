@@ -28,6 +28,7 @@ app.get('/api/photos/:letter/:letterCount', pc.getPhoto)
 
 app.post('/auth/register', ac.register);
 app.post('/auth/login', ac.login);
+app.post('/auth/logout', ac.logout);
 
 app.post('/cart', cc.addToCart);
 app.get('/cart', cc.getCart);
