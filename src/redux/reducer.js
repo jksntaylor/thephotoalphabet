@@ -1,8 +1,7 @@
 const initialState = {
     isLoggedIn: false,
     isAdmin: false,
-    userID: 0,
-    cart: []
+    user: {}
 };
 
 const LOGGED_IN = 'LOGGED_IN';
@@ -13,7 +12,7 @@ const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export default function reducer(state = initialState, action) {
     switch (action.type) {
         case LOGGED_IN:
-           return {...state, isLoggedIn: true, userID: action.payload};
+           return {...state, isLoggedIn: true, user: action.payload};
         case IS_ADMIN:
             return {...state, isAdmin: true};
         case ADD_TO_CART:
@@ -28,10 +27,10 @@ export default function reducer(state = initialState, action) {
     }
 }
 
-export function loggedIn (userID) {
+export function loggedIn (user) {
     return {
         type: LOGGED_IN,
-        payload: +userID
+        payload: user
     }
 }
 
