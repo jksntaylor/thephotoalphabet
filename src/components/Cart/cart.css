@@ -3,3 +3,67 @@
 .orderContainer .fa-angle-up {
     display: none;
 }
+
+.cartContainer {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    overflow: hidden;
+}
+
+.cartContainer .cartNavContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding: 10%;
+    background-color: white;
+    box-shadow: 0 2px 5px #888;
+}
+
+.cartContainer  i {
+    color: black;
+}
+
+.checkoutContainer {
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+}
+
+.cartContainer input {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    margin: 1%;
+    display: inline-block;
+    margin: 1vh 22.5vw;
+    width: 55vw;
+    height: 8vw;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.cartContainer .orderContainer {
+    margin: 0;
+    padding: 10px;
+}
+
+.cartContainer .photosContainer {
+    background-color: white;
+    margin: 0;
+}
+
+.cartOrdersContainer {
+    height: 79vh;
+    overflow: scroll;
+}
+
+.orderContainer button {
+    background: none;
+    border: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}

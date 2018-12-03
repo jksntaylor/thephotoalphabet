@@ -42,18 +42,25 @@ class Cart extends Component {
             i++;
             return (
                 <div key={item.cartID} className='orderContainer'>
-                    <button onClick={() => {this.deleteFromCart(+item.cartID)}}>X</button>
                     <Order key={i} pictureIDs={item.pictureIDs}/>
+                    <button onClick={() => {this.deleteFromCart(+item.cartID)}}>delete</button>
                 </div>
             )
         })
 
         return (
-            <div>
-                <Link to='/make'><i className="fas fa-edit fa-2x"></i></Link>
-                <Link to='/auth'><h5><i className="fas fa-user fa-2x"></i></h5></Link>
-                {this.state.cart.length !== 0 ? orders : <h2>No Orders in Cart</h2>}
-                <Link to='/checkout'>Checkout</Link>
+            <div className='cartContainer'>
+                <div className='cartNavContainer'>
+                    <Link to='/make'><i className="fas fa-edit fa-2x"></i></Link>
+                    <Link to='/auth'><h5><i className="fas fa-user fa-2x"></i></h5></Link>
+                </div>
+                <div className='cartOrdersContainer'>
+                    {this.state.cart.length !== 0 ? orders : <h2>No Orders in Cart</h2>}
+                </div>
+                <div className='checkoutContainer'>
+                    <h4>Items in Cart: {this.state.cart.length}</h4>
+                    <Link to='/checkout'><i class="fas fa-credit-card fa-2x"></i></Link>
+                </div>
             </div>
         )
     }

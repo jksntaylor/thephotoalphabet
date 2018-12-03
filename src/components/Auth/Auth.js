@@ -3,6 +3,7 @@ import Login from './Login/Login';
 import User from './User/User';
 import Admin from './Admin/Admin';
 import {connect} from 'react-redux';
+import './auth.css';
 
 
 function Auth (props) {

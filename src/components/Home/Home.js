@@ -13,6 +13,7 @@ class Home extends Component {
                 </div>
                 <div className='home-button-container'>
                     <Link to='/make' className='home-button-anchor'><button className='home-button'>GET STARTED</button></Link>
+                    <div className='home-button-underline'/>
                 </div>
             </div>
         )

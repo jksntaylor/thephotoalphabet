@@ -23,15 +23,17 @@ svg {
 }
 
 .home-button-container {
+    display: flex;
+    flex-direction: column;
     height: 50vh;
     justify-content: center;
-    padding-bottom: 20vh;
-    /* animation: home-button 1s linear forwards; */
+    padding-bottom: 0;
+    animation: home-button-move 1.5s ease-out forwards;
     animation-delay: 3.2s;
 }
 
 .home-button {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 16px;
     color: black;
     background: none;
@@ -40,25 +42,23 @@ svg {
     width: 35%;
     margin: 0 32.5%;
     padding: 5% 0;
-    animation: home-button-color 1s linear forwards;
+    animation: home-button-color 1.6s linear forwards;
     animation-delay: 3.2s;
 }
 
-.home-button-anchor {
-    position: relative;
-    animation: home-button-move .7s ease-in-out forwards;
-    animation-delay: 3.2s;
+
+.home-button-underline {
+    background-color: black;
+    height: 1px;
+    width: 0;
+    margin: 0 auto;
+    animation: home-button-underline 1s linear forwards;
+    animation-delay: 4.5s;
 }
 
 @keyframes home-button-move {
-    0% {
-        top: 150px;
-    }
-    /* 60% {
-        top: 95px;
-    } */
     100% {
-        top: 100px;
+        padding-bottom: 20vh;
     }
 }
 
@@ -66,11 +66,16 @@ svg {
     0% {
         color: black;
         font-size: 16px;
-        border-bottom: 1px solid black
     }
     100% {
         color: white;
-        font-size: 18px;
-        border-bottom: 1px solid white
+        font-size: 20px;
+    }
+}
+
+@keyframes home-button-underline {
+    100% {
+        background-color: white;
+        width: 25%;
     }
 }

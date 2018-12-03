@@ -1,0 +1,56 @@
+.auth-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    padding-bottom: 100px;
+}
+
+.auth-container .navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding: 10%;
+    background-color: white;
+    box-shadow: 0 2px 5px #888;
+}
+
+.auth-container .navContainer i {
+    color: black;
+}
+
+.auth-container input {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    margin: 1%;
+    display: inline-block;
+    margin: 1vh 22.5vw;
+    width: 55vw;
+    height: 8vw;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.authButton {
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    width: 30vw;
+    height: 10vw;
+    margin-left: 35vw;
+    margin-top: 3vh;
+}
+
+.Toastify__toast-body {
+    font-family: 'Montserrat',sans-serif;
+    color: black;
+    font-size: 24px;
+}
+
+.Toastify__progress-bar {
+    background: none;
+    background-color: black;
+}

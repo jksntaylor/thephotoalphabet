@@ -146,7 +146,7 @@
 }
 
 .containerMagnified {
-    animation: containerMagnified 1s ease-in forwards;
+    animation: containerMagnified .8s ease-in forwards;
 }
 
 .containerMagnified .photo-container {
@@ -154,7 +154,7 @@
 }
 
 .faMagnifiedToggle {
-    animation: faMagnifiedToggle 1s ease-in forwards;
+    animation: faMagnifiedToggle .8s ease-in forwards;
 }
 
 @keyframes navMagnified {
