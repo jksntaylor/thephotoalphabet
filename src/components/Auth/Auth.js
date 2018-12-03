@@ -55,8 +55,8 @@ class Auth extends Component {
     render() {
         return (
             <div className='auth-container'>
-                <Link to='/make'><h5>Make More</h5></Link>
-                <Link to='/cart'><h5>Cart</h5></Link>
+                <Link to='/make'><i class="fas fa-edit fa-2x"></i></Link>
+                <Link to='/cart'><i class="fas fa-shopping-cart fa-2x"></i></Link>
                 <div className='registration-form'>
                     <h1>Register</h1>
                     <input onChange={e => {this.handleChange('fullName', e.target.value)}} value={this.state.fullName} className='register-name-input' placeholder='Name'/>

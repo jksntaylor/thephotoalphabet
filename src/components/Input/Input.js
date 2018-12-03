@@ -67,8 +67,8 @@ class Input extends Component {
         return (
             <div className='inputPageContainer'>
                 <div className='inputNavContainer'>
-                    <Link to='/auth'>Auth</Link>
-                    <Link to='/cart'>Cart</Link>
+                    <Link to='/auth'><i class="fas fa-user fa-2x"></i></Link>
+                    <Link to='/cart'><i class="fas fa-shopping-cart fa-2x"></i></Link>
                 </div>
                 <div className='randomContainer'>
                     <div className='photosContainer'>

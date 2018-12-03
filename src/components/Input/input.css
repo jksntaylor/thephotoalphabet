@@ -2,15 +2,14 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 10px;
+    padding: 0 5px;
     border: 5px solid black;
-    height: 15vh;
+    height: 14vh;
     /* width: 95%; */
-    min-width: 30%;
+    min-width: 40%;
     margin: 0 auto;
     margin-bottom: 0;
-    position: absolute;
-    top: 15%;
+    box-shadow: 3px 3px 6px #aaa;
 }
 
 .orderContainer .photosContainer {
@@ -19,17 +18,22 @@
     align-items: center;
     padding: 10px;
     border: 5px solid black;
-    min-height: 10vh;
-    max-height: 30vh;
-    width: 95%;
+    min-width: 40%;
     margin: 1% 2.5%;
 }
 
-.photo-container {
+.inputPageContainer .photo-container {
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 8vw;
+    width: 10vw;
+    margin: 1%;
+}
+
+.orderContainer .photo-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     margin: 1%;
 }
 
@@ -75,6 +79,10 @@
     width: 100vw;
 }
 
+.inputContainer {
+    height: 30vh;
+}
+
 .inputMinLength h6 {
     margin: 0;
     margin-top: 1%;
@@ -99,7 +107,23 @@
 
 .randomContainer {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     height: 60vh;
     align-items: center;
+    justify-content: space-around;
+    padding-top: 40px;
+}
+
+.inputNavContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding: 10%;
+    background-color: black;
+    box-shadow: 0 2px 3px #aaa;
+}
+
+.inputNavContainer i {
+    color: white;
 }

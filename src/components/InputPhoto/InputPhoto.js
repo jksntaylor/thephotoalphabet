@@ -18,20 +18,18 @@ class InputPhoto extends Component {
 
     handleUpButton = () => {
         if (this.state.letterCount===4) {
-            this.setState({letterCount: 1})
+            this.setState({letterCount: 1}, this.getPhoto)
         } else {
-            this.setState({letterCount: this.state.letterCount+1})
+            this.setState({letterCount: this.state.letterCount+1}, this.getPhoto)
         }
-        this.getPhoto();
     }
 
     handleDownButton = () => {
         if (this.state.letterCount===1) {
-            this.setState({letterCount: 4})
+            this.setState({letterCount: 4}, this.getPhoto)
         } else {
-            this.setState({letterCount: this.state.letterCount-1})
+            this.setState({letterCount: this.state.letterCount-1}, this.getPhoto)
         }
-        this.getPhoto();
     }
 
     getPhoto() {
