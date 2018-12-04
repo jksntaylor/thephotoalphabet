@@ -4,22 +4,11 @@ import CheckoutForm from './CheckoutForm';
 
 class App extends Component {
 
-    async submit(ev) {
-        let {token} = await this.props.stripe.createToken({name: "Name"});
-        let response = await fetch("/charge", {
-          method: "POST",
-          headers: {"Content-Type": "text/plain"},
-          body: token.id
-        });
-      
-        if (response.ok) console.log("Purchase Complete!")
-      }
-
   render() {
     return (
       <StripeProvider apiKey="pk_test_KJzSf9w3SSqFsagSRoecHHsu">
-        <div className="example">
-          <h1>React Stripe Elements Example</h1>
+        <div className="checkoutCardContainer">
+          <h1>Checkout</h1>
           <Elements>
             <CheckoutForm />
           </Elements>

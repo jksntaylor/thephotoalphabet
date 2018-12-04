@@ -1,4 +1,3 @@
-
 .orderContainer .fa-angle-down,
 .orderContainer .fa-angle-up {
     display: none;
@@ -21,16 +20,75 @@
     box-shadow: 0 2px 5px #888;
 }
 
+.cartNavContainer a {
+    z-index: 1;
+}
+
+
 .cartContainer  i {
     color: black;
+}
+
+.cartContainer:last-child {
+    z-index: 100;
+}
+
+.orderContainer {
+    z-index: 1;
 }
 
 .checkoutContainer {
     background: white;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+.checkoutNav {
+    display: flex;
+    width: 100%;
     justify-content: space-around;
     align-items: center;
+    font-size: 20px;
+    background: white;
+    z-index: 10;
     height: 10vh;
+}
+
+.checkoutCardContainer {
+    width: 100%;
+    height: 90vh;
+    z-index: 100;
+    background: black;
+    color: white;
+}
+
+.checkoutCardContainer button {
+    background: none;
+    border: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    width: 30vw;
+    border: 1px solid white;
+    height: 10vw;
+    border-radius: 5px;
+    margin: 10% 35%;
+}
+
+.checkoutCardContainer h1 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.checkoutEnter {
+    animation: checkoutUp 1s ease-in-out forwards;
+}
+
+.checkoutLeave {
+    animation: checkoutDown 1s ease-in-out forwards;
 }
 
 .cartContainer input {
@@ -56,7 +114,7 @@
 }
 
 .cartOrdersContainer {
-    height: 79vh;
+    height: 80vh;
     overflow: scroll;
 }
 
@@ -66,4 +124,33 @@
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
+}
+
+.checkout p {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-size: 12px;
+}
+
+.StripeElement {
+    background-color: white;
+    padding: 10px;
+    margin: 5px 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@keyframes checkoutUp {
+    100% {
+        margin-top: -90vh;
+    }
+}
+
+@keyframes checkoutDown {
+    0% {
+        margin-top: -90vh;
+    }
+
+    100% {
+        margin-top: 0vh;
+    }
 }

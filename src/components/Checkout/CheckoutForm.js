@@ -5,23 +5,12 @@ import axios from 'axios';
 class CheckoutForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {complete: false}
+    this.state = {
+      complete: false
+    }
     this.submit = this.submit.bind(this);
   }
 
-//   async submit() {
-//     let {token} = await this.props.stripe.createToken({name: "Name"});
-//     let response = await axios.post("/charge", {
-//       method: "POST",
-//       headers: {"Content-Type": "text/plain"},
-//       body: token.id
-//     });
-  
-//     if (response.ok) {
-//         console.log("Purchase Complete!");
-//         this.setState({complete: true})
-//     }
-//   }
   async submit() {
       let token = await this.props.stripe.createToken({name: 'Name'})
       console.log(token);
@@ -39,8 +28,8 @@ class CheckoutForm extends Component {
 
     return (
       <div className="checkout">
-        <p>Would you like to complete the purchase?</p>
         <CardElement />
+        <p>This site does not save payment details, we apologize for the inconvenience</p>
         <button onClick={this.submit}>Send</button>
       </div>
     );
