@@ -9,7 +9,7 @@ class Input extends Component {
         super();
         this.state = {
             userInput: [],
-            magnified: false
+            magnified: 0
         }
     }
 
@@ -64,9 +64,13 @@ class Input extends Component {
     }
 
     toggleMagnified = () => {
-        this.setState({
-            magnified: !this.state.magnified
-        })
+        if (this.state.magnified===0) {
+            this.setState({magnified: 1})
+        } else if (this.state.magnified===1) {
+            this.setState({magnified: 2})
+        } else {
+            this.setState({magnified: 1})
+        }
     }
 
     render() {
@@ -82,7 +86,7 @@ class Input extends Component {
         }
 
          
-        let normal= <div className='inputPageContainer'>
+        let base= <div className='inputPageContainer'>
                         <div className='inputNavContainer'>
                             <Link to='/auth'><i className="fas fa-user fa-2x"></i></Link>
                             <Link to='/cart'><i className="fas fa-shopping-cart fa-2x"></i></Link>
@@ -100,29 +104,55 @@ class Input extends Component {
                         </div>
                     </div>;
 
-        let magnified = <div className='inputPageContainer'>
-                            <div className='inputNavContainer navMagnified'>
+        let magnifiedEnter = <div className='inputPageContainer'>
+                            <div className='inputNavContainer navMagnifiedEnter'>
                                 <Link to='/auth'><i className="fas fa-user fa-2x"></i></Link>
                                 <Link to='/cart'><i className="fas fa-shopping-cart fa-2x"></i></Link>
                             </div>
-                            <div className='randomContainer randomMagnified'>
-                                <div className='photosContainer containerMagnified'>
+                            <div className='randomContainer randomMagnifiedEnter'>
+                                <div className='photosContainer containerMagnifiedEnter'>
                                     {photos}
                                 </div>
-                                <i className="fas fa-random fa-2x faMagnified" onClick={this.handleRandomize}></i>
-                                <i class="fas fa-search fa-2x faMagnifiedToggle" onClick={this.toggleMagnified}></i>
+                                <i className="fas fa-random fa-2x faMagnifiedEnter" onClick={this.handleRandomize}></i>
+                                <i class="fas fa-search fa-2x faMagnifiedToggleEnter" onClick={this.toggleMagnified}></i>
                             </div>
-                            <div className='inputContainer inputMagnified'>
+                            <div className='inputContainer inputMagnifiedEnter'>
                                 <input className='input' placeholder='Type Here!' value={inputValue} onChange={e => this.handleInputChange(e.target.value)} type="text" />
                                 {this.state.userInput.length>=3 ? <div><button onClick={this.addToCart} className='addToCartButton'>Add To Cart</button></div> : <div className='inputMinLength'><h6 >Word Must be At Least 3 Letters</h6></div>}
                             </div>
                         </div>;
 
+        let magnifiedExit = <div className='inputPageContainer'>
+                            <div className='inputNavContainer navMagnifiedExit'>
+                            <Link to='/auth'><i className="fas fa-user fa-2x"></i></Link>
+                            <Link to='/cart'><i className="fas fa-shopping-cart fa-2x"></i></Link>
+                        </div>
+                        <div className='randomContainer randomMagnifiedExit'>
+                            <div className='photosContainer containerMagnifiedExit'>
+                                {photos}
+                            </div>
+                            <i className="fas fa-random fa-2x faMagnifiedExit" onClick={this.handleRandomize}></i>
+                            <i class="fas fa-search fa-2x faMagnifiedToggleExit" onClick={this.toggleMagnified}></i>
+                        </div>
+                        <div className='inputContainer inputMagnifiedExit'>
+                            <input className='input' placeholder='Type Here!' value={inputValue} onChange={e => this.handleInputChange(e.target.value)} type="text" />
+                            {this.state.userInput.length>=3 ? <div><button onClick={this.addToCart} className='addToCartButton'>Add To Cart</button></div> : <div className='inputMinLength'><h6 >Word Must be At Least 3 Letters</h6></div>}
+                        </div>
+                    </div>;
+
+        if (this.state.magnified===0) {
+            var input = base
+        } else if (this.state.magnified===1) {
+            input = magnifiedEnter
+        } else {
+            input = magnifiedExit
+        }
+
 
 
         return (
             <div>
-                {this.state.magnified ? magnified : normal}
+               {input}
             </div> 
         )
     }
