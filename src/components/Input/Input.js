@@ -16,6 +16,7 @@ class Input extends Component {
     
 
     handleInputChange(value) {
+        this.setState({magnified: 0});
         function letterChecker(val) {
             if (!val) {
                 return true;

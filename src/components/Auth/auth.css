@@ -21,7 +21,7 @@
 
 .auth-container input {
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     margin: 1%;
     display: inline-block;
     margin: 1vh 22.5vw;
@@ -34,14 +34,13 @@
 .authButton {
     background-color: white;
     font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
+    font-size: 22px;
     color: black;
     border: none;
     border-radius: 5px;
-    width: 30vw;
     height: 10vw;
-    margin-left: 35vw;
     margin-top: 3vh;
+    padding: 5px;
 }
 
 .Toastify__toast-body {
@@ -53,4 +52,11 @@
 .Toastify__progress-bar {
     background: none;
     background-color: black;
+}
+
+.registration-form, 
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

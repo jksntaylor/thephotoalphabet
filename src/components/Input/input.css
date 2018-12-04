@@ -165,17 +165,17 @@
 }
 
 .containerMagnifiedEnter .photo-container {
-    animation: containerMagnifiedImgEnter 1s ease-in forwards;
+    animation: containerMagnifiedImgEnter .8s ease-in forwards;
 }
 .containerMagnifiedExit .photo-container {
-    animation: containerMagnifiedImgExit 1s ease-in forwards;
+    animation: containerMagnifiedImgExit .8s ease-in forwards;
 }
 
 .faMagnifiedToggleEnter {
-    animation: faMagnifiedToggleEnter .8s ease-in forwards;
+    animation: faMagnifiedToggleEnter 1s ease-in forwards;
 }
 .faMagnifiedToggleExit {
-    animation: faMagnifiedToggleExit .8s ease-in forwards;
+    animation: faMagnifiedToggleExit 1s ease-in forwards;
 }
 
 @keyframes navMagnifiedEnter {
@@ -261,11 +261,11 @@
 
 @keyframes containerMagnifiedEnter {
     100% {
-        transform: rotate(90deg) translate(10vh, 30vw);
         height: 50vw;
         width: 80vh;
         margin-left: 10vw;
         margin-bottom: 10%;
+        transform: rotate(90deg) translate(10vh, 30vw);
     }
 }
 @keyframes containerMagnifiedExit {
@@ -278,7 +278,7 @@
     100% {
         transform: rotate(0) translate(0);
         height: 14vh;
-        width: 95%;
+        min-width: 40%;
         margin-left: auto;
         margin-bottom: 0;
     }

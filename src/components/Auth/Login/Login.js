@@ -82,14 +82,14 @@ class Login extends Component {
                     <h1>Register</h1>
                     <input onChange={e => {this.handleChange('fullName', e.target.value)}} value={this.state.fullName} className='register-name-input' placeholder='Name'/>
                     <input onChange={e => {this.handleChange('email', e.target.value)}} value={this.state.email} className='register-email-input' placeholder='Email'/>
-                    <input onChange={e => {this.handleChange('password', e.target.value)}} value={this.state.password}  className='register-password-input' placeholder='Create Password'/>
-                    <input onChange={e => {this.handleChange('confirmedpassword', e.target.value)}} value={this.state.confirmedpassword} className='register-password2-input' placeholder='Confirm Password'/>
+                    <input type='password' onChange={e => {this.handleChange('password', e.target.value)}} value={this.state.password}  className='register-password-input' placeholder='Create Password'/>
+                    <input type='password' onChange={e => {this.handleChange('confirmedpassword', e.target.value)}} value={this.state.confirmedpassword} className='register-password2-input' placeholder='Confirm Password'/>
                     <button className='authButton' onClick={this.register}>Register</button>
                 </div>
                 <div className='login-form'>
                     <h1>Login</h1>
                     <input value={this.state.loginEmail} onChange={e => this.handleChange('loginEmail', e.target.value)} placeholder='Email'/>
-                    <input value={this.state.loginPassword} onChange={e => this.handleChange('loginPassword', e.target.value)} placeholder='Password'/>
+                    <input type='password' value={this.state.loginPassword} onChange={e => this.handleChange('loginPassword', e.target.value)} placeholder='Password'/>
                     <button className='authButton' onClick={this.login}>Login</button>
                 </div>
             </div>

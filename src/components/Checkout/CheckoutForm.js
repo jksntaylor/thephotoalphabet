@@ -30,7 +30,7 @@ class CheckoutForm extends Component {
       <div className="checkout">
         <CardElement />
         <p>This site does not save payment details, we apologize for the inconvenience</p>
-        <button onClick={this.submit}>Send</button>
+        <button onClick={this.submit}>Complete</button>
       </div>
     );
   }
