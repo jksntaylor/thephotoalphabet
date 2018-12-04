@@ -92,7 +92,7 @@ class Input extends Component {
                                 {photos}
                             </div>
                             <i className="fas fa-random fa-2x" onClick={this.handleRandomize}></i>
-                            <i class="fas fa-search fa-2x" onClick={this.toggleMagnified}></i>
+                            <i className="fas fa-search fa-2x" onClick={this.toggleMagnified}></i>
                         </div>
                         <div className='inputContainer'>
                             <input className='input' placeholder='Type Here!' value={inputValue} onChange={e => this.handleInputChange(e.target.value)} type="text" />

@@ -59,7 +59,7 @@ class Cart extends Component {
                 </div>
                 <div className='checkoutContainer'>
                     <h4>Items in Cart: {this.state.cart.length}</h4>
-                    <Link to='/checkout'><i class="fas fa-credit-card fa-2x"></i></Link>
+                    <Link to='/checkout'><i className="fas fa-credit-card fa-2x"></i></Link>
                 </div>
             </div>
         )
