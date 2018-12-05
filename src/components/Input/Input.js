@@ -9,6 +9,7 @@ class Input extends Component {
         super();
         this.state = {
             userInput: [],
+            price: 0,
             magnified: 0,
             randomFade: false
         }
@@ -31,6 +32,7 @@ class Input extends Component {
             if (value.length<=10) {
                 // this.setState({userInput: value})
                 this.setState({
+                    price: value.length * 2,
                     userInput: value.split('').reduce((acc, letter) => {
                         return [ ...acc, { letter: letter.toUpperCase(), count: 1 }]
                     }, [])
@@ -39,6 +41,7 @@ class Input extends Component {
                 alert('10 Letter Limit')
             }
         } else {
+            this.setState({price: 0})
             return;
         }
     }
@@ -58,7 +61,8 @@ class Input extends Component {
 
     addToCart = () => {
         Axios.post('/cart', {
-            userInput: this.state.userInput
+            userInput: this.state.userInput,
+            price: this.state.price
             // userID: this.state.userID
         }).then(response => {
             console.log(response)
@@ -117,7 +121,13 @@ class Input extends Component {
                         </div>
                         <div className='inputContainer'>
                             <input className='input' placeholder='Type Here!' value={inputValue} onChange={e => this.handleInputChange(e.target.value)} type="text" />
-                            {this.state.userInput.length>=3 ? <div><button onClick={this.addToCart} className='addToCartButton'>Add To Cart</button></div> : <div className='inputMinLength'><h6 >Word Must be At Least 3 Letters</h6></div>}
+                            {this.state.userInput.length>=3 ? 
+                            <div className='inputPriceContainer'>
+                                <h3 className='inputPrice'>Price: ${this.state.price}</h3>
+                                <button onClick={this.addToCart} className='addToCartButton'>Add To Cart</button>
+                            </div> 
+                            : 
+                            <div className='inputMinLength'><h6 >Word Must be At Least 3 Letters</h6></div>}
                         </div>
                     </div>;
 
@@ -135,7 +145,13 @@ class Input extends Component {
                             </div>
                             <div className='inputContainer inputMagnifiedEnter'>
                                 <input className='input' placeholder='Type Here!' value={inputValue} onChange={e => this.handleInputChange(e.target.value)} type="text" />
-                                {this.state.userInput.length>=3 ? <div><button onClick={this.addToCart} className='addToCartButton'>Add To Cart</button></div> : <div className='inputMinLength'><h6 >Word Must be At Least 3 Letters</h6></div>}
+                                {this.state.userInput.length>=3 ? 
+                                <div className='inputPriceContainer'>
+                                    <h3 className='inputPrice'>Price: ${this.state.price}</h3>
+                                    <button onClick={this.addToCart} className='addToCartButton'>Add To Cart</button>
+                                </div> 
+                                : 
+                                <div className='inputMinLength'><h6 >Word Must be At Least 3 Letters</h6></div>}
                             </div>
                         </div>;
 
@@ -153,7 +169,13 @@ class Input extends Component {
                         </div>
                         <div className='inputContainer inputMagnifiedExit'>
                             <input className='input' placeholder='Type Here!' value={inputValue} onChange={e => this.handleInputChange(e.target.value)} type="text" />
-                            {this.state.userInput.length>=3 ? <div><button onClick={this.addToCart} className='addToCartButton'>Add To Cart</button></div> : <div className='inputMinLength'><h6 >Word Must be At Least 3 Letters</h6></div>}
+                            {this.state.userInput.length>=3 ? 
+                            <div className='inputPriceContainer'>
+                                <h3 className='inputPrice'>Price: ${this.state.price}</h3>
+                                <button onClick={this.addToCart} className='addToCartButton'>Add To Cart</button>
+                            </div> 
+                            : 
+                            <div className='inputMinLength'><h6 >Word Must be At Least 3 Letters</h6></div>}
                         </div>
                     </div>;
 

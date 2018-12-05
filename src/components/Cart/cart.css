@@ -140,6 +140,26 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.orderContainer {
+    opacity: 0;
+    animation: fadeIn 1s linear forwards
+}
+
+.orderPrice {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    display: inline;
+    margin: 0;
+}
+
+.orderPriceContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 5%;
+}
+
 @keyframes checkoutUp {
     100% {
         margin-top: -90vh;
@@ -153,5 +173,14 @@
 
     100% {
         margin-top: 0vh;
+    }
+}
+
+@keyframes fadeIn {
+    85% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

@@ -95,8 +95,7 @@
 .addToCartButton {
     background: none;
     border: none;
-    width: 30%;
-    margin: 2% 35%;
+    width: 50%;
     height: 4vh;
     background-color: black;
     color: white;
@@ -104,6 +103,18 @@
     font-family: 'Raleway', sans-serif;
     font-size: 18px;
     box-shadow: #ddd 2px 3px 5px;
+}
+
+.inputPriceContainer {
+    margin: 0 15%;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.inputPrice {
+    display: inline;
 }
 
 .randomContainer {

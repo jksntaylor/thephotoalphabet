@@ -8,6 +8,7 @@ module.exports = {
 
        req.session.cart.push({
            pictureIDs: req.body.userInput,
+           price: req.body.price,
            cartID: cartId
        })
 

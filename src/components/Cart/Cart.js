@@ -10,7 +10,8 @@ class Cart extends Component {
         super();
         this.state = {
             cart: [],
-            checkout: 0
+            checkout: 0,
+            price: 0
         }
     }
 
@@ -20,6 +21,10 @@ class Cart extends Component {
                 cart: response.data
             })
             console.log(this.state.cart);
+            let cartPrice = this.state.cart.reduce((acc, elem) => {
+                return acc += elem.price
+            }, 0);
+            this.setState({price: cartPrice})
         })
     }
 
@@ -55,7 +60,10 @@ class Cart extends Component {
             return (
                 <div key={item.cartID} className='orderContainer'>
                     <Order key={i} pictureIDs={item.pictureIDs}/>
+                    <div className='orderPriceContainer'>
+                    <h3 className='orderPrice'>${item.price}</h3>
                     <button onClick={() => {this.deleteFromCart(+item.cartID)}}>delete</button>
+                    </div>
                 </div>
             )
         })
@@ -63,7 +71,8 @@ class Cart extends Component {
         if (this.state.checkout===1) {
             var checkout =  <div className='checkoutContainer checkoutEnter'>
                                 <div className='checkoutNav'>
-                                    <h4>Items in Cart: {this.state.cart.length}</h4>
+                                    <h4>{this.state.cart.length} Items</h4>
+                                    <h4>${this.state.price}</h4>
                                     <i className="fas fa-credit-card fa-2x" onClick={this.toggleCheckout}></i>
                                 </div>
                                 <Checkout />
@@ -71,7 +80,8 @@ class Cart extends Component {
         } else if (this.state.checkout===2) {
             checkout =  <div className='checkoutContainer checkoutLeave'>
                                 <div className='checkoutNav'>
-                                    <h4>Items in Cart: {this.state.cart.length}</h4>
+                                    <h4>{this.state.cart.length} Items</h4>
+                                    <h4>${this.state.price}</h4>
                                     <i className="fas fa-credit-card fa-2x" onClick={this.toggleCheckout}></i>
                                 </div>
                                 <Checkout />
@@ -79,7 +89,8 @@ class Cart extends Component {
         } else {
             checkout =  <div className='checkoutContainer'>
                                 <div className='checkoutNav'>
-                                    <h4>Items in Cart: {this.state.cart.length}</h4>
+                                    <h4>{this.state.cart.length} Items</h4>
+                                    <h4>${this.state.price}</h4>
                                     <i className="fas fa-credit-card fa-2x" onClick={this.toggleCheckout}></i>
                                 </div>
                                 <Checkout />
