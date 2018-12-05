@@ -178,6 +178,10 @@
     animation: faMagnifiedToggleExit 1s ease-in forwards;
 }
 
+.fadeActive {
+    animation: fadeActive 1s linear forwards;
+}
+
 @keyframes navMagnifiedEnter {
     100% {
         transform: translate(0, -30vh)
@@ -297,5 +301,20 @@
     }
     100% {
         width: 10vw;
+    }
+}
+
+@keyframes fadeActive {
+    0% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

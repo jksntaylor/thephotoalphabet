@@ -9,7 +9,8 @@ class Input extends Component {
         super();
         this.state = {
             userInput: [],
-            magnified: 0
+            magnified: 0,
+            randomFade: false
         }
     }
 
@@ -43,11 +44,16 @@ class Input extends Component {
     }
 
     handleRandomize = () => {
-        this.setState({
-            userInput: this.state.userInput.map(obj => {
-                return { ...obj, count: Math.floor(Math.random() * 3)+1 }
-            })
-        })
+        setTimeout(() => {
+            this.setState({
+                userInput: this.state.userInput.map(obj => {
+                    return { ...obj, count: Math.floor(Math.random() * 3)+1 }
+                })
+            });    
+        }, 221);
+        this.setState({randomFade: true}, () => {setTimeout(() => {
+            this.setState({randomFade: false})
+        }, 1100)})
     }
 
     addToCart = () => {
@@ -68,13 +74,23 @@ class Input extends Component {
         if (this.state.magnified===0) {
             this.setState({magnified: 1})
         } else if (this.state.magnified===1) {
-            this.setState({magnified: 2})
+            this.setState({magnified: 2}, () => {
+                setTimeout(() => {
+                    this.setState({magnified: 0})
+                }, 1010);
+            })
         } else {
             this.setState({magnified: 1})
         }
     }
 
     render() {
+        if (this.state.randomFade) {
+            var fade = 'fadeActive'
+        } else {
+            fade = ''
+        }
+
         if (this.state.userInput) {
             var photos = this.state.userInput.map((obj, index) => {
                 return (
@@ -93,7 +109,7 @@ class Input extends Component {
                             <Link to='/cart'><i className="fas fa-shopping-cart fa-2x"></i></Link>
                         </div>
                         <div className='randomContainer'>
-                            <div className='photosContainer'>
+                            <div className={'photosContainer ' + fade}>
                                 {photos}
                             </div>
                             <i className="fas fa-random fa-2x" onClick={this.handleRandomize}></i>
