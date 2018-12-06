@@ -11,14 +11,13 @@ class CheckoutForm extends Component {
       error: false,
       orders: [],
       totalPrice: 0,
-      shipping: {}
     }
     this.submit = this.submit.bind(this);
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.orders.length!==this.props.orders.length) {
-      this.setState({orders: this.props.orders, shipping: this.props.shipping})
+      this.setState({orders: this.props.orders})
     }
   }
 
@@ -35,7 +34,8 @@ class CheckoutForm extends Component {
           this.setState({paid: true});
           this.state.orders.map(order => {
             let {price, pictureIDs} = order
-            let shipping = this.state.shipping
+            let shipping = this.props.shipping
+            console.log('SHIPPING CHECKOUTFORM', shipping, '///')
             this.setState({totalPrice: this.state.totalPrice += price})
             
             axios.post('/order', {price, pictureIDs, shipping}).then(() => {

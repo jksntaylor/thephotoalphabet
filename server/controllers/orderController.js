@@ -24,15 +24,12 @@ module.exports = {
       },
 
       process: (req, res) => {
+        console.log('REQ.BODY ORDERCONTROLLER', req.body, '//////')
         const db = req.app.get('db');
 
         const {address, address2, city, state, zip} = req.body.shipping;
         const {price, pictureIDs} = req.body
-        if (!req.session.user) {
-          var userId = 10
-        } else {
-          var userId = req.session.user.id
-        }
+        let userId = req.session.user.id
 
         //destructure info here from req.body
         try {
