@@ -75,7 +75,7 @@ class Cart extends Component {
                                     <h4>${this.state.price}</h4>
                                     <i className="fas fa-credit-card fa-2x" onClick={this.toggleCheckout}></i>
                                 </div>
-                                <Checkout />
+                                <Checkout orders={this.state.cart} totalPrice={this.state.price}/>
                             </div>
         } else if (this.state.checkout===2) {
             checkout =  <div className='checkoutContainer checkoutLeave'>
@@ -84,7 +84,7 @@ class Cart extends Component {
                                     <h4>${this.state.price}</h4>
                                     <i className="fas fa-credit-card fa-2x" onClick={this.toggleCheckout}></i>
                                 </div>
-                                <Checkout />
+                                <Checkout orders={this.state.cart} totalPrice={this.state.price}/>
                             </div>
         } else {
             checkout =  <div className='checkoutContainer'>
@@ -93,7 +93,7 @@ class Cart extends Component {
                                     <h4>${this.state.price}</h4>
                                     <i className="fas fa-credit-card fa-2x" onClick={this.toggleCheckout}></i>
                                 </div>
-                                <Checkout />
+                                <Checkout orders={this.state.cart} totalPrice={this.state.price}/>
                             </div>
         }
 

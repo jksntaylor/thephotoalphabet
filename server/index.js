@@ -44,6 +44,7 @@ app.delete('/cart/:id', cc.deleteFromCart);
 
 //ORDER
 app.post("/charge", oc.charge);
+app.post('/order', oc.process);
 
 //PHOTO
 app.get('/api/photos/:letter/:letterCount', pc.getPhoto)
