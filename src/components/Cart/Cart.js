@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 import Order from '../Order/Order';
 import axios from 'axios';
 import './cart.css';
@@ -97,19 +98,42 @@ class Cart extends Component {
                             </div>
         }
 
+        if (this.props.isLoggedIn) {
+        var cart = <div className='cartContainer'>
+                    <div className='cartNavContainer'>
+                        <Link to='/make'><i className="fas fa-edit fa-2x"></i></Link>
+                        <Link to='/auth'><h5><i className="fas fa-user fa-2x"></i></h5></Link>
+                    </div>
+                    <div className='cartOrdersContainer'>
+                        {this.state.cart.length !== 0 ? orders : <h2>No Orders in Cart</h2>}
+                    </div>
+                    {checkout} 
+                </div>
+        } else {
+         cart = <div className='cartContainer'>
+                    <div className='cartNavContainer'>
+                        <Link to='/make'><i className="fas fa-edit fa-2x"></i></Link>
+                        <Link to='/auth'><h5><i className="fas fa-user fa-2x"></i></h5></Link>
+                    </div>
+                    <div className='cartGuestContainer'>
+                        <h1>Please sign in to access Cart and Checkout</h1>
+                    </div>
+                </div>
+        }
+
         return (
-            <div className='cartContainer'>
-                <div className='cartNavContainer'>
-                    <Link to='/make'><i className="fas fa-edit fa-2x"></i></Link>
-                    <Link to='/auth'><h5><i className="fas fa-user fa-2x"></i></h5></Link>
-                </div>
-                <div className='cartOrdersContainer'>
-                    {this.state.cart.length !== 0 ? orders : <h2>No Orders in Cart</h2>}
-                </div>
-                {checkout} 
+            <div>
+                {cart}
             </div>
         )
+
     }
 }
 
-export default Cart;
+let mapStateToProps = (state) => {
+    return {
+        isLoggedIn: state.isLoggedIn
+    }
+}
+
+export default connect(mapStateToProps)(Cart);
