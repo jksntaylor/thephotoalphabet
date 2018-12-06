@@ -42,6 +42,7 @@ module.exports = {
         }
 
         req.session.user = user;
+        console.log('authController Line 45', req.session.user, '//////')
         res.status(200).send(req.session.user);
     },
 

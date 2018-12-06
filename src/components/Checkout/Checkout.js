@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Elements, StripeProvider} from 'react-stripe-elements';
 import CheckoutForm from './CheckoutForm';
+import axios from 'axios';
 
 class Checkout extends Component {
   constructor(props) {
@@ -13,17 +14,20 @@ class Checkout extends Component {
         city: '',
         state: '',
         zip: '',
-        save: false
       },
       orders: [],
       totalPrice: 0
     }
-    this.handleSaveChange = this.handleSaveChange.bind(this);
+    // this.handleSaveChange = this.handleSaveChange.bind(this);
     this.handleShippingChange = this.handleShippingChange.bind(this)
   }
 
   handleShippingChange(name, val) {
     this.setState({shipping: {...this.state.shipping, [name]: val}})
+  }
+
+  componentDidMount() {
+    this.getUserAddress();
   }
 
   componentDidUpdate(prevProps) {
@@ -32,11 +36,41 @@ class Checkout extends Component {
     }
   }
 
-  handleSaveChange() {
-    this.setState({
-      save: !this.state.save
+  nullToString = (val) => {
+    if (val===null) {
+      val = ''
+      console.log(1111, val)
+    }
+  }
+
+  getUserAddress = () => {
+    axios.get('/user/address').then(res => {
+      console.log(res)
+      let {address, address2, city, state, zip} = res.data
+      this.nullToString(address);
+      this.nullToString(address2);
+      this.nullToString(city);
+      this.nullToString(state);
+      this.nullToString(zip);
+      this.setState({
+        shipping: {...this.state.shipping, 
+          address: address,
+          address2: address2,
+          city: city,
+          state: state,
+          zip: zip
+        }
+      })
+    }).catch(() => {
+      console.log('error')
     })
   }
+
+  // handleSaveChange() {
+  //   this.setState({
+  //     save: !this.state.save
+  //   })
+  // }
 
   render() {
     return (
@@ -47,7 +81,7 @@ class Checkout extends Component {
             <h2>Shipping</h2>
             <h6>US Only</h6>
             <div>
-              <span>Save Address for Future Use?</span><input type='checkbox' onChange={this.handleSaveChange}/>
+              {/* <span>Save Address for Future Use?</span><input type='checkbox' onChange={this.handleSaveChange}/> */}
               <input placeholder='Name' onChange={e => this.handleShippingChange('name', e.target.value)} value={this.state.shipping.name}/>
               <input placeholder='Address' onChange={e => this.handleShippingChange('address', e.target.value)} value={this.state.shipping.address}/>
               <input placeholder='Address 2' onChange={e => this.handleShippingChange('address2', e.target.value)} value={this.state.shipping.address2}/>

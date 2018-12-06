@@ -35,6 +35,7 @@ class CheckoutForm extends Component {
           this.setState({error: true});
           return;
         })
+        return ('Order Processed');
       })
       let token = await this.props.stripe.createToken({name: 'Name'})
       console.log(token);

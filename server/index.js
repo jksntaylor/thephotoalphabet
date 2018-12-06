@@ -41,6 +41,7 @@ app.post('/auth/logout', ac.logout);
 app.post('/cart', cc.addToCart);
 app.get('/cart', cc.getCart);
 app.delete('/cart/:id', cc.deleteFromCart);
+app.get('/user/address', cc.getUserAddress);
 
 //ORDER
 app.post("/charge", oc.charge);

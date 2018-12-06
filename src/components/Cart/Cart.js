@@ -73,7 +73,7 @@ class Cart extends Component {
             var checkout =  <div className='checkoutContainer checkoutEnter'>
                                 <div className='checkoutNav'>
                                     <h4>{this.state.cart.length} Items</h4>
-                                    <h4>${this.state.price}</h4>
+                                    <h4>${this.state.price}.00</h4>
                                     <i className="fas fa-credit-card fa-2x" onClick={this.toggleCheckout}></i>
                                 </div>
                                 <Checkout orders={this.state.cart} totalPrice={this.state.price}/>
@@ -82,7 +82,7 @@ class Cart extends Component {
             checkout =  <div className='checkoutContainer checkoutLeave'>
                                 <div className='checkoutNav'>
                                     <h4>{this.state.cart.length} Items</h4>
-                                    <h4>${this.state.price}</h4>
+                                    <h4>${this.state.price}.00</h4>
                                     <i className="fas fa-credit-card fa-2x" onClick={this.toggleCheckout}></i>
                                 </div>
                                 <Checkout orders={this.state.cart} totalPrice={this.state.price}/>
@@ -91,7 +91,7 @@ class Cart extends Component {
             checkout =  <div className='checkoutContainer'>
                                 <div className='checkoutNav'>
                                     <h4>{this.state.cart.length} Items</h4>
-                                    <h4>${this.state.price}</h4>
+                                    <h4>${this.state.price}.00</h4>
                                     <i className="fas fa-credit-card fa-2x" onClick={this.toggleCheckout}></i>
                                 </div>
                                 <Checkout orders={this.state.cart} totalPrice={this.state.price}/>

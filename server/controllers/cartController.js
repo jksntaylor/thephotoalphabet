@@ -33,5 +33,20 @@ module.exports = {
         }
 
         return res.status(200).send(req.session.cart);
+    },
+
+    getUserAddress: async(req, res) => {
+        console.log('getUserAddress Line 38', req.session, '//////')
+        console.log('getUserAddress Line 39', req.session.user, '//////');
+        if (!req.session.user) {
+            res.sendStatus(404);
+        }
+
+        const db = req.app.get('db')
+        const {id} = req.session.user
+
+        let gettingAddress = await db.getUserAddress(id)
+        let address = gettingAddress[0];
+        res.status(200).send(address);
     }
 }

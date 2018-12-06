@@ -1,3 +1,3 @@
-INSERT INTO Users (name, email, hash, address, city, state, zip)
-VALUES ($1, $2, $3, null, null, null, null)
+INSERT INTO Users (name, email, hash, address, address2, city, state, zip)
+VALUES ($1, $2, $3, '', '', '', '', '')
 RETURNING *;

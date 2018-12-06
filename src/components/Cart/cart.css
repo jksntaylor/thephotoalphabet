@@ -86,11 +86,11 @@
 }
 
 .checkoutEnter {
-    animation: checkoutUp 1s ease-in-out forwards;
+    animation: checkoutUp .8s ease-in-out forwards;
 }
 
 .checkoutLeave {
-    animation: checkoutDown 1s ease-in-out forwards;
+    animation: checkoutDown .8s ease-in-out forwards;
 }
 
 .cartContainer input {
@@ -139,6 +139,7 @@
     padding: 10px;
     margin: 5px 15px;
     font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
 }
 
 .orderContainer {
@@ -159,6 +160,13 @@
     align-items: center;
     width: 90%;
     margin: 0 5%;
+}
+
+.cartGuestContainer {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 @keyframes checkoutUp {
