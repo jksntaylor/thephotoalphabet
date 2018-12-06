@@ -39,8 +39,8 @@ svg {
     background: none;
     border: 2px solid black;
     border-radius: 5px;
-    width: 35%;
-    margin: 0 32.5%;
+    width: 50%;
+    margin: 0 25%;
     padding: 5% 0;
     animation: home-button-color 1.6s linear forwards;
     animation-delay: 3.2s;
