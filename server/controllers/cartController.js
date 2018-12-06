@@ -36,8 +36,6 @@ module.exports = {
     },
 
     getUserAddress: async(req, res) => {
-        console.log('getUserAddress Line 38', req.session, '//////')
-        console.log('getUserAddress Line 39', req.session.user, '//////');
         if (!req.session.user) {
             res.sendStatus(404);
         }

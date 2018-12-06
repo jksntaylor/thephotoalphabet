@@ -32,7 +32,7 @@ class Checkout extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.orders.length!==this.props.orders.length) {
-      this.setState({orders: this.props.orders, totalPrice: this.props.totalPrice})
+      this.setState({orders: this.props.orders})
     }
   }
 
@@ -45,7 +45,6 @@ class Checkout extends Component {
 
   getUserAddress = () => {
     axios.get('/user/address').then(res => {
-      console.log(res)
       let {address, address2, city, state, zip} = res.data
       this.nullToString(address);
       this.nullToString(address2);
@@ -93,7 +92,7 @@ class Checkout extends Component {
           <div>
             <h2>Payment</h2>
           <Elements>
-            <CheckoutForm orders={this.state.orders} totalPrice={this.state.totalPrice} shipping={this.state.shipping}/>
+            <CheckoutForm orders={this.state.orders} totalPrice={this.props.totalPrice} shipping={this.state.shipping}/>
           </Elements>
           </div>
         </div>

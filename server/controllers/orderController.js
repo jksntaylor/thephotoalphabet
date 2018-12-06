@@ -5,8 +5,8 @@ module.exports = {
     charge: async (req, res) => {
         const stripe = require('stripe')(STRIPE_SECRET_KEY);
         console.log('111111', req.body, '111111');
-        const {id, price} = req.body
-        let serverPrice = price * 100
+        const {id, totalPrice} = req.body
+        let serverPrice = totalPrice * 100
         try {
           let {status} = await stripe.charges.create({
             amount: serverPrice,

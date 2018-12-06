@@ -18,37 +18,42 @@ class CheckoutForm extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.orders.length!==this.props.orders.length) {
-      this.setState({orders: this.props.orders, totalPrice: this.props.totalPrice, shipping: this.props.shipping})
+      this.setState({orders: this.props.orders, shipping: this.props.shipping})
     }
   }
 
+
+
   async submit() {
-      this.state.orders.map(order => {
-        let {price, pictureIDs} = order
-        let shipping = this.state.shipping
-        this.setState({totalPrice: this.state.totalPrice += price})
-        
-        axios.post('/order', {price, pictureIDs, shipping}).then(() => {
-          console.log('Order Processed');
-          this.setState({processed: true})
-        }).catch(() => {
-          this.setState({error: true});
-          return;
-        })
-        return ('Order Processed');
-      })
+      
       let token = await this.props.stripe.createToken({name: 'Name'})
       console.log(token);
       let id = token.token.id
-      let price = this.state.totalPrice;
-      axios.post('/charge', {id, price}).then(() => {
+      let totalPrice = this.props.totalPrice;
+      axios.post('/charge', {id, totalPrice}).then(() => {
           console.log('Purchase Completed');
-          this.setState({paid: true})
+          this.setState({paid: true});
+          this.state.orders.map(order => {
+            let {price, pictureIDs} = order
+            let shipping = this.state.shipping
+            this.setState({totalPrice: this.state.totalPrice += price})
+            
+            axios.post('/order', {price, pictureIDs, shipping}).then(() => {
+              console.log('Order Processed');
+              this.setState({processed: true})
+            }).catch(() => {
+              this.setState({error: true});
+              return;
+            })
+            return ('Order Processed');
+          })
       }).catch(() => {
         this.setState({error: true})
       })
 
   }
+
+
 
   render() {
     if (this.state.paid && this.state.processed) {
@@ -56,7 +61,7 @@ class CheckoutForm extends Component {
     }
 
     if (this.state.error) {
-      return (<h1>There was an error completing your purchase</h1>)
+      return (<h3>There was an error completing your purchase, please refresh the browser</h3>)
     }
 
     return (
