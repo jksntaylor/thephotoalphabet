@@ -38,19 +38,19 @@ class Checkout extends Component {
 
   nullToString = (val) => {
     if (val===null) {
-      val = ''
-      console.log(1111, val)
+      return val = ''
     }
+    return val;
   }
 
   getUserAddress = () => {
     axios.get('/user/address').then(res => {
       let {address, address2, city, state, zip} = res.data
-      this.nullToString(address);
-      this.nullToString(address2);
-      this.nullToString(city);
-      this.nullToString(state);
-      this.nullToString(zip);
+      address = this.nullToString(address);
+      address2 = this.nullToString(address2);
+      city = this.nullToString(city);
+      state = this.nullToString(state);
+      zip = this.nullToString(zip);
       this.setState({
         shipping: {...this.state.shipping, 
           address: address,

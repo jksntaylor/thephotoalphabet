@@ -116,7 +116,7 @@ class Cart extends Component {
                         <Link to='/auth'><h5><i className="fas fa-user fa-2x"></i></h5></Link>
                     </div>
                     <div className='cartGuestContainer'>
-                        <h1>Please sign in to access Cart and Checkout</h1>
+                        <h1>Please sign in to access Cart</h1>
                     </div>
                 </div>
         }
