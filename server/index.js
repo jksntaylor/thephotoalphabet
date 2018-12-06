@@ -29,6 +29,8 @@ app.use(session({
     saveUninitialized: false
 }))
 
+app.use( express.static( `${__dirname}/../build` ) );
+
 //ADMIN
 app.get('/admin/orders', adc.getOrders)
 
