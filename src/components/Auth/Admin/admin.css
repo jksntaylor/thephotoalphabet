@@ -1,0 +1,134 @@
+.adminContainer {
+    overflow: hidden;
+    height: 100vh;
+    background-color: black;
+    color: white;
+}
+
+.adminOrdersContainer {
+    overflow: scroll;
+    height: 80vh;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.adminContainer .navContainer {
+    height: 10vh;
+    padding: 10%;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.adminContainer .navContainer i {
+    color: black;
+}
+
+.adminPhotosContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    border: 5px solid black;
+    min-width: 40%;
+    margin: 1% 10%;
+    max-height: 40%;
+    width: 80%;
+}
+
+.adminContainer .fa-angle-down,
+.adminContainer .fa-angle-up {
+    display: none;
+}
+
+.adminOrderContainer {
+    background-color: white;
+    height: 35vh;
+    color: black;
+    font-size: 10px;
+    margin: 10px;
+    padding-top: 10px;
+    border-radius: 5px;
+}
+
+.adminOrderInfoContainer {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2.5%; 
+    text-align: center;
+}
+
+.adminOrderInfoContainer h2 {
+    margin: 0;
+    margin-top: 5px;
+}
+
+.adminOrderBooleanContainer {
+    display: flex;
+    justify-content: space-around;
+    height: 50%;
+}
+
+.adminContainer h1 {
+    display: inline;
+}
+
+.adminContainer button {
+    background: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    
+}
+
+.adminAuth {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.adminOrdersContainer h3 {
+    margin-left: 10px;
+    border-bottom: 1px solid white;
+    display: inline;
+}
+
+.adminOrderBoolean {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .adminContainer .navContainer {
+        padding: 0 5%;
+    }
+
+    .adminOrderContainer {
+        display: flex;
+        width: 80%;
+        margin: 5% 10%;
+    }
+
+    .adminPhotosContainer {
+        width: 30%;
+        padding: 10px;
+        max-height: 70%;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }
+
+    .adminOrderInfoContainer {
+        height: 70%;
+        margin-top: 5vh;
+    }
+
+}
