@@ -137,9 +137,9 @@
 .StripeElement {
     background-color: white;
     padding: 10px;
-    margin: 5px 15px;
     font-family: 'Montserrat', sans-serif;
     border-radius: 5px;
+    width: 100%
 }
 
 .orderContainer {
@@ -167,6 +167,23 @@
     text-align: center;
     padding: 20px;
     font-family: 'Montserrat', sans-serif;
+}
+
+.checkoutCardContainer2 h2, h6 {
+    padding-left: 10%;
+}
+
+.shippingContainer h6,
+.shippingContainer h2 {
+    margin: 0;
+}
+
+.checkout {
+    width: 55vw;
+    margin: 0 22.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @keyframes checkoutUp {
@@ -266,6 +283,7 @@
 
     .paymentContainer h2 {
         margin-bottom: 15%;
+        text-align: center;
     }
 
     .checkoutCardContainer2 {
@@ -279,5 +297,20 @@
 
     .checkoutCardContainer {
         overflow: hidden;
+    }
+
+    .checkoutCardContainer2 h2, 
+    .checkoutCardContainer2 h6 {
+        padding: 0;
+    }
+
+    .checkout {
+        margin: 0;
+        width: 100%;
+    }
+
+    .paymentContainer {
+        display: flex;
+        flex-direction: column;
     }
 }
