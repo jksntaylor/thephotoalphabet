@@ -26,7 +26,6 @@ class CheckoutForm extends Component {
   async submit() {
       
       let token = await this.props.stripe.createToken({name: 'Name'})
-      console.log(token);
       let id = token.token.id
       let totalPrice = this.props.totalPrice;
       axios.post('/charge', {id, totalPrice}).then(() => {
@@ -35,7 +34,6 @@ class CheckoutForm extends Component {
           this.state.orders.map(order => {
             let {price, pictureIDs} = order
             let shipping = this.props.shipping
-            console.log('SHIPPING CHECKOUTFORM', shipping, '///')
             this.setState({totalPrice: this.state.totalPrice += price})
             
             axios.post('/order', {price, pictureIDs, shipping}).then(() => {

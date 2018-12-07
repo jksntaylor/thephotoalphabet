@@ -12,6 +12,7 @@ const ac = require('./controllers/authController.js');
 const cc = require('./controllers/cartController.js');
 const oc = require('./controllers/orderController');
 const pc = require('./controllers/photosController.js');
+const uc = require('./controllers/userController');
 
 const app = express();
 
@@ -51,6 +52,9 @@ app.post('/order', oc.process);
 
 //PHOTO
 app.get('/api/photos/:letter/:letterCount', pc.getPhoto)
+
+//USER
+app.get('/user/orders', uc.getUserOrders)
 
 app.listen(PORT, () => {
     console.log('never go full retard', PORT)
