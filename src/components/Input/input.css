@@ -4,7 +4,7 @@
     align-items: center;
     padding: 0 5px;
     border: 5px solid black;
-    height: 14vh;
+    /* height: 14vh; */
     /* width: 95%; */
     min-width: 40%;
     margin: 0 auto;
@@ -26,7 +26,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 10vw;
+    width: 8vw;
     margin: 1%;
 }
 
@@ -100,7 +100,7 @@
     background-color: black;
     color: white;
     border-radius: 5px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     box-shadow: #ddd 2px 3px 5px;
 }
@@ -115,6 +115,7 @@
 
 .inputPrice {
     display: inline;
+    font-family: 'Montserrat';
 }
 
 .randomContainer {
@@ -328,4 +329,44 @@
     100% {
         opacity: 1;
     }
+}
+
+@media (min-width: 992px) {
+    .inputNavContainer {
+        padding: 5vh 5vw;
+    }
+    .inputContainer {
+        width: 50vw;
+        display: inline-block;
+        margin: 0 25vw;
+    }
+
+    .inputPageContainer .fa-random {
+        width: 10%;
+    }
+
+    .randomContainer {
+        height: 50vh;
+    }
+
+    .inputPageContainer .photosContainer {
+        min-height: 15vh;
+    }
+
+    .inputPrice {
+        font-size: 30px;
+    }
+
+    .input:focus {
+        background-color: black;
+        color: white;
+        outline: none;
+    }
+
+    .addToCartButton:hover {
+        background-color: white;
+        color: black;
+        font-family: 'Montserrat';
+        border: 1px solid white;
+    } 
 }

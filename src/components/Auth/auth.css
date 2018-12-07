@@ -32,7 +32,7 @@
 }
 
 .authButton {
-    background-color: white;
+    background-image: radial-gradient(#fff, #ccc);
     font-family: 'Montserrat', sans-serif;
     font-size: 22px;
     color: black;
@@ -59,4 +59,45 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media (min-width: 992px) {
+    .login-form, .registration-form {
+        width: 50%;
+        display: inline-flex;
+    }
+
+    .auth-container input {
+        height: 5vh;
+        width: 70%;
+        margin: 1% 0;
+        font-size: 30px;
+    }
+
+    .auth-container h1 {
+        color: white;
+        font-size: 40px;
+    }
+
+    .auth-container .navContainer {
+        padding: 0 5%;
+    }
+
+    .authButton {
+        height: 10%;
+        width: 20%;
+    }
+
+    .authButton:hover {
+        background: none;
+        background-color: black;
+        border: 1px solid white;
+        color: white;
+    }
+
+    .auth-container input:focus {
+        background-color: black;
+        color: white;
+        outline: none;
+    }
 }

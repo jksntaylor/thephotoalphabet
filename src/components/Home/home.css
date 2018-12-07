@@ -28,7 +28,7 @@ svg {
     height: 50vh;
     justify-content: center;
     padding-bottom: 0;
-    animation: home-button-move 1.5s ease-out forwards;
+    animation: home-button-move-mobile 1.5s ease-out forwards;
     animation-delay: 3.2s;
 }
 
@@ -52,30 +52,60 @@ svg {
     height: 1px;
     width: 0;
     margin: 0 auto;
-    animation: home-button-underline 1s linear forwards;
+    animation: home-button-underline-mobile 1s linear forwards;
     animation-delay: 4.5s;
 }
 
-@keyframes home-button-move {
+@keyframes home-button-move-mobile {
     100% {
         padding-bottom: 20vh;
+    }
+}
+@keyframes home-button-move-desktop {
+    100% {
+        padding-bottom: 10vh;
     }
 }
 
 @keyframes home-button-color {
     0% {
         color: black;
-        font-size: 16px;
     }
     100% {
         color: white;
-        font-size: 20px;
     }
 }
 
-@keyframes home-button-underline {
+@keyframes home-button-underline-mobile {
     100% {
         background-color: white;
         width: 25%;
+    }
+}
+@keyframes home-button-underline-desktop {
+    100% {
+        background-color: white;
+        width: 10%;
+    }
+}
+
+@media (min-width: 992px) {
+    .home-button-container {
+        padding: 0;
+        animation: home-button-move-desktop 1.5s ease-out forwards;
+    }
+    .home-handwriting-container {
+        height: 60vh;
+        width: 60vw;
+        margin: 0 20vw;
+        margin-top: 20vh;
+    }
+    .home-button {
+        font-size: 30px;
+        padding: 2% 0;
+    }
+    .home-button-underline {
+        animation: home-button-underline-desktop 1s linear forwards;
+        animation-delay: 4.5s;
     }
 }

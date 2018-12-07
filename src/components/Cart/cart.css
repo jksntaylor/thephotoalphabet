@@ -193,3 +193,91 @@
         opacity: 1;
     }
 }
+
+@media (min-width: 992px) {
+    .cartContainer .cartNavContainer {
+        padding: 0 5%;
+    }
+
+    .orderContainer .photosContainer {
+        max-width: 70%;
+        margin: auto;
+    }
+
+    .cartContainer .orderContainer {
+        display: flex;
+        margin-top: 5%;
+    }
+
+    .orderPriceContainer {
+        margin: 0;
+        padding: 3%;
+        width: 20%;
+        font-size: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .orderPriceContainer button{
+        font-size: 30px;
+    }
+
+    .cartOrdersContainer {
+        padding-bottom: 5%;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+
+    .checkoutNav h4 {
+        font-size: 30px;
+    }
+
+    .shippingContainer {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .shippingContainer h2 {
+        margin-bottom: 0;
+    }
+
+    .shippingContainer h6 {
+        margin-top: 1%;
+    }
+
+    .shippingForm {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .shippingForm input {
+        margin: 1% 25%;
+        width: 50%;
+        height: 5vh;
+    }
+
+    .paymentContainer {
+        width: 50%;
+        padding: 0 10%;
+    }
+
+    .paymentContainer h2 {
+        margin-bottom: 15%;
+    }
+
+    .checkoutCardContainer2 {
+        display: flex;
+    }
+
+    .checkout button {
+        height: 5vh;
+        width: 40%;
+    }
+
+    .checkoutCardContainer {
+        overflow: hidden;
+    }
+}

@@ -76,24 +76,26 @@ class Checkout extends Component {
       <StripeProvider apiKey="pk_test_KJzSf9w3SSqFsagSRoecHHsu">
         <div className="checkoutCardContainer">
           <h1>Checkout</h1>
-          <div>
-            <h2>Shipping</h2>
-            <h6>US Only</h6>
-            <div>
-              {/* <span>Save Address for Future Use?</span><input type='checkbox' onChange={this.handleSaveChange}/> */}
-              <input placeholder='Name' onChange={e => this.handleShippingChange('name', e.target.value)} value={this.state.shipping.name}/>
-              <input placeholder='Address' onChange={e => this.handleShippingChange('address', e.target.value)} value={this.state.shipping.address}/>
-              <input placeholder='Address 2' onChange={e => this.handleShippingChange('address2', e.target.value)} value={this.state.shipping.address2}/>
-              <input placeholder='City' onChange={e => this.handleShippingChange('city', e.target.value)} value={this.state.shipping.city}/>
-              <input placeholder='State' onChange={e => this.handleShippingChange('state', e.target.value)} value={this.state.shipping.state}/>
-              <input placeholder='Zip' onChange={e => this.handleShippingChange('zip', e.target.value)} value={this.state.shipping.zip}/>
+          <div className='checkoutCardContainer2'>
+            <div className='shippingContainer'>
+              <h2>Shipping</h2>
+              <h6>US Only</h6>
+              <div className='shippingForm'>
+                {/* <span>Save Address for Future Use?</span><input type='checkbox' onChange={this.handleSaveChange}/> */}
+                <input placeholder='Name' onChange={e => this.handleShippingChange('name', e.target.value)} value={this.state.shipping.name}/>
+                <input placeholder='Address' onChange={e => this.handleShippingChange('address', e.target.value)} value={this.state.shipping.address}/>
+                <input placeholder='Address 2' onChange={e => this.handleShippingChange('address2', e.target.value)} value={this.state.shipping.address2}/>
+                <input placeholder='City' onChange={e => this.handleShippingChange('city', e.target.value)} value={this.state.shipping.city}/>
+                <input placeholder='State' onChange={e => this.handleShippingChange('state', e.target.value)} value={this.state.shipping.state}/>
+                <input placeholder='Zip' onChange={e => this.handleShippingChange('zip', e.target.value)} value={this.state.shipping.zip}/>
+              </div>
             </div>
-          </div>
-          <div>
-            <h2>Payment</h2>
-          <Elements>
-            <CheckoutForm orders={this.state.orders} totalPrice={this.props.totalPrice} shipping={this.state.shipping}/>
-          </Elements>
+            <div className='paymentContainer'>
+              <h2>Payment</h2>
+            <Elements>
+              <CheckoutForm orders={this.state.orders} totalPrice={this.props.totalPrice} shipping={this.state.shipping}/>
+            </Elements>
+            </div>
           </div>
         </div>
       </StripeProvider>
