@@ -7,9 +7,11 @@
     /* height: 14vh; */
     /* width: 95%; */
     min-width: 40%;
+    min-height: 15vh;
     margin: 0 auto;
     margin-bottom: 0;
-    box-shadow: 3px 3px 6px #aaa;
+    background-color: white;
+    box-shadow: 3px 3px 6px #333;
 }
 
 .orderContainer .photosContainer {
@@ -20,6 +22,7 @@
     border: 5px solid black;
     min-width: 40%;
     margin: 1% 2.5%;
+    background-color: white;
 }
 
 .inputPageContainer .photo-container {
@@ -61,8 +64,12 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    color: white;
 }
 
+.fa-expand {
+    color: white;
+}
 .input {
     font-size: 35px;
     width: 70%;
@@ -78,6 +85,7 @@
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+    background-image: url('../../ThePhotoAlphabetBG.jpg')
 }
 
 .inputContainer {
@@ -89,7 +97,7 @@
     margin-top: 1%;
     text-align: center;
     font-size: 16px;
-    color: #aaa
+    color: white;
 }
 
 .addToCartButton {
@@ -102,7 +110,7 @@
     border-radius: 5px;
     font-family: 'Raleway', sans-serif;
     font-size: 18px;
-    box-shadow: #ddd 2px 3px 5px;
+    box-shadow: #333 2px 3px 5px;
 }
 
 .inputPriceContainer {
@@ -116,6 +124,7 @@
 .inputPrice {
     display: inline;
     font-family: 'Raleway', sans-serif;
+    color: white;
 }
 
 .randomContainer {
@@ -134,7 +143,7 @@
     height: 10vh;
     padding: 10%;
     background-color: black;
-    box-shadow: 0 2px 3px #aaa;
+    box-shadow: 0 2px 3px #333;
 }
 
 .inputNavContainer i {

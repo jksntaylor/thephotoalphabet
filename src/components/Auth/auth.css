@@ -11,17 +11,17 @@
     align-items: center;
     height: 10vh;
     padding: 10%;
-    background-color: white;
-    box-shadow: 0 2px 5px #888;
+    background-image: url('../../ThePhotoAlphabetBG.jpg');
+    box-shadow: 0 2px 5px #333;
 }
 
 .auth-container .navContainer i {
-    color: black;
+    color: white;
 }
 
 .auth-container input {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
     margin: 1%;
     display: inline-block;
     margin: 1vh 22.5vw;
@@ -33,7 +33,7 @@
 
 .authButton {
     background-image: radial-gradient(#fff, #ccc);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 22px;
     color: black;
     border: none;
@@ -44,7 +44,7 @@
 }
 
 .Toastify__toast-body {
-    font-family: 'Montserrat',sans-serif;
+    font-family: 'Raleway',sans-serif;
     color: black;
     font-size: 24px;
 }

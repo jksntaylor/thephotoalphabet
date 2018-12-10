@@ -1,7 +1,7 @@
 .userContainer {
     overflow: hidden;
     height: 100vh;
-    background-color: black;
+    background-image: url('../../../ThePhotoAlphabetBG.jpg');
     color: white;
 }
 
@@ -52,6 +52,9 @@
     margin: 10px;
     padding-top: 10px;
     border-radius: 5px;
+    opacity: 0;
+    animation: authPhotosFadeIn 1s linear forwards;
+    animation-delay: 1.5s;
 }
 
 .userOrderInfoContainer {
@@ -95,9 +98,11 @@
 }
 
 .userOrdersContainer h3 {
-    margin-left: 10px;
     border-bottom: 1px solid white;
-    display: inline;
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+    margin: 0 30%;
 }
 
 .userOrderBoolean {
@@ -105,6 +110,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@keyframes authPhotosFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @media (min-width: 992px) {
