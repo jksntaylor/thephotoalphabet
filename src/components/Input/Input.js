@@ -125,7 +125,7 @@ class Input extends Component {
                             <input className='input' placeholder='Type Here!' value={inputValue} onChange={e => this.handleInputChange(e.target.value)} type="text" />
                             {this.state.userInput.length>=3 ? 
                             <div className='inputPriceContainer'>
-                                <h3 className='inputPrice'>Price: ${this.state.price}</h3>
+                                <h3 className='inputPrice'>Price: ${this.state.price}.00</h3>
                                 <button onClick={this.addToCart} className='addToCartButton'>Add To Cart</button>
                             </div> 
                             : 
@@ -149,7 +149,7 @@ class Input extends Component {
                                 <input className='input' placeholder='Type Here!' value={inputValue} onChange={e => this.handleInputChange(e.target.value)} type="text" />
                                 {this.state.userInput.length>=3 ? 
                                 <div className='inputPriceContainer'>
-                                    <h3 className='inputPrice'>Price: ${this.state.price}</h3>
+                                    <h3 className='inputPrice'>Price: ${this.state.price}.00</h3>
                                     <button onClick={this.addToCart} className='addToCartButton'>Add To Cart</button>
                                 </div> 
                                 : 
@@ -173,7 +173,7 @@ class Input extends Component {
                             <input className='input' placeholder='Type Here!' value={inputValue} onChange={e => this.handleInputChange(e.target.value)} type="text" />
                             {this.state.userInput.length>=3 ? 
                             <div className='inputPriceContainer'>
-                                <h3 className='inputPrice'>Price: ${this.state.price}</h3>
+                                <h3 className='inputPrice'>Price: ${this.state.price}.00</h3>
                                 <button onClick={this.addToCart} className='addToCartButton'>Add To Cart</button>
                             </div> 
                             : 

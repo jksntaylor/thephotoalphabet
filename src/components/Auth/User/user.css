@@ -76,6 +76,12 @@
     height: 50%;
 }
 
+.userOrdersContainer .userOrderBoolean h3 {
+    margin: 0;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
 .userContainer h1 {
     display: inline;
 }
@@ -117,7 +123,7 @@
         opacity: 0;
     }
     100% {
-        opacity: 1;
+        opacity: .8;
     }
 }
 
