@@ -109,6 +109,8 @@ class Input extends Component {
          
         let base= <div className='inputPageContainer'>
                         <div className='inputNavContainer'>
+                            <Link to='/'><i className='fas fa-home fa-2x'></i></Link>
+                            <Link to='/make'><i className="fas fa-edit fa-3x"></i></Link>
                             <Link to='/auth'><i className="fas fa-user fa-2x"></i></Link>
                             <Link to='/cart'><i className="fas fa-shopping-cart fa-2x"></i></Link>
                         </div>

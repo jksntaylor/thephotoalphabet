@@ -17,14 +17,14 @@
 .adminContainer .navContainer {
     height: 10vh;
     padding: 10%;
-    background-color: white;
+    background-color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .adminContainer .navContainer i {
-    color: black;
+    color: white;
 }
 
 .adminPhotosContainer {

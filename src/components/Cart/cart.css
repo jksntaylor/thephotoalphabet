@@ -52,9 +52,14 @@
     justify-content: space-around;
     align-items: center;
     font-size: 20px;
-    background: white;
+    background-image: url('../../ThePhotoAlphabetBG.jpg');
     z-index: 10;
     height: 10vh;
+    color: white;
+}
+
+.cartContainer .fa-credit-card {
+    color: white;
 }
 
 .checkoutCardContainer {

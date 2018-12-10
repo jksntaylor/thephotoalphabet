@@ -101,8 +101,10 @@ class Cart extends Component {
         if (this.props.isLoggedIn) {
         var cart = <div className='cartContainer'>
                     <div className='cartNavContainer'>
+                        <Link to='/'><i className='fas fa-home fa-2x'></i></Link>
                         <Link to='/make'><i className="fas fa-edit fa-2x"></i></Link>
-                        <Link to='/auth'><h5><i className="fas fa-user fa-2x"></i></h5></Link>
+                        <Link to='/auth'><i className="fas fa-user fa-2x"></i></Link>
+                        <Link to='/cart'><i className="fas fa-shopping-cart fa-3x"></i></Link>
                     </div>
                     <div className='cartOrdersContainer'>
                         {this.state.cart.length !== 0 ? orders : <h2>No Orders in Cart</h2>}
@@ -112,8 +114,10 @@ class Cart extends Component {
         } else {
          cart = <div className='cartContainer'>
                     <div className='cartNavContainer'>
+                        <Link to='/'><i className='fas fa-home fa-2x'></i></Link>
                         <Link to='/make'><i className="fas fa-edit fa-2x"></i></Link>
-                        <Link to='/auth'><h5><i className="fas fa-user fa-2x"></i></h5></Link>
+                        <Link to='/auth'><i className="fas fa-user fa-2x"></i></Link>
+                        <Link to='/cart'><i className="fas fa-shopping-cart fa-3x"></i></Link>
                     </div>
                     <div className='cartGuestContainer'>
                         <h1>Please sign in to access Cart</h1>

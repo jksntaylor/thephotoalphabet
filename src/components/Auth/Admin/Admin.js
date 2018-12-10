@@ -99,7 +99,9 @@ class Admin extends Component {
         return (
             <div className='adminContainer'>
                     <div className='navContainer'>
+                    <Link to='/'><i className='fas fa-home fa-2x'></i></Link>
                     <Link to='/make'><i className="fas fa-edit fa-2x"></i></Link>
+                    <Link to='/auth'><i className="fas fa-user fa-3x"></i></Link>
                     <Link to='/cart'><i className="fas fa-shopping-cart fa-2x"></i></Link>
                 </div>
                 <div className='adminAuth'>
