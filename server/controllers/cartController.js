@@ -46,5 +46,10 @@ module.exports = {
         let gettingAddress = await db.getUserAddress(id)
         let address = gettingAddress[0];
         res.status(200).send(address);
-    }
+    },
+    
+    emptyCart: (req, res) => {
+        req.session.cart = [];
+        res.sendStatus(200)
+    } 
 }

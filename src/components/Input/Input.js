@@ -167,7 +167,7 @@ class Input extends Component {
                                 {photos}
                             </div>
                             <i className="fas fa-random fa-2x faMagnifiedExit" onClick={this.handleRandomize}></i>
-                            <i class="fas fa-expand fa-2x faMagnifiedToggleExit" onClick={this.toggleMagnified}></i>
+                            <i className="fas fa-expand fa-2x faMagnifiedToggleExit" onClick={this.toggleMagnified}></i>
                         </div>
                         <div className='inputContainer inputMagnifiedExit'>
                             <input className='input' placeholder='Type Here!' value={inputValue} onChange={e => this.handleInputChange(e.target.value)} type="text" />

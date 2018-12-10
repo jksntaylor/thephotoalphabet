@@ -9,6 +9,7 @@ const IS_ADMIN = 'IS_ADMIN';
 const LOGGED_OUT = 'LOGGED_OUT';
 const ADD_TO_CART = 'ADD_TO_CART';
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
+const EMPTY_CART = 'EMPTY_CART';
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
@@ -25,6 +26,8 @@ export default function reducer(state = initialState, action) {
             let copy = state.cart.slice();
             copy.splice(index, 1);
             return {...state, cart: copy};
+        case EMPTY_CART:
+            return {...state, cart: []}
         default:
             return state;
     }
@@ -53,5 +56,11 @@ export function addToCart (item) {
     return {
         type: ADD_TO_CART,
         payload: item
+    }
+}
+
+export function emptyCart () {
+    return {
+        type: EMPTY_CART
     }
 }

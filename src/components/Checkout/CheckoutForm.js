@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {CardElement, injectStripe} from 'react-stripe-elements';
 import axios from 'axios';
+import {connect} from 'react-redux';
+import {emptyCart} from '../../redux/reducer';
 
 class CheckoutForm extends Component {
   constructor(props) {
@@ -19,6 +21,12 @@ class CheckoutForm extends Component {
     if (prevProps.orders.length!==this.props.orders.length) {
       this.setState({orders: this.props.orders})
     }
+  }
+
+  emptyCart = () => {
+    axios.post('/cart/empty').then(() => {
+      console.log('Cart emptied')
+    })
   }
 
 
@@ -43,6 +51,7 @@ class CheckoutForm extends Component {
               this.setState({error: true});
               return;
             })
+            this.emptyCart();
             return ('Order Processed');
           })
       }).catch(() => {
@@ -72,4 +81,5 @@ class CheckoutForm extends Component {
   }
 }
 
-export default injectStripe(CheckoutForm);
+
+export default injectStripe(connect(null, {emptyCart})(CheckoutForm));
