@@ -2,6 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const massive = require('massive');
 const bodyParser = require('body-parser');
+const path = require('path');
 require('dotenv').config();
 const { CONNECTION_STRING, SERVER_PORT : PORT, SESSION_SECRET} = process.env;
 
@@ -56,6 +57,10 @@ app.get('/api/photos/:letter/:letterCount', pc.getPhoto)
 
 //USER
 app.get('/user/orders', uc.getUserOrders)
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+});
 
 app.listen(PORT, () => {
     console.log('never go full retard', PORT)
