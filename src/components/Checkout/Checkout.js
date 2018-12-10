@@ -8,7 +8,6 @@ class Checkout extends Component {
     super(props);
     this.state = {
       shipping: {
-        name: '',
         address: '',
         address2: '',
         city: '',
@@ -82,7 +81,6 @@ class Checkout extends Component {
               <h6>US Only</h6>
               <div className='shippingForm'>
                 {/* <span>Save Address for Future Use?</span><input type='checkbox' onChange={this.handleSaveChange}/> */}
-                <input placeholder='Name' onChange={e => this.handleShippingChange('name', e.target.value)} value={this.state.shipping.name}/>
                 <input placeholder='Address' onChange={e => this.handleShippingChange('address', e.target.value)} value={this.state.shipping.address}/>
                 <input placeholder='Address 2' onChange={e => this.handleShippingChange('address2', e.target.value)} value={this.state.shipping.address2}/>
                 <input placeholder='City' onChange={e => this.handleShippingChange('city', e.target.value)} value={this.state.shipping.city}/>
