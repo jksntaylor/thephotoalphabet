@@ -3,7 +3,7 @@
     justify-content: space-around;
     align-items: center;
     padding: 0 5px;
-    border: 5px solid black;
+    border: 10px solid black;
     /* height: 14vh; */
     /* width: 95%; */
     min-width: 40%;
@@ -69,7 +69,7 @@
     margin: 10% 15%;
     margin-bottom: 0;
     border-radius: 5px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
     padding: 5px;
     text-align: center;
 }
@@ -100,7 +100,7 @@
     background-color: black;
     color: white;
     border-radius: 5px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 18px;
     box-shadow: #ddd 2px 3px 5px;
 }
@@ -115,7 +115,7 @@
 
 .inputPrice {
     display: inline;
-    font-family: 'Montserrat';
+    font-family: 'Raleway', sans-serif;
 }
 
 .randomContainer {
@@ -139,6 +139,11 @@
 
 .inputNavContainer i {
     color: white;
+}
+
+.inputMinLength h6 {
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
 }
 
 .navMagnifiedEnter {
@@ -366,7 +371,11 @@
     .addToCartButton:hover {
         background-color: white;
         color: black;
-        font-family: 'Montserrat';
+        font-family: 'Raleway';
         border: 1px solid white;
     } 
+
+    .fa-expand {
+        display: none;
+    }
 }

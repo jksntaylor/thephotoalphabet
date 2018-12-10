@@ -5,7 +5,6 @@
 svg {
     padding: 10px;
     width: 100%;
-    color: white;
 }
 
 .home-container {
@@ -13,7 +12,8 @@ svg {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: black;
+    background-image: url('../../ThePhotoAlphabetBG.jpg');
+    background-size: cover;
 }
 
 .home-handwriting-container {
@@ -33,11 +33,12 @@ svg {
 }
 
 .home-button {
+    opacity: 0;
     font-family: 'Raleway', sans-serif;
-    font-size: 16px;
-    color: black;
+    font-size: 24px;
+    color: white;
     background: none;
-    border: 2px solid black;
+    border: none;
     border-radius: 5px;
     width: 50%;
     margin: 0 25%;
@@ -48,8 +49,8 @@ svg {
 
 
 .home-button-underline {
-    background-color: black;
-    height: 1px;
+    background-color: white;
+    height: 2px;
     width: 0;
     margin: 0 auto;
     animation: home-button-underline-mobile 1s linear forwards;
@@ -69,22 +70,22 @@ svg {
 
 @keyframes home-button-color {
     0% {
-        color: black;
+        opacity: 0;
     }
     100% {
-        color: white;
+        opacity: 1;
     }
 }
 
 @keyframes home-button-underline-mobile {
     100% {
-        background-color: white;
+        opacity: 1;
         width: 25%;
     }
 }
 @keyframes home-button-underline-desktop {
     100% {
-        background-color: white;
+        opacity: 1;
         width: 10%;
     }
 }
@@ -93,6 +94,7 @@ svg {
     .home-button-container {
         padding: 0;
         animation: home-button-move-desktop 1.5s ease-out forwards;
+        animation-delay: 3.2s
     }
     .home-handwriting-container {
         height: 60vh;

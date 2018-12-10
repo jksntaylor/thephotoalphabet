@@ -55,82 +55,82 @@ const SVG = () => (
   <title>ThePhotoAlphabetHandwriting</title>
   <g id="Alphabet-t-mask">
     <g clipPath="url(#clip-path)">
-      <path id="Alphabet-t-path" d="M1347.5,519V658s4,31,41,15c0,0-94-78-85-82s87-2,87-2" transform="translate(-189.6 -123.5)" fill="none" stroke="#FFF" strokeMiterlimit="10" strokeWidth="11"/>
+      <path id="Alphabet-t-path" d="M1347.5,519V658s4,31,41,15c0,0-94-78-85-82s87-2,87-2" transform="translate(-189.6 -123.5)" fill="none" stroke="#fff" strokeMiterlimit="10" strokeWidth="11"/>
     </g>
   </g>
   <g id="Alphabet-e-mask">
     <g clipPath="url(#clip-path-2)">
-      <path id="Alphabet-e-path" d="M1214,671l72-69s-28-32-61-3-3,73,11,75,34,10,56-7" transform="translate(-189.6 -123.5)" fill="none" stroke="#FFF" strokeMiterlimit="10" strokeWidth="10"/>
+      <path id="Alphabet-e-path" d="M1214,671l72-69s-28-32-61-3-3,73,11,75,34,10,56-7" transform="translate(-189.6 -123.5)" fill="none" stroke="#fff" strokeMiterlimit="10" strokeWidth="10"/>
     </g>
   </g>
   <g id="Alphabet-b-mask">
     <g clipPath="url(#clip-path-3)">
-      <path id="Alphabet-b-path" d="M1123,592s17,4,7,8c-12.6,5.1-10-8-10-8,3.2-12.6,18.2-4.4,28,2s30.3,37.6,4,69-62,10-71-5-6-52-6-52V471" transform="translate(-189.6 -123.5)" fill="none" stroke="#FFF" strokeMiterlimit="10" strokeWidth="10"/>
+      <path id="Alphabet-b-path" d="M1123,592s17,4,7,8c-12.6,5.1-10-8-10-8,3.2-12.6,18.2-4.4,28,2s30.3,37.6,4,69-62,10-71-5-6-52-6-52V471" transform="translate(-189.6 -123.5)" fill="none" stroke="#fff" strokeMiterlimit="10" strokeWidth="10"/>
     </g>
   </g>
   <g id="Alphabet-a2-mask">
     <g clipPath="url(#clip-path-4)">
-      <path id="Alphabet-a2-path" d="M1003,581v60s-4,32-44.5,37.5c-1.3,1.6-56.9-8.2-42.3-63.1a11.9,11.9,0,0,1,.8-2c2.5-5.3,15.5-26.9,42-25.4a47.1,47.1,0,0,1,41,28l4,44s-.5,27.5,37.5,14.5L1035,666" transform="translate(-189.6 -123.5)" fill="none" stroke="#FFF" strokeMiterlimit="10" strokeWidth="10"/>
+      <path id="Alphabet-a2-path" d="M1003,581v60s-4,32-44.5,37.5c-1.3,1.6-56.9-8.2-42.3-63.1a11.9,11.9,0,0,1,.8-2c2.5-5.3,15.5-26.9,42-25.4a47.1,47.1,0,0,1,41,28l4,44s-.5,27.5,37.5,14.5L1035,666" transform="translate(-189.6 -123.5)" fill="none" stroke="#fff" strokeMiterlimit="10" strokeWidth="10"/>
     </g>
   </g>
   <g id="Alphabet-h-mask">
     <g clipPath="url(#clip-path-5)">
-      <path id="Alphabet-h-path" d="M783,472V683l2.5-.5v-63s4-29,35-32,32,35,32,35v35s0,29,42,18l-7-2,7-3-8-3" transform="translate(-189.6 -123.5)" fill="none" stroke="#FFF" strokeMiterlimit="10" strokeWidth="11"/>
+      <path id="Alphabet-h-path" d="M783,472V683l2.5-.5v-63s4-29,35-32,32,35,32,35v35s0,29,42,18l-7-2,7-3-8-3" transform="translate(-189.6 -123.5)" fill="none" stroke="#fff" strokeMiterlimit="10" strokeWidth="11"/>
     </g>
   </g>
   <g id="Alphabet-p-mask">
     <g clipPath="url(#clip-path-6)">
-      <path id="Alphabet-p-path" d="M637.5,584l.8,58.7S651,681,686,679s45-46,40-57-19-42-59-32-29,82-29,82v77" transform="translate(-189.6 -123.5)" fill="none" stroke="#FFF" strokeMiterlimit="10" strokeWidth="11"/>
+      <path id="Alphabet-p-path" d="M637.5,584l.8,58.7S651,681,686,679s45-46,40-57-19-42-59-32-29,82-29,82v77" transform="translate(-189.6 -123.5)" fill="none" stroke="#fff" strokeMiterlimit="10" strokeWidth="11"/>
     </g>
   </g>
   <g id="Alphabet-l-mask">
     <g clipPath="url(#clip-path-7)">
-      <path id="Alphabet-l-path" d="M565,471V658s-1,26,40,19l-9-10" transform="translate(-189.6 -123.5)" fill="none" stroke="#FFF" strokeMiterlimit="10" strokeWidth="12"/>
+      <path id="Alphabet-l-path" d="M565,471V658s-1,26,40,19l-9-10" transform="translate(-189.6 -123.5)" fill="none" stroke="#fff" strokeMiterlimit="10" strokeWidth="12"/>
     </g>
   </g>
   <g id="Alphabet-A-mask">
     <g clipPath="url(#clip-path-8)">
-      <path id="Alphabet-A-path" d="M402,684V566s3-38,24-48-40,93-75,65c0,0-25-17-14-59s71-51,84-47,64,4,73,69V657s0,30,40,20l-33-46H368" transform="translate(-189.6 -123.5)" fill="none" stroke="#FFF" strokeMiterlimit="10" strokeWidth="12"/>
+      <path id="Alphabet-A-path" d="M402,684V566s3-38,24-48-40,93-75,65c0,0-25-17-14-59s71-51,84-47,64,4,73,69V657s0,30,40,20l-33-46H368" transform="translate(-189.6 -123.5)" fill="none" stroke="#fff" strokeMiterlimit="10" strokeWidth="12"/>
     </g>
   </g>
   <g id="Photo-o2-mask">
     <g clipPath="url(#clip-path-9)">
-      <path id="Photo-o2-path" d="M1411.5,260.5s7.7-2.4,8.5.5c1.5,5.5-1.5,11.1-9.5,5.5-6.1-4.3-.2-13.3,5.5-13.5s21.5,13.5,15.5,44.5c-5,25.8-33.5,37.5-47.5,34.5-10.8-2.3-41-13-40-48s35-42.8,42-43c17.5-.5,24.5,6.5,32.5,10.5S1435,259,1435,259" transform="translate(-189.6 -123.5)" fill="none" stroke="#FFF" strokeMiterlimit="10" strokeWidth="10"/>
+      <path id="Photo-o2-path" d="M1411.5,260.5s7.7-2.4,8.5.5c1.5,5.5-1.5,11.1-9.5,5.5-6.1-4.3-.2-13.3,5.5-13.5s21.5,13.5,15.5,44.5c-5,25.8-33.5,37.5-47.5,34.5-10.8-2.3-41-13-40-48s35-42.8,42-43c17.5-.5,24.5,6.5,32.5,10.5S1435,259,1435,259" transform="translate(-189.6 -123.5)" fill="none" stroke="#fff" strokeMiterlimit="10" strokeWidth="10"/>
     </g>
   </g>
   <g id="Photo-t-mask">
     <g clipPath="url(#clip-path-10)">
-      <path id="Photo-t-path" d="M1275,174V313s4,31,41,15c0,0-94-78-85-82s87-2,87-2" transform="translate(-189.6 -123.5)" fill="none" stroke="#FFF" strokeMiterlimit="10" strokeWidth="11"/>
+      <path id="Photo-t-path" d="M1275,174V313s4,31,41,15c0,0-94-78-85-82s87-2,87-2" transform="translate(-189.6 -123.5)" fill="none" stroke="#fff" strokeMiterlimit="10" strokeWidth="11"/>
     </g>
   </g>
   <g id="Photo-o1-mask">
     <g clipPath="url(#clip-path-11)">
-      <path id="Photo-o1-path" d="M1190.5,260.5s7.7-2.4,8.5.5c1.5,5.5-1.5,11.1-9.5,5.5-6.1-4.3-.2-13.3,5.5-13.5s21.5,13.5,15.5,44.5c-5,25.8-33.5,37.5-47.5,34.5-10.8-2.3-41-13-40-48s35-42.8,42-43c17.5-.5,24.5,6.5,32.5,10.5S1214,259,1214,259" transform="translate(-189.6 -123.5)" fill="none" stroke="#FFF" strokeMiterlimit="10" strokeWidth="10"/>
+      <path id="Photo-o1-path" d="M1190.5,260.5s7.7-2.4,8.5.5c1.5,5.5-1.5,11.1-9.5,5.5-6.1-4.3-.2-13.3,5.5-13.5s21.5,13.5,15.5,44.5c-5,25.8-33.5,37.5-47.5,34.5-10.8-2.3-41-13-40-48s35-42.8,42-43c17.5-.5,24.5,6.5,32.5,10.5S1214,259,1214,259" transform="translate(-189.6 -123.5)" fill="none" stroke="#fff" strokeMiterlimit="10" strokeWidth="10"/>
     </g>
   </g>
   <g id="Photo-h-mask">
     <g clipPath="url(#clip-path-12)">
-      <path id="Photo-h-path" d="M992,126V337l2.5-.5v-63s4-29,35-32,32,35,32,35v35s0,29,42,18l-7-2,7-3-8-3" transform="translate(-189.6 -123.5)" fill="none" stroke="#FFF" strokeMiterlimit="10" strokeWidth="11"/>
+      <path id="Photo-h-path" d="M992,126V337l2.5-.5v-63s4-29,35-32,32,35,32,35v35s0,29,42,18l-7-2,7-3-8-3" transform="translate(-189.6 -123.5)" fill="none" stroke="#fff" strokeMiterlimit="10" strokeWidth="11"/>
     </g>
   </g>
   <g id="Photo-p-mask">
     <g clipPath="url(#clip-path-13)">
-      <path id="Photo-P-path" d="M767,252s-43-39,6-97c0,0,40-35,99-23,0,0,48,9,62,49s-16,71-21,75-27,20-64,10-36-11-36-11-16-94,14-94V310s-2,35-41,15" transform="translate(-189.6 -123.5)" fill="none" stroke="#FFF" strokeMiterlimit="10" strokeWidth="12"/>
+      <path id="Photo-P-path" d="M767,252s-43-39,6-97c0,0,40-35,99-23,0,0,48,9,62,49s-16,71-21,75-27,20-64,10-36-11-36-11-16-94,14-94V310s-2,35-41,15" transform="translate(-189.6 -123.5)" fill="none" stroke="#fff" strokeMiterlimit="10" strokeWidth="12"/>
     </g>
   </g>
   <g id="The-e-mask">
     <g clipPath="url(#clip-path-14)">
-      <path id="The-e-path" d="M567,323l70-68s-30-33-67,2c0,0-23,29,1,58,0,0,23,31,69,8" transform="translate(-189.6 -123.5)" fill="none" stroke="#FFF" strokeMiterlimit="10" strokeWidth="11"/>
+      <path id="The-e-path" d="M567,323l70-68s-30-33-67,2c0,0-23,29,1,58,0,0,23,31,69,8" transform="translate(-189.6 -123.5)" fill="none" stroke="#fff" strokeMiterlimit="10" strokeWidth="11"/>
     </g>
   </g>
   <g id="The-h-mask">
     <g clipPath="url(#clip-path-15)">
-      <path id="The-h-path" d="M430,125V336l2.5-.5v-63s4-29,35-32,32,35,32,35v35s0,29,42,18l-7-2,7-3-8-3" transform="translate(-189.6 -123.5)" fill="none" stroke="#FFF" strokeMiterlimit="10" strokeWidth="11"/>
+      <path id="The-h-path" d="M430,125V336l2.5-.5v-63s4-29,35-32,32,35,32,35v35s0,29,42,18l-7-2,7-3-8-3" transform="translate(-189.6 -123.5)" fill="none" stroke="#fff" strokeMiterlimit="10" strokeWidth="11"/>
     </g>
   </g>
   <g id="The-T-mask">
     <g clipPath="url(#clip-path-16)">
-      <path id="The-T-path" d="M242.5,222.5s-49-4-47-50,66-40,66-40h139s-73,0-76,74v91s-10,58-73,24" transform="translate(-189.6 -123.5)" fill="none" stroke="#FFF" strokeMiterlimit="10" strokeWidth="11.75"/>
+      <path id="The-T-path" d="M242.5,222.5s-49-4-47-50,66-40,66-40h139s-73,0-76,74v91s-10,58-73,24" transform="translate(-189.6 -123.5)" fill="none" stroke="#fff" strokeMiterlimit="10" strokeWidth="11.75"/>
     </g>
   </g>
 </svg>
