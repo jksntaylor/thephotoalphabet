@@ -71,28 +71,28 @@ class Cart extends Component {
 
         if (this.state.checkout===1) {
             var checkout =  <div className='checkoutContainer checkoutEnter'>
-                                <div className='checkoutNav'>
+                                <div className='checkoutNav' onClick={this.toggleCheckout}>
                                     <h4>{this.state.cart.length} Items</h4>
                                     <h4>${this.state.price}.00</h4>
-                                    <i className="fas fa-credit-card fa-2x" onClick={this.toggleCheckout}></i>
+                                    <i className="fas fa-credit-card fa-2x"></i>
                                 </div>
                                 <Checkout orders={this.state.cart} totalPrice={this.state.price}/>
                             </div>
         } else if (this.state.checkout===2) {
             checkout =  <div className='checkoutContainer checkoutLeave'>
-                                <div className='checkoutNav'>
+                                <div className='checkoutNav' onClick={this.toggleCheckout}>
                                     <h4>{this.state.cart.length} Items</h4>
                                     <h4>${this.state.price}.00</h4>
-                                    <i className="fas fa-credit-card fa-2x" onClick={this.toggleCheckout}></i>
+                                    <i className="fas fa-credit-card fa-2x"></i>
                                 </div>
                                 <Checkout orders={this.state.cart} totalPrice={this.state.price}/>
                             </div>
         } else {
             checkout =  <div className='checkoutContainer'>
-                                <div className='checkoutNav'>
+                                <div className='checkoutNav' onClick={this.toggleCheckout}>
                                     <h4>{this.state.cart.length} Items</h4>
                                     <h4>${this.state.price}.00</h4>
-                                    <i className="fas fa-credit-card fa-2x" onClick={this.toggleCheckout}></i>
+                                    <i className="fas fa-credit-card fa-2x"></i>
                                 </div>
                                 <Checkout orders={this.state.cart} totalPrice={this.state.price}/>
                             </div>

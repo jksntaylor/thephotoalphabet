@@ -44,6 +44,7 @@
     justify-content: space-between;
     align-items: center;
     height: 100vh;
+    animation: jumpTease 1s ease 2s;
 }
 
 .checkoutNav {
@@ -213,6 +214,18 @@
     }
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes jumpTease {
+    50% {
+        margin-top: -5vh;
+    }
+    80% {
+        margin-top: -5vh;
+    }
+    100% {
+        margin-top: 0;
     }
 }
 
