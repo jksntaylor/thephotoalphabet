@@ -1,0 +1,2 @@
+INSERT INTO Orders (userid, photoids, date, price, processed, paid, guestemail, guestname, guestaddress, guestaddress2, guestcity, gueststate, guestzip)
+VALUES (0, ${pictureIDs}, ${date}, ${price}, true, true, ${email}, ${name}, ${address}, ${address2}, ${city}, ${state}, ${zip});

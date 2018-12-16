@@ -17,6 +17,7 @@ class Admin extends Component {
 
     getOrders = () => {
         axios.get('/admin/orders').then(response => {
+            console.log(response);
             this.setState({
                 orders: response.data
             })
@@ -35,7 +36,8 @@ class Admin extends Component {
 
     render() {
         const orders = this.state.orders.map(order => {
-            let {address, address2, city, date, delivered, email, id, name, paid, photoids, price, processed, shipped, state, zip} = order;
+            let {address, address2, city, date, delivered, email, id, name, paid, photoids, price, processed, shipped, state, userid, zip} = order;
+            let {guestname, guestemail, guestaddress, guestaddress2, guestcity, gueststate, guestzip} = order;
             let actualDate = date.slice(0, 10)
             if (paid) {
                 var paidIcon = <i className="fas fa-check fa-2x"></i>
@@ -65,15 +67,27 @@ class Admin extends Component {
                         <InputPhoto count={count} letter={letter} key={`${letter}${count}${index}`}/>
                 )
             })
+            if (userid) {
+                var fullInfo = <div>
+                                <h2 className='adminOrderName'>{name} || {email}</h2>
+                                <h2 className='adminOrderAddress'>{address} {address2}, {city} {state} {zip}</h2>
+                                <h2 className='adminOrderDate'>${price} || {actualDate} </h2>
+                               </div>
+            } else {
+                fullInfo = <div>
+                            <h2 className='adminOrderName'>{guestname} || {guestemail}</h2>
+                            <h2 className='adminOrderAddress'>{guestaddress} {guestaddress2}, {guestcity} {gueststate} {guestzip}</h2>
+                            <h2 className='adminOrderDate'>${price} || {actualDate} </h2>
+                           </div>
+            }
+
             return (
                 <div className='adminOrderContainer'key={id}>
                     <div className='adminPhotosContainer'>
                         {photos}
                     </div>
                     <div className='adminOrderInfoContainer'>
-                        <h2 className='adminOrderName'>{name} || {email}</h2>
-                        <h2 className='adminOrderAddress'>{address} {address2}, {city} {state} {zip}</h2>
-                        <h2 className='adminOrderDate'>${price} || {actualDate} </h2>
+                        {fullInfo}
                         <div className='adminOrderBooleanContainer'>
                             <div className='adminOrderBoolean'>
                                 <h3>Paid</h3>

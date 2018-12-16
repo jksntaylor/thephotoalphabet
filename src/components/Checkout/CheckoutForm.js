@@ -3,6 +3,7 @@ import {CardElement, injectStripe} from 'react-stripe-elements';
 import axios from 'axios';
 import {connect} from 'react-redux';
 import {emptyCart} from '../../redux/reducer';
+import {Link} from 'react-router-dom';
 
 class CheckoutForm extends Component {
   constructor(props) {
@@ -44,13 +45,23 @@ class CheckoutForm extends Component {
             let shipping = this.props.shipping
             this.setState({totalPrice: this.state.totalPrice += price})
             
-            axios.post('/order', {price, pictureIDs, shipping}).then(() => {
-              console.log('Order Processed');
-              this.setState({processed: true})
-            }).catch(() => {
-              this.setState({error: true});
-              return;
-            })
+            if (this.props.isLoggedIn) {
+              axios.post('/order', {price, pictureIDs, shipping}).then(() => {
+                console.log('Order Processed');
+                this.setState({processed: true})
+              }).catch(() => {
+                this.setState({error: true});
+                return;
+              })
+            } else {
+              axios.post('/guestorder', {price, pictureIDs, shipping}).then(() => {
+                console.log('Guest Order Processed');
+                this.setState({processed: true})
+              }).catch(() => {
+                this.setState({error: true});
+                return;
+              })
+            }
             this.emptyCart();
             return ('Order Processed');
           })
@@ -63,8 +74,20 @@ class CheckoutForm extends Component {
 
 
   render() {
+
+    if (!this.props.totalPrice) {
+      return (
+        <h1>There is nothing in the cart</h1>
+      )
+    }
+
     if (this.state.paid && this.state.processed) {
-        return (<h1>Purchase Complete</h1>)
+        return (
+          <div className='purchase-complete'>
+            <h1>Purchase Complete</h1>
+            <Link to='/make'><button>Continue Shopping</button></Link>
+          </div>
+        )
     }
 
     if (this.state.error) {
@@ -81,5 +104,11 @@ class CheckoutForm extends Component {
   }
 }
 
+let mapStateToProps = (state) => {
+  return {
+    isLoggedIn: state.isLoggedIn
+  }
+}
 
-export default injectStripe(connect(null, {emptyCart})(CheckoutForm));
+
+export default injectStripe(connect(mapStateToProps, {emptyCart})(CheckoutForm));

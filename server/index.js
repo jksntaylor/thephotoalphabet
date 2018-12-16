@@ -51,6 +51,7 @@ app.post('/cart/empty', cc.emptyCart)
 //ORDER
 app.post("/charge", oc.charge);
 app.post('/order', oc.process);
+app.post('/guestorder', oc.processGuest);
 
 //PHOTO
 app.get('/api/photos/:letter/:letterCount', pc.getPhoto)

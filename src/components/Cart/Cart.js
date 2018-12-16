@@ -98,8 +98,36 @@ class Cart extends Component {
                             </div>
         }
 
-        if (this.props.isLoggedIn) {
-        var cart = <div className='cartContainer'>
+        // if (this.props.isLoggedIn) {
+        // var cart = <div className='cartContainer'>
+        //             <div className='cartNavContainer'>
+        //                 <Link to='/'><i className='fas fa-home fa-2x'></i></Link>
+        //                 <Link to='/make'><i className="fas fa-edit fa-2x"></i></Link>
+        //                 <Link to='/auth'><i className="fas fa-user fa-2x"></i></Link>
+        //                 <Link to='/cart'><i className="fas fa-shopping-cart fa-3x"></i></Link>
+        //             </div>
+        //             <div className='cartOrdersContainer'>
+        //                 {this.state.cart.length !== 0 ? orders : <h2>No Orders in Cart</h2>}
+        //             </div>
+        //             {checkout} 
+        //         </div>
+        // } else {
+        //  cart = <div className='cartContainer'>
+        //             <div className='cartNavContainer'>
+        //                 <Link to='/'><i className='fas fa-home fa-2x'></i></Link>
+        //                 <Link to='/make'><i className="fas fa-edit fa-2x"></i></Link>
+        //                 <Link to='/auth'><i className="fas fa-user fa-2x"></i></Link>
+        //                 <Link to='/cart'><i className="fas fa-shopping-cart fa-3x"></i></Link>
+        //             </div>
+        //             <div className='cartGuestContainer'>
+        //                 <h1>Please sign in to access Cart</h1>
+        //             </div>
+        //         </div>
+        // }
+
+        return (
+            <div>
+                <div className='cartContainer'>
                     <div className='cartNavContainer'>
                         <Link to='/'><i className='fas fa-home fa-2x'></i></Link>
                         <Link to='/make'><i className="fas fa-edit fa-2x"></i></Link>
@@ -111,23 +139,6 @@ class Cart extends Component {
                     </div>
                     {checkout} 
                 </div>
-        } else {
-         cart = <div className='cartContainer'>
-                    <div className='cartNavContainer'>
-                        <Link to='/'><i className='fas fa-home fa-2x'></i></Link>
-                        <Link to='/make'><i className="fas fa-edit fa-2x"></i></Link>
-                        <Link to='/auth'><i className="fas fa-user fa-2x"></i></Link>
-                        <Link to='/cart'><i className="fas fa-shopping-cart fa-3x"></i></Link>
-                    </div>
-                    <div className='cartGuestContainer'>
-                        <h1>Please sign in to access Cart</h1>
-                    </div>
-                </div>
-        }
-
-        return (
-            <div>
-                {cart}
             </div>
         )
 
