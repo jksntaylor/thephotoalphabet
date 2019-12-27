@@ -1,74 +1,246 @@
-* {
-    box-sizing: border-box;
+.inputPageContainer .photosContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 5px;
+    border: 10px solid black;
+    /* height: 14vh; */
+    /* width: 95%; */
+    min-width: 40%;
+    min-height: 15vh;
+    margin: 0 auto;
+    margin-bottom: 0;
+    background-color: white;
+    box-shadow: 3px 3px 6px #333;
 }
 
-svg {
+.orderContainer .photosContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     padding: 10px;
+    border: 5px solid black;
+    min-width: 40%;
+    margin: 1% 2.5%;
+    background-color: white;
+}
+
+.inputPageContainer .photo-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 8vw;
+    margin: 1%;
+}
+
+.orderContainer .photo-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 1%;
+}
+
+.photo-container img {
     width: 100%;
 }
 
-.home-container {
-    width: 100vw;
-    height: 100vh;
+.fa-angle-up,
+.fa-angle-down {
     display: flex;
-    flex-direction: column;
-    background-image: url('../../ThePhotoAlphabetBG.jpg');
-    background-size: cover;
-}
-
-.home-handwriting-container {
-    display: flex;
-    height: 50vh;
-    align-items: flex-end;
-}
-
-.home-button-container {
-    display: flex;
-    flex-direction: column;
-    height: 50vh;
     justify-content: center;
-    padding-bottom: 0;
-    animation: home-button-move-mobile 1.5s ease-out forwards;
-    animation-delay: 3.2s;
+    color: #ccc;
+    margin: 2px;
+    width: 100%;
 }
 
-.home-button {
-    opacity: 0;
-    font-family: 'Raleway', sans-serif;
-    font-size: 24px;
+/* .fas.fa-angle-up::before,
+.fas.fa-angle-down::before {
+    width: 100%;
+    justify-content: center;
+} */
+
+.fa-random {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     color: white;
+}
+
+.fa-expand {
+    color: white;
+}
+.input {
+    font-size: 35px;
+    width: 70%;
+    margin: 10% 15%;
+    margin-bottom: 0;
+    border-radius: 5px;
+    font-family: 'Raleway', sans-serif;
+    padding: 5px;
+    text-align: center;
+}
+
+.inputPageContainer {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.inputContainer {
+    height: 30vh;
+}
+
+.inputMinLength h6 {
+    margin: 0;
+    margin-top: 1%;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+}
+
+.addToCartButton {
     background: none;
     border: none;
-    border-radius: 5px;
     width: 50%;
-    margin: 0 25%;
-    padding: 5% 0;
-    animation: home-button-color 1.6s linear forwards;
-    animation-delay: 3.2s;
+    height: 4vh;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    box-shadow: #333 2px 3px 5px;
 }
 
-
-.home-button-underline {
-    background-color: white;
-    height: 2px;
-    width: 0;
-    margin: 0 auto;
-    animation: home-button-underline-mobile 1s linear forwards;
-    animation-delay: 4.5s;
+.inputPriceContainer {
+    margin: 0 15%;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-@keyframes home-button-move-mobile {
+.inputPrice {
+    display: inline;
+    font-family: 'Raleway', sans-serif;
+    color: #bbb;
+}
+
+.randomContainer {
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 40px;
+}
+
+.inputNavContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding: 10%;
+    background-color: black;
+    box-shadow: 0 2px 3px #333;
+}
+
+.inputNavContainer i {
+    color: white;
+}
+
+.inputMinLength h6 {
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+.navMagnifiedEnter {
+    animation: navMagnifiedEnter 1s ease-in forwards;
+}
+.navMagnifiedExit {
+    animation: navMagnifiedExit 1s ease-in forwards;
+}
+
+.inputMagnifiedEnter {
+    animation: inputMagnifiedEnter 1s ease-in forwards;
+}
+.inputMagnifiedExit {
+    animation: inputMagnifiedExit 1s ease-in forwards;
+}
+
+.faMagnifiedEnter {
+    animation: faMagnifiedEnter 1s ease-in forwards;
+}
+.faMagnifiedExit {
+    animation: faMagnifiedExit 1s ease-in forwards;
+}
+
+.randomMagnifiedEnter {
+    animation: randomMagnifiedEnter 1s ease-in forwards;
+}
+.randomMagnifiedExit {
+    animation: randomMagnifiedExit 1s ease-in forwards;
+}
+
+.containerMagnifiedEnter {
+    animation: containerMagnifiedEnter .8s ease-in forwards;
+}
+.containerMagnifiedExit {
+    animation: containerMagnifiedExit .8s ease-in forwards;
+}
+
+.containerMagnifiedEnter .photo-container {
+    animation: containerMagnifiedImgEnter .8s ease-in forwards;
+}
+.containerMagnifiedExit .photo-container {
+    animation: containerMagnifiedImgExit .8s ease-in forwards;
+}
+
+.faMagnifiedToggleEnter {
+    animation: faMagnifiedToggleEnter 1s ease-in forwards;
+}
+.faMagnifiedToggleExit {
+    animation: faMagnifiedToggleExit 1s ease-in forwards;
+}
+
+.fadeActive {
+    animation: fadeActive 1s linear forwards;
+}
+
+@keyframes navMagnifiedEnter {
     100% {
-        padding-bottom: 20vh;
+        transform: translate(0, -30vh)
     }
 }
-@keyframes home-button-move-desktop {
+@keyframes navMagnifiedExit {
+    0% {
+        transform: translate(0, -30vh)
+    }
     100% {
-        padding-bottom: 10vh;
+        transform: translate(0)
     }
 }
 
-@keyframes home-button-color {
+@keyframes inputMagnifiedEnter {
+    100% {
+        transform: translate(0, 35vh);
+    }
+}
+@keyframes inputMagnifiedExit {
+    0% {
+        transform: translate(0, 35vh);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes faMagnifiedEnter {
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes faMagnifiedExit {
     0% {
         opacity: 0;
     }
@@ -77,37 +249,141 @@ svg {
     }
 }
 
-@keyframes home-button-underline-mobile {
+@keyframes faMagnifiedToggleEnter {
     100% {
-        opacity: 1;
-        width: 25%;
+        transform: rotate(90deg);
     }
 }
-@keyframes home-button-underline-desktop {
+@keyframes faMagnifiedToggleExit {
+    0% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes randomMagnifiedEnter {
+    100% {
+        height: 100vh;
+        width: 100vw;
+        transform: translate(0, -11vh);
+        padding: 0;
+        padding-top: 100px;
+    }
+}
+@keyframes randomMagnifiedExit {
+    0% {
+        height: 100vh;
+        width: 100vw;
+        transform: translate(0, -11vh);
+        padding: 0;
+        padding-top: 100px;
+    }
+    100% {
+        height: 60vh;
+        width: auto;
+        transform: translate(0);
+        padding-top: 40px;
+    }
+}
+
+@keyframes containerMagnifiedEnter {
+    100% {
+        height: 50vw;
+        width: 80vh;
+        margin-left: 10vw;
+        margin-bottom: 10%;
+        transform: rotate(90deg) translate(10vh, 30vw);
+    }
+}
+@keyframes containerMagnifiedExit {
+    0% {
+        transform: rotate(90deg) translate(10vh, 30vw);
+        height: 50vw;
+        width: 80vh;
+        
+    }
+    100% {
+        transform: rotate(0) translate(0);
+        height: 14vh;
+        min-width: 40%;
+        margin-left: auto;
+        margin-bottom: 0;
+    }
+}
+
+@keyframes containerMagnifiedImgEnter {
+    100% {
+        width: 10vh;
+        justify-content: center;
+    }
+}
+@keyframes containerMagnifiedImgExit {
+    0% {
+        width: 10vh;
+        justify-content: center;
+    }
+    100% {
+        width: 10vw;
+    }
+}
+
+@keyframes fadeActive {
+    0% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
     100% {
         opacity: 1;
-        width: 10%;
     }
 }
 
 @media (min-width: 992px) {
-    .home-button-container {
-        padding: 0;
-        animation: home-button-move-desktop 1.5s ease-out forwards;
-        animation-delay: 3.2s
+    .inputNavContainer {
+        padding: 5vh 5vw;
     }
-    .home-handwriting-container {
-        height: 60vh;
-        width: 60vw;
-        margin: 0 20vw;
-        margin-top: 20vh;
+    .inputContainer {
+        width: 50vw;
+        display: inline-block;
+        margin: 0 25vw;
     }
-    .home-button {
+
+    .inputPageContainer .fa-random {
+        width: 10%;
+    }
+
+    .randomContainer {
+        height: 50vh;
+    }
+
+    .inputPageContainer .photosContainer {
+        min-height: 15vh;
+    }
+
+    .inputPrice {
         font-size: 30px;
-        padding: 2% 0;
     }
-    .home-button-underline {
-        animation: home-button-underline-desktop 1s linear forwards;
-        animation-delay: 4.5s;
+
+    .input:focus {
+        background-color: black;
+        color: white;
+        outline: none;
+    }
+
+    .addToCartButton:hover {
+        background-color: white;
+        color: black;
+        font-family: 'Raleway';
+        border: 1px solid white;
+    } 
+
+    .fa-expand {
+        display: none;
     }
 }

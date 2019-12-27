@@ -16,7 +16,6 @@
     align-items: center;
     height: 10vh;
     padding: 10%;
-    background-image: url('../../ThePhotoAlphabetBG.jpg');
     box-shadow: 0 2px 5px #333;
 }
 
@@ -53,7 +52,6 @@
     justify-content: space-around;
     align-items: center;
     font-size: 20px;
-    background-image: url('../../ThePhotoAlphabetBG.jpg');
     z-index: 10;
     height: 10vh;
     color: white;
