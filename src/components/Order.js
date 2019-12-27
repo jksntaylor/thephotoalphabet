@@ -1,5 +1,5 @@
 import React from 'react';
-import InputPhoto from '../InputPhoto/InputPhoto';
+import InputPhoto from './InputPhoto';
 
 function Order (props) {
     let array = props.pictureIDs;

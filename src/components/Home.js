@@ -1,6 +1,6 @@
 import React from 'react';
-import InputPhoto from '../InputPhoto/InputPhoto';
-import './home.css';
+import InputPhoto from './InputPhoto';
+import '../styling/home.css';
 import axios from 'axios';
 
 export default class Home extends React.Component {

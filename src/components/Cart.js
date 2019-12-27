@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Order from '../Order/Order';
 import axios from 'axios';
-import './cart.css';
+import '..styling/cart.css';
 import Checkout from '../Checkout/Checkout';
 
 class Cart extends Component {
