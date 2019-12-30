@@ -1,12 +1,12 @@
 import React from 'react';
 import InputPhoto from './InputPhoto';
-import '../styling/home.css';
 import axios from 'axios';
 import SlidingPane from 'react-sliding-pane';
 import Modal from 'react-modal';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
 import Auth from './Auth/Auth';
 import Cart from './Cart';
+import '../styling/main.scss';
 
 export default class Home extends React.Component {
     constructor() {

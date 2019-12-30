@@ -1,0 +1,12 @@
+$f1 : 200 20px Poppins;
+$f2 : 500 20px Poppins;
+$f3 : 800 20px Poppins;
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    font: $f1;
+}

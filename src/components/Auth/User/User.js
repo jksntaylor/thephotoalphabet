@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import axios from 'axios';
 import {loggedOut} from '../../../redux/reducer';
 import InputPhoto from '../../InputPhoto';
-import './user.css'
 
 class User extends Component {
     constructor() {

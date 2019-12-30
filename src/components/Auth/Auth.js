@@ -4,21 +4,8 @@ import User from './User/User';
 import Admin from './Admin/Admin';
 import {connect} from 'react-redux';
 
-
 function Auth (props) {
-    if (props.isAdmin) {
-        return (
-            <Admin />
-        )
-    } else if (props.isLoggedIn) {
-        return (
-            <User />
-        )
-    } else {
-        return (
-            <Login />
-        )
-    }
+    return props.isAdmin ? <Admin/> : props.isLoggedIn ? <User/> : <Login/>
 }
 
 let mapStateToProps = (state) => {
