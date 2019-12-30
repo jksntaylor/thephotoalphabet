@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import {CardElement, injectStripe} from 'react-stripe-elements';
 import axios from 'axios';
 import {connect} from 'react-redux';
-import {emptyCart} from '../../redux/reducer';
-import {Link} from 'react-router-dom';
+import {emptyCart} from '../redux/reducer';
 
 class CheckoutForm extends Component {
   constructor(props) {
@@ -85,7 +84,6 @@ class CheckoutForm extends Component {
         return (
           <div className='purchase-complete'>
             <h1>Purchase Complete</h1>
-            <Link to='/make'><button>Continue Shopping</button></Link>
           </div>
         )
     }

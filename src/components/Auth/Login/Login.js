@@ -74,12 +74,6 @@ class Login extends Component {
         return (
             <div className='auth-container'>
                 <ToastContainer />
-                <div className='navContainer'>
-                    <Link to='/'><i className='fas fa-home fa-2x'></i></Link>
-                    <Link to='/make'><i className="fas fa-edit fa-2x"></i></Link>
-                    <Link to='/auth'><i className="fas fa-user fa-3x"></i></Link>
-                    <Link to='/cart'><i className="fas fa-shopping-cart fa-2x"></i></Link>
-                </div>
                 <div className='registration-form'>
                     <h1>Register</h1>
                     <input onChange={e => {this.handleChange('fullName', e.target.value)}} value={this.state.fullName} className='register-name-input' placeholder='Name'/>

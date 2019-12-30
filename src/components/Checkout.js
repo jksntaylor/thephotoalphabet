@@ -20,11 +20,9 @@ class Checkout extends Component {
       orders: [],
       totalPrice: 0
     }
-    // this.handleSaveChange = this.handleSaveChange.bind(this);
-    this.handleShippingChange = this.handleShippingChange.bind(this)
   }
 
-  handleShippingChange(name, val) {
+  handleShippingChange = (name, val) => {
     this.setState({shipping: {...this.state.shipping, [name]: val}})
   }
 
@@ -40,23 +38,14 @@ class Checkout extends Component {
     }
   }
 
-  nullToString = (val) => {
-    if (val===null) {
-      return val = ''
-    }
-    return val;
+  nullToString = val => {
+    return val===null ? '' : val;
   }
 
   getUserAddress = () => {
     axios.get('/user/address').then(res => {
+      res.data.forEach(val => {return this.nullToString(val)})
       let {name, email, address, address2, city, state, zip} = res.data
-      name = this.nullToString(name);
-      email = this.nullToString(email);
-      address = this.nullToString(address);
-      address2 = this.nullToString(address2);
-      city = this.nullToString(city);
-      state = this.nullToString(state);
-      zip = this.nullToString(zip);
       this.setState({
         shipping: {...this.state.shipping,
           name: name,
@@ -73,12 +62,6 @@ class Checkout extends Component {
     })
   }
 
-  // handleSaveChange() {
-  //   this.setState({
-  //     save: !this.state.save
-  //   })
-  // }
-
   render() {
     return (
       <StripeProvider apiKey="pk_test_KJzSf9w3SSqFsagSRoecHHsu">
@@ -87,9 +70,7 @@ class Checkout extends Component {
           <div className='checkoutCardContainer2'>
             <div className='shippingContainer'>
               <h2>Shipping</h2>
-              <h6>US Only</h6>
               <div className='shippingForm'>
-                {/* <span>Save Address for Future Use?</span><input type='checkbox' onChange={this.handleSaveChange}/> */}
                 <input placeholder='Name' onChange={e => this.handleShippingChange('name', e.target.value)} value={this.state.shipping.name}/>
                 <input placeholder='Email' onChange={e => this.handleShippingChange('email', e.target.value)} value={this.state.shipping.email}/>
                 <input placeholder='Address' onChange={e => this.handleShippingChange('address', e.target.value)} value={this.state.shipping.address}/>
@@ -119,4 +100,3 @@ let mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(Checkout);
-//checkout with have children components for each order in the cart

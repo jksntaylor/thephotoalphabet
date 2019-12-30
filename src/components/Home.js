@@ -2,14 +2,25 @@ import React from 'react';
 import InputPhoto from './InputPhoto';
 import '../styling/home.css';
 import axios from 'axios';
+import SlidingPane from 'react-sliding-pane';
+import Modal from 'react-modal';
+import 'react-sliding-pane/dist/react-sliding-pane.css';
+import Auth from './Auth/Auth';
+import Cart from './Cart';
 
 export default class Home extends React.Component {
     constructor() {
         super();
         this.state = {
             userInput: [],
-            inputWord: ''
+            inputWord: '',
+            isPaneOpen: false,
+            isPaneOpenLeft: false
         }
+    }
+
+    componentDidMount() {
+        Modal.setAppElement(this.el);
     }
 
     handleDelete = () => {
@@ -32,7 +43,7 @@ export default class Home extends React.Component {
     addToCart = () => { axios.post(`/cart/${this.state.userInput}`).then(() => {this.setState({userInput: ''})}) }
 
     render() {
-        const {userInput, inputWord} = this.state;
+        const {userInput, inputWord, isPaneOpen, isPaneOpenLeft} = this.state;
         let price = (30 + (inputWord.length-3)*5) - 0.01;
         let photos = userInput.length>=3 ? 
         userInput.map((obj, index) => {
@@ -41,7 +52,21 @@ export default class Home extends React.Component {
             )
         }) : null
         return (
-            <div className='inputPageContainer'>    
+            <div ref={ref => this.el = ref} className='inputPageContainer'>
+                <header>
+                    <i className='fas fa-user-alt' onClick={() => {this.setState({isPaneOpenLeft: true})}}/>
+                    <div>
+                        <h1>The Photo Alphabet</h1>
+                        <h2>Custom Letter Photography Prints</h2>
+                    </div>
+                    <i className='fas fa-shopping-cart' onClick={() => {this.setState({isPaneOpen: true})}}/>
+                </header>
+                <SlidingPane isOpen={ isPaneOpen } width='25%' onRequestClose={() => {this.setState({ isPaneOpen: false })}}>
+                    <Cart/>
+                </SlidingPane>
+                <SlidingPane isOpen={ isPaneOpenLeft } from='left' width='25%' onRequestClose={() => this.setState({ isPaneOpenLeft: false })}>
+                    <Auth/>
+                </SlidingPane>
                 <div className={'photosContainer'}>
                     {photos}
                 </div>
@@ -53,8 +78,9 @@ export default class Home extends React.Component {
                         <button onClick={this.addToCart} className='addToCartButton'>Add To Cart</button>
                     </div> 
                     : 
-                    <div className='inputMinLength'><h6 >Word Must be At Least 3 Letters</h6></div>}
+                    <div className='inputPriceContainer'><h3 className="inputPrice">Word Must be At Least 3 Letters</h3></div>}
                 </div>
+                <footer><h4>*custom framing available upon request</h4></footer>
             </div>
         )
     }

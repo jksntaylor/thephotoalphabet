@@ -1,12 +1,10 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import {connect} from 'react-redux';
-import Order from '../Order/Order';
+import React from 'react';
 import axios from 'axios';
-import '..styling/cart.css';
-import Checkout from '../Checkout/Checkout';
+import {connect} from 'react-redux';
+import Order from './Order';
+import Checkout from './Checkout';
 
-class Cart extends Component {
+class Cart extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -15,52 +13,23 @@ class Cart extends Component {
             price: 0
         }
     }
+    
+    componentDidMount() {this.getCart()}
 
     getCart = () => {
-        axios.get('/cart').then(response => {
-            this.setState({
-                cart: response.data
-            })
-            console.log(this.state.cart);
-            let cartPrice = this.state.cart.reduce((acc, elem) => {
-                return acc += elem.price
-            }, 0);
-            this.setState({price: cartPrice})
+        axios.get('/cart').then(res => {
+            let cartPrice = res.data.reduce((acc, elem) => {return acc += elem.price}, 0);
+            this.setState({cart: res.data, price: cartPrice})
         })
     }
 
-    deleteFromCart = (id) => {
-        console.log(id);
-        axios.delete(`/cart/${id}`).then(response => {
-            console.log(response);
-            this.setState({
-                cart: response.data
-            })
-            this.getCart();
-        })
-    }
-
-    toggleCheckout = () => {
-        if (this.state.checkout===0) {
-            this.setState({checkout: 1})
-        } else if (this.state.checkout===1) {
-            this.setState({checkout: 2})
-        } else {
-            this.setState({checkout: 1})
-        }
-    }
-
-    componentDidMount() {
-        this.getCart();
-    }
+    deleteFromCart = (id) => {axios.delete(`/cart/${id}`).then(() => {this.getCart();})}
 
     render() {
-        let i = 0;
         let orders = this.state.cart.map(item => {
-            i++;
             return (
                 <div key={item.cartID} className='orderContainer'>
-                    <Order key={i} pictureIDs={item.pictureIDs}/>
+                    <Order key={item.cartID} pictureIDs={item.pictureIDs}/>
                     <div className='orderPriceContainer'>
                     <h3 className='orderPrice'>${item.price}</h3>
                     <button onClick={() => {this.deleteFromCart(+item.cartID)}}>delete</button>
@@ -69,75 +38,20 @@ class Cart extends Component {
             )
         })
 
-        if (this.state.checkout===1) {
-            var checkout =  <div className='checkoutContainer checkoutEnter'>
-                                <div className='checkoutNav' onClick={this.toggleCheckout}>
-                                    <h4>{this.state.cart.length} Items</h4>
-                                    <h4>${this.state.price}.00</h4>
-                                    <i className="fas fa-credit-card fa-2x"></i>
-                                </div>
-                                <Checkout orders={this.state.cart} totalPrice={this.state.price}/>
-                            </div>
-        } else if (this.state.checkout===2) {
-            checkout =  <div className='checkoutContainer checkoutLeave'>
-                                <div className='checkoutNav' onClick={this.toggleCheckout}>
-                                    <h4>{this.state.cart.length} Items</h4>
-                                    <h4>${this.state.price}.00</h4>
-                                    <i className="fas fa-credit-card fa-2x"></i>
-                                </div>
-                                <Checkout orders={this.state.cart} totalPrice={this.state.price}/>
-                            </div>
-        } else {
-            checkout =  <div className='checkoutContainer'>
-                                <div className='checkoutNav' onClick={this.toggleCheckout}>
-                                    <h4>{this.state.cart.length} Items</h4>
-                                    <h4>${this.state.price}.00</h4>
-                                    <i className="fas fa-credit-card fa-2x"></i>
-                                </div>
-                                <Checkout orders={this.state.cart} totalPrice={this.state.price}/>
-                            </div>
-        }
-
-        // if (this.props.isLoggedIn) {
-        // var cart = <div className='cartContainer'>
-        //             <div className='cartNavContainer'>
-        //                 <Link to='/'><i className='fas fa-home fa-2x'></i></Link>
-        //                 <Link to='/make'><i className="fas fa-edit fa-2x"></i></Link>
-        //                 <Link to='/auth'><i className="fas fa-user fa-2x"></i></Link>
-        //                 <Link to='/cart'><i className="fas fa-shopping-cart fa-3x"></i></Link>
-        //             </div>
-        //             <div className='cartOrdersContainer'>
-        //                 {this.state.cart.length !== 0 ? orders : <h2>No Orders in Cart</h2>}
-        //             </div>
-        //             {checkout} 
-        //         </div>
-        // } else {
-        //  cart = <div className='cartContainer'>
-        //             <div className='cartNavContainer'>
-        //                 <Link to='/'><i className='fas fa-home fa-2x'></i></Link>
-        //                 <Link to='/make'><i className="fas fa-edit fa-2x"></i></Link>
-        //                 <Link to='/auth'><i className="fas fa-user fa-2x"></i></Link>
-        //                 <Link to='/cart'><i className="fas fa-shopping-cart fa-3x"></i></Link>
-        //             </div>
-        //             <div className='cartGuestContainer'>
-        //                 <h1>Please sign in to access Cart</h1>
-        //             </div>
-        //         </div>
-        // }
-
         return (
             <div>
                 <div className='cartContainer'>
-                    <div className='cartNavContainer'>
-                        <Link to='/'><i className='fas fa-home fa-2x'></i></Link>
-                        <Link to='/make'><i className="fas fa-edit fa-2x"></i></Link>
-                        <Link to='/auth'><i className="fas fa-user fa-2x"></i></Link>
-                        <Link to='/cart'><i className="fas fa-shopping-cart fa-3x"></i></Link>
-                    </div>
                     <div className='cartOrdersContainer'>
                         {this.state.cart.length !== 0 ? orders : <h2>No Orders in Cart</h2>}
                     </div>
-                    {checkout} 
+                    <div className='checkoutContainer'>
+                        <div className='checkoutNav' onClick={this.toggleCheckout}>
+                            <h4>{this.state.cart.length} Items</h4>
+                            <h4>${this.state.price}.00</h4>
+                            <i className="fas fa-credit-card fa-2x"></i>
+                        </div>
+                        <Checkout orders={this.state.cart} totalPrice={this.state.price}/>
+                    </div>
                 </div>
             </div>
         )

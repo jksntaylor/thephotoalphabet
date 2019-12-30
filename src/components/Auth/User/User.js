@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
 import {loggedOut} from '../../../redux/reducer';
-import InputPhoto from '../../InputPhoto/InputPhoto';
+import InputPhoto from '../../InputPhoto';
 import './user.css'
 
 class User extends Component {
@@ -98,12 +97,6 @@ class User extends Component {
         })
         return (
             <div className='userContainer'>
-                    <div className='navContainer'>
-                    <Link to='/'><i className='fas fa-home fa-2x'></i></Link>
-                    <Link to='/make'><i className="fas fa-edit fa-2x"></i></Link>
-                    <Link to='/auth'><i className="fas fa-user fa-3x"></i></Link>
-                    <Link to='/cart'><i className="fas fa-shopping-cart fa-2x"></i></Link>
-                </div>
                 <div className='userAuth'>
                     <h1>Welcome, {this.props.user.name}!</h1>
                     <button onClick={this.logout}>Logout</button>
