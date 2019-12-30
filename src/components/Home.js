@@ -1,5 +1,5 @@
 import React from 'react';
-import InputPhoto from './InputPhoto';
+import Photo from './Photo';
 import axios from 'axios';
 import SlidingPane from 'react-sliding-pane';
 import Modal from 'react-modal';
@@ -23,6 +23,13 @@ export default class Home extends React.Component {
         Modal.setAppElement(this.el);
     }
 
+    clearState = () => {
+         this.setState({userInput: [],
+                        inputWord: '',
+                        isPaneOpen: false,
+                        isPaneOpenLeft: false})
+    }
+
     handleDelete = () => {
         let {userInput, inputWord} = this.state;
         let newInput = inputWord.slice(0, inputWord.length-1)
@@ -33,7 +40,7 @@ export default class Home extends React.Component {
         if (!val) {this.setState({userInput: [], inputWord: ''}); return;}
         if (val.length<this.state.inputWord.length) this.handleDelete();
         if (!val.match(/[a-z]/i)) return;
-        if (val.length>10) { this.setState({error: "10 Letter Limit"}); return; }
+        if (val.length>8) { this.setState({error: "8 Letter Limit"}); return; }
         let userInput = val.split('').reduce((acc, letter) => {
             return [...acc, {letter: letter.toUpperCase(), count: 1}]
         }, [])
@@ -44,15 +51,22 @@ export default class Home extends React.Component {
 
     render() {
         const {userInput, inputWord, isPaneOpen, isPaneOpenLeft} = this.state;
+        const blank = [1,2,3]
         let price = (30 + (inputWord.length-3)*5) - 0.01;
         let photos = userInput.length>=3 ? 
         userInput.map((obj, index) => {
             return (
-                <InputPhoto count={obj.count} letter={obj.letter} key={`${obj.letter}${obj.count}${index}`}/>
+                <Photo count={obj.count} letter={obj.letter} key={`${obj.letter}${obj.count}${index}`}/>
             )
-        }) : null
+        }) : blank.map(() => {
+            return (
+                <Photo letter='blank'/>
+            )
+        })
+        let pWidth = userInput.length * 70;
+        let iWidth = userInput.length >=3 ? 300 : 150;
         return (
-            <div ref={ref => this.el = ref} className='inputPageContainer'>
+            <div ref={ref => this.el = ref} className='home'>
                 <header>
                     <i className='fas fa-user-alt' onClick={() => {this.setState({isPaneOpenLeft: true})}}/>
                     <div>
@@ -67,18 +81,19 @@ export default class Home extends React.Component {
                 <SlidingPane isOpen={ isPaneOpenLeft } from='left' width='25%' onRequestClose={() => this.setState({ isPaneOpenLeft: false })}>
                     <Auth/>
                 </SlidingPane>
-                <div className={'photosContainer'}>
+                <div className='photos' style={{width: `${pWidth}px`}}>
                     {photos}
                 </div>
-                <div className='inputContainer'>
-                    <input className='input' placeholder='Type Here!' value={inputWord} onChange={e => this.handleInputChange(e.target.value)} type="text" />
+                <div className='input' style={{width: iWidth}}>
+                    <input placeholder='Type Here!' value={inputWord} onChange={e => this.handleInputChange(e.target.value)} type="text" />
                     {userInput.length>=3 ? 
-                    <div className='inputPriceContainer'>
-                        <h3 className='inputPrice'>Price: ${price}</h3>
-                        <button onClick={this.addToCart} className='addToCartButton'>Add To Cart</button>
+                    <div className='add'>
+                        <h4>${price}</h4>
+                        <i onClick={this.clearState} className='fas fa-times'></i>
+                        <i onClick={this.addToCart}className='fas fa-cart-plus'></i>
                     </div> 
                     : 
-                    <div className='inputPriceContainer'><h3 className="inputPrice">Word Must be At Least 3 Letters</h3></div>}
+                    <div className='add'><h5>*3 Letter Minimum</h5></div>}
                 </div>
                 <footer><h4>*custom framing available upon request</h4></footer>
             </div>

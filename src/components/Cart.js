@@ -40,16 +40,14 @@ class Cart extends React.Component {
 
         return (
             <div>
-                <div className='cartContainer'>
-                    <div className='cartOrdersContainer'>
+                <div className='cart'>
+                    <div className='orders'>
                         {this.state.cart.length !== 0 ? orders : <h2>No Orders in Cart</h2>}
                     </div>
-                    <div className='checkoutContainer'>
-                        <div className='checkoutNav' onClick={this.toggleCheckout}>
-                            <h4>{this.state.cart.length} Items</h4>
-                            <h4>${this.state.price}.00</h4>
-                            <i className="fas fa-credit-card fa-2x"></i>
-                        </div>
+                    <div className='checkout'>
+                        <h4>{this.state.cart.length} Items</h4>
+                        <h4>${this.state.price}.00</h4>
+                        <i className="fas fa-credit-card fa-2x"></i>
                         <Checkout orders={this.state.cart} totalPrice={this.state.price}/>
                     </div>
                 </div>

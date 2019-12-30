@@ -4,9 +4,132 @@ $f3 : 800 20px Poppins;
 
 html {
     height: 100%;
+    h1, h2, h3, h4, h5, h6 {
+        font: $f1;
+        margin: 0;
+    }
 }
 
 body {
-    min-height: 100%;
+    height: 100%;
     font: $f1;
+    color: white;
+    background: no-repeat top center/cover url('../assets/room.jpg');
+
+    #root {
+        height: 100%;
+    }
+}
+
+.home {
+    height: 100%;
+    header {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        width: 100%;
+        text-shadow: -5px 3px 6px rgba(0,0,0,0.5);
+
+        h1 {
+            font-size: 60px;
+        }
+
+        h2 {
+            font: $f3;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        i {
+            margin: 20px;
+            font-size: 24px;
+        }
+    }
+
+    footer {
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+        color: black;
+        h4 {
+            font: $f2;
+            font-size: 12px;
+        }
+    }
+}
+
+.photos {
+    height: 90px;
+    width: 0;
+    min-width: 220px;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 0;
+    background-color: white;
+    border: 10px solid black;
+    box-shadow: -8px 4px 3px rgba(54, 34, 0, 0.3),
+                -12px 6px 4px rgba(54, 34, 3,0.2),
+                -13px 6px 20px rgba(54, 34, 3,0.1);
+    display: flex;
+    img {
+        width: 60px;
+        height: auto;
+    }
+    i {
+        display: none;
+    }
+
+    .letter {
+        width: 60px;
+        height: 90px;
+    }
+
+    .blank {
+        background-color: #ddd;
+    }
+}
+
+.input {
+    width: 0;
+    min-width: 200px;
+    margin: auto;
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    background-color: rgba(0,0,0,0.8);
+    transition: width 300ms ease;
+
+    input {
+        font: $f2;
+        width: 130px;
+        border: none;
+        background: none;
+        padding: 0 10px;
+        color: white;
+    }
+
+    input:focus {outline: none;}
+
+    .add {
+        width: 150px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        i {
+            font-size: 20px;
+        }
+        h4 {
+            font-size: 12px
+        }
+        h5 {
+            font: $f2;
+            font-size: 10px;
+            width: 100px;
+            color: black;
+            position: absolute;
+            top: 35px;
+            left: 50px;
+        }
+    }
 }

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-class InputPhoto extends Component {
+class Photo extends Component {
     constructor(props) {
         super(props);
         this.state={
@@ -13,6 +13,7 @@ class InputPhoto extends Component {
     }
 
     componentDidMount() {
+        if (this.state.letter === 'blank') return;
         this.getPhoto();
     }
 
@@ -41,16 +42,15 @@ class InputPhoto extends Component {
     }
 
     render() {
-        return (
-            <div className='photo-container'>
-                {/* <button onClick={this.handleUpButton}>^</button> */}
-                <i onClick={this.handleUpButton} className="fas fa-angle-up"></i>
-                <img src={this.state.url} alt=''/>
-                <i  onClick={this.handleDownButton} className="fas fa-angle-down"></i>
-                {/* <button onClick={this.handleDownButton}>v</button> */}
-            </div>
-        )
+
+        return this.props.letter === 'blank' ? <div className='letter blank'/>
+        :
+        <div className='letter'>
+            <i onClick={this.handleUpButton} className="fas fa-angle-up"></i>
+            <img src={this.state.url} alt={this.state.letter}/>
+            <i  onClick={this.handleDownButton} className="fas fa-angle-down"></i>
+        </div>
     }
 }
 
-export default InputPhoto;
+export default Photo;

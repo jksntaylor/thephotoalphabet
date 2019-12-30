@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
 import {loggedOut} from '../redux/reducer';
-import InputPhoto from './InputPhoto';
+import Photo from './Photo';
 
 class Admin extends Component {
     constructor() {
@@ -62,7 +62,7 @@ class Admin extends Component {
                 let letter = ids.letter;
                 let count = ids.count;
                 return (
-                        <InputPhoto count={count} letter={letter} key={`${letter}${count}${index}`}/>
+                        <Photo count={count} letter={letter} key={`${letter}${count}${index}`}/>
                 )
             })
             if (userid) {
