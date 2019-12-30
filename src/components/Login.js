@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
-import {loggedIn, isAdmin} from '../../../redux/reducer';
+import {loggedIn, isAdmin} from '../redux/reducer';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

@@ -4,7 +4,7 @@ import axios from 'axios';
 import SlidingPane from 'react-sliding-pane';
 import Modal from 'react-modal';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
-import Auth from './Auth/Auth';
+import Auth from './Auth';
 import Cart from './Cart';
 import '../styling/main.scss';
 

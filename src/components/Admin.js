@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
-import {loggedOut} from '../../../redux/reducer';
-import InputPhoto from '../../InputPhoto';
+import {loggedOut} from '../redux/reducer';
+import InputPhoto from './InputPhoto';
 
 class Admin extends Component {
     constructor() {
