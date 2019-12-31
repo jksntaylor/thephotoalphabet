@@ -78,15 +78,37 @@ body {
     }
     i {
         display: none;
+        position: absolute;
+        background-color: rgba(0,0,0,0.4);
+        width: 100%;
+        left: 0;
+    }
+
+    i::before {
+        margin-left: calc(50% - 7px);
+    }
+
+    .fa-angle-up {
+        top: 0;
+    }
+
+    .fa-angle-down {
+        bottom: 0;
     }
 
     .letter {
         width: 60px;
         height: 90px;
+        background-color: #ddd;
+        position: relative;
     }
 
-    .blank {
-        background-color: #ddd;
+    .letter:hover {
+        transform: scale(1.15);
+        box-shadow: 0 0 10px rgba(54, 34, 0, 0.3);
+        i {
+            display: initial
+        }
     }
 }
 
