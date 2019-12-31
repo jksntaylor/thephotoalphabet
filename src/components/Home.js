@@ -47,7 +47,15 @@ export default class Home extends React.Component {
         this.setState({userInput: userInput, inputWord: val})
     }
 
-    addToCart = () => { axios.post(`/cart/${this.state.userInput}`).then(() => {this.setState({userInput: ''})}) }
+    addToCart = () => { 
+        let arr = this.state.userInput.map(e => {
+            return `${e.letter}${e.count}`
+        })
+        axios.post(`/cart/${arr}`).then(res => {
+            this.setState({inputWord: '', userInput: []});
+            console.log(res.data)
+        }) 
+    }
 
     render() {
         const {userInput, inputWord, isPaneOpen, isPaneOpenLeft} = this.state;

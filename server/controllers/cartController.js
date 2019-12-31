@@ -6,9 +6,11 @@ module.exports = {
            req.session.cart = [];
        }
 
+       let price = (((req.params.array.length+1)/3) - 3) * 5 + 29.99;
+
        req.session.cart.push({
-           pictureIDs: req.body.userInput,
-           price: req.body.price,
+           pictureIDs: req.params.array,
+           price: price.toFixed(2),
            cartID: cartId
        })
 

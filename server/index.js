@@ -42,7 +42,7 @@ app.post('/auth/login', ac.login);
 app.post('/auth/logout', ac.logout);
 
 //CART
-app.post('/cart', cc.addToCart);
+app.post('/cart/:array', cc.addToCart);
 app.get('/cart', cc.getCart);
 app.delete('/cart/:id', cc.deleteFromCart);
 app.get('/user/address', cc.getUserAddress);
