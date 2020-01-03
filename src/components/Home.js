@@ -94,7 +94,7 @@ export default class Home extends React.Component {
                     </div>
                     <i className='fas fa-shopping-cart' onClick={() => {this.setState({isPaneOpen: true})}}/>
                 </header>
-                <SlidingPane isOpen={ isPaneOpen } width='25%' onRequestClose={() => {this.setState({ isPaneOpen: false })}}>
+                <SlidingPane title="Cart" isOpen={ isPaneOpen } width='25%' onRequestClose={() => {this.setState({ isPaneOpen: false })}}>
                     <Cart/>
                 </SlidingPane>
                 <SlidingPane isOpen={ isPaneOpenLeft } from='left' width='25%' onRequestClose={() => this.setState({ isPaneOpenLeft: false })}>

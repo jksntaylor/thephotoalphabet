@@ -12,11 +12,9 @@ const adc = require('./controllers/adminController.js');
 const ac = require('./controllers/authController.js');
 const cc = require('./controllers/cartController.js');
 const oc = require('./controllers/orderController');
-const pc = require('./controllers/photosController.js');
 const uc = require('./controllers/userController');
 
 const app = express();
-
 
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db);
@@ -42,7 +40,7 @@ app.post('/auth/login', ac.login);
 app.post('/auth/logout', ac.logout);
 
 //CART
-app.post('/cart/:array', cc.addToCart);
+app.post('/cart/:config', cc.addToCart);
 app.get('/cart', cc.getCart);
 app.delete('/cart/:id', cc.deleteFromCart);
 app.get('/user/address', cc.getUserAddress);
@@ -52,9 +50,6 @@ app.post('/cart/empty', cc.emptyCart)
 app.post("/charge", oc.charge);
 app.post('/order', oc.process);
 app.post('/guestorder', oc.processGuest);
-
-//PHOTO
-app.get('/api/photos/:letter/:letterCount', pc.getPhoto)
 
 //USER
 app.get('/user/orders', uc.getUserOrders)

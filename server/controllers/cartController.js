@@ -1,17 +1,13 @@
-var cartId = 0;
+let cartId = 0;
 
 module.exports = {
     addToCart(req, res) {
        if (!req.session.cart) {
            req.session.cart = [];
        }
-
-       const {price} = req.body
-       console.log(req.body);
-
        req.session.cart.push({
-           pictureIDs: req.params.array,
-           price: price,
+           config: req.params.config,
+           price: req.body.price,
            cartID: cartId
        })
 

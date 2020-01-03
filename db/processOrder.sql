@@ -1,4 +1,4 @@
-INSERT INTO Orders (userid, photoids, date, price, processed, paid)
+INSERT INTO Orders (userid, config, date, price, processed, paid)
 VALUES ($6, $7, $8, $9, true, true);
 
 UPDATE Users

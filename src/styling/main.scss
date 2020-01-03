@@ -56,26 +56,89 @@ body {
             font-size: 12px;
         }
     }
+    
+    .input {
+        width: 0;
+        min-width: 200px;
+        margin: auto;
+        position: relative;
+        margin-top: 20px;
+        display: flex;
+        background-color: rgba(0,0,0,0.8);
+        transition: width 300ms ease;
+    
+        input {
+            font: $f2;
+            width: 130px;
+            border: none;
+            background: none;
+            padding: 0 10px;
+            color: white;
+        }
+    
+        input:focus {outline: none;}
+    
+        .add {
+            width: 150px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            i {
+                font-size: 20px;
+            }
+            h4 {
+                font-size: 12px
+            }
+            h5 {
+                font: $f2;
+                font-size: 10px;
+                width: 100px;
+                color: black;
+                position: absolute;
+                top: 35px;
+                left: 50px;
+            }
+        }
+    }
+
+    .photos {
+        height: 90px;
+        width: 0;
+        min-width: 220px;
+        padding: 10px 0;
+        img {
+            width: 60px;
+            height: auto;
+        }
+        .letter {
+            width: 60px;
+            height: 90px;
+            background-color: #ddd;
+            position: relative;
+        }
+        .letter:hover {
+            transform: scale(1.15);
+            box-shadow: 0 0 10px rgba(54, 34, 0, 0.3);
+            i {
+                display: initial
+            }
+        }
+        
+    }
 }
 
 .photos {
-    height: 90px;
-    width: 0;
-    min-width: 220px;
+    
     margin: auto;
     display: flex;
     justify-content: space-evenly;
-    padding: 10px 0;
     background-color: white;
     border: 10px solid black;
     box-shadow: -8px 4px 3px rgba(54, 34, 0, 0.3),
                 -12px 6px 4px rgba(54, 34, 3,0.2),
                 -13px 6px 20px rgba(54, 34, 3,0.1);
     display: flex;
-    img {
-        width: 60px;
-        height: auto;
-    }
+    
     i {
         display: none;
         position: absolute;
@@ -96,62 +159,20 @@ body {
         bottom: 0;
     }
 
-    .letter {
-        width: 60px;
-        height: 90px;
-        background-color: #ddd;
-        position: relative;
-    }
-
-    .letter:hover {
-        transform: scale(1.15);
-        box-shadow: 0 0 10px rgba(54, 34, 0, 0.3);
-        i {
-            display: initial
-        }
-    }
 }
 
-.input {
-    width: 0;
-    min-width: 200px;
-    margin: auto;
-    position: relative;
-    margin-top: 20px;
-    display: flex;
-    background-color: rgba(0,0,0,0.8);
-    transition: width 300ms ease;
-
-    input {
-        font: $f2;
-        width: 130px;
-        border: none;
-        background: none;
-        padding: 0 10px;
-        color: white;
-    }
-
-    input:focus {outline: none;}
-
-    .add {
-        width: 150px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        i {
-            font-size: 20px;
-        }
-        h4 {
-            font-size: 12px
-        }
-        h5 {
-            font: $f2;
-            font-size: 10px;
-            width: 100px;
-            color: black;
-            position: absolute;
-            top: 35px;
-            left: 50px;
+.cart {
+    color: black;
+    .photos {
+        .letter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            margin: 5px 0;
+            img {
+                width: 80%;
+            }
         }
     }
 }

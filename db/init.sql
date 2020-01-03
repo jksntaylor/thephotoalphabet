@@ -1,12 +1,5 @@
 -- USED ONCE TO SET UP TABLES, SHOULDN'T BE ACCESSED IN PROGRAM 
 
--- CREATE TABLE Photos (
---     id SERIAL PRIMARY KEY,
---     letter VARCHAR(1),
---     letterCount INTEGER,
---     photoUrl VARCHAR
--- );
-
 -- CREATE TABLE Users (
 --     id SERIAL PRIMARY KEY,
 --     name VARCHAR,
