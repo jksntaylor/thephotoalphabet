@@ -12,7 +12,7 @@ export default class Home extends React.Component {
     constructor() {
         super();
         this.state = {
-            userInput: [],
+            config: [],
             inputWord: '',
             isPaneOpen: false,
             isPaneOpenLeft: false
@@ -24,55 +24,72 @@ export default class Home extends React.Component {
     }
 
     clearState = () => {
-         this.setState({userInput: [],
+         this.setState({config: [],
                         inputWord: '',
                         isPaneOpen: false,
                         isPaneOpenLeft: false})
     }
 
     handleDelete = () => {
-        let {userInput, inputWord} = this.state;
-        let newInput = inputWord.slice(0, inputWord.length-1)
-        this.setState({userInput: userInput.pop(), inputWord: newInput})
+        let {config, inputWord} = this.state;
+        this.setState({config: config.pop(), inputWord: inputWord.slice(0, inputWord.length-1)})
+    }
+
+    validate = val => {
+        let a = val.split('');
+        let r = true;
+        a.forEach(l => {
+            if (!l.match(/[a-z]/gi)) {
+                r = false;
+            }
+        })
+        return r;
     }
 
     handleInputChange = val => {
-        if (!val) {this.setState({userInput: [], inputWord: ''}); return;}
         if (val.length<this.state.inputWord.length) this.handleDelete();
-        if (!val.match(/[a-z]/i)) return;
-        if (val.length>8) { this.setState({error: "8 Letter Limit"}); return; }
-        let userInput = val.split('').reduce((acc, letter) => {
-            return [...acc, {letter: letter.toUpperCase(), count: 1}]
+        if (!this.validate(val)) return;
+        if (!val) { this.clearState(); return; }
+        if (val.length>10) { this.setState({error: "10 Letter Limit"}); return; }
+        let config = val.split('').reduce((acc, letter) => {
+            return [...acc, `${letter.toUpperCase()}1`]
         }, [])
-        this.setState({userInput: userInput, inputWord: val})
+        this.setState({config: config, inputWord: val})
+    }
+
+    updateInput = (index, val) => {
+        let temp = this.state.config;
+        temp[index] = val;
+        this.setState({config: temp})
     }
 
     addToCart = () => { 
-        let arr = this.state.userInput.map(e => {
+        // CHANGE THIS TO CONFIG
+        let arr = this.state.config.map(e => {
             return `${e.letter}${e.count}`
         })
         axios.post(`/cart/${arr}`).then(res => {
-            this.setState({inputWord: '', userInput: []});
+            this.setState({inputWord: '', config: []});
             console.log(res.data)
         }) 
     }
 
     render() {
-        const {userInput, inputWord, isPaneOpen, isPaneOpenLeft} = this.state;
+        const {config, inputWord, isPaneOpen, isPaneOpenLeft} = this.state;
         const blank = [1,2,3]
         let price = (30 + (inputWord.length-3)*5) - 0.01;
-        let photos = userInput.length>=3 ? 
-        userInput.map((obj, index) => {
+        let photos = config.length>=3 ? 
+        config.map((letter, index) => {
             return (
-                <Photo count={obj.count} letter={obj.letter} key={`${obj.letter}${obj.count}${index}`}/>
+                <Photo letter={letter} index={index} key={index} update={this.updateInput}/>
             )
         }) : blank.map(() => {
             return (
                 <Photo letter='blank'/>
             )
         })
-        let pWidth = userInput.length * 70;
-        let iWidth = userInput.length >=3 ? 300 : 150;
+        let pWidth = config.length * 70;
+        let iWidth = config.length >=3 ? 300 : 150;
         return (
             <div ref={ref => this.el = ref} className='home'>
                 <header>
@@ -94,7 +111,7 @@ export default class Home extends React.Component {
                 </div>
                 <div className='input' style={{width: iWidth}}>
                     <input placeholder='Type Here!' value={inputWord} onChange={e => this.handleInputChange(e.target.value)} type="text" />
-                    {userInput.length>=3 ? 
+                    {config.length>=3 ? 
                     <div className='add'>
                         <h4>${price}</h4>
                         <i onClick={this.clearState} className='fas fa-times'></i>
