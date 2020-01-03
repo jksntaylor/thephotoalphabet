@@ -1,21 +1,19 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 function Photo (props) {
 
     let handleUp = () => {
         let arr = props.letter.split('');
-        if (arr[1]==4) arr[1]=1;
+        if (arr[1]===4||arr[1]==='4') arr[1]=1;
         else arr[1]++
-        let temp = arr.join('');
-        props.update(props.index, temp);
+        props.update(props.index, arr.join(''));
     }
 
     let handleDown = () => {
         let arr = props.letter.split('');
-        if (arr[1]==1) arr[1]=4;
+        if (arr[1]===1||arr[1]==='1') arr[1]=4;
         else arr[1]--
-        let temp = arr.join('');
-        props.update(props.index, temp);
+        props.update(props.index, arr.join(''));
     }
 
     return props.letter === 'blank' ? <div className='letter blank'/>

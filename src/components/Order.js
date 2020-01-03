@@ -2,7 +2,7 @@ import React from 'react';
 // import Photo from './Photo';
 
 function Order (props) {
-    let array = props.pictureIDs;
+    // let array = props.pictureIDs;
     console.log(props)
     // let i=0;
     // let photos = array.map(photo => {

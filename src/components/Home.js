@@ -14,6 +14,7 @@ export default class Home extends React.Component {
         this.state = {
             config: [],
             inputWord: '',
+            price: 0,
             isPaneOpen: false,
             isPaneOpenLeft: false
         }
@@ -26,6 +27,7 @@ export default class Home extends React.Component {
     clearState = () => {
          this.setState({config: [],
                         inputWord: '',
+                        price: 0,
                         isPaneOpen: false,
                         isPaneOpenLeft: false})
     }
@@ -53,8 +55,9 @@ export default class Home extends React.Component {
         if (val.length>10) { this.setState({error: "10 Letter Limit"}); return; }
         let config = val.split('').reduce((acc, letter) => {
             return [...acc, `${letter.toUpperCase()}1`]
-        }, [])
-        this.setState({config: config, inputWord: val})
+        }, []);
+        let price = (30 + (this.state.inputWord.length-3)*5) - 0.01;
+        this.setState({config: config, inputWord: val, price: price})
     }
 
     updateInput = (index, val) => {
@@ -64,30 +67,21 @@ export default class Home extends React.Component {
     }
 
     addToCart = () => { 
-        // CHANGE THIS TO CONFIG
-        let arr = this.state.config.map(e => {
-            return `${e.letter}${e.count}`
-        })
-        axios.post(`/cart/${arr}`).then(res => {
-            this.setState({inputWord: '', config: []});
-            console.log(res.data)
+        const {config, price} = this.state
+        axios.post(`/cart/${config}`, {price: price}).then(() => {
+            this.clearState();
         }) 
     }
 
     render() {
-        const {config, inputWord, isPaneOpen, isPaneOpenLeft} = this.state;
+        const {config, inputWord, price, isPaneOpen, isPaneOpenLeft} = this.state;
         const blank = [1,2,3]
-        let price = (30 + (inputWord.length-3)*5) - 0.01;
         let photos = config.length>=3 ? 
         config.map((letter, index) => {
             return (
                 <Photo letter={letter} index={index} key={index} update={this.updateInput}/>
             )
-        }) : blank.map(() => {
-            return (
-                <Photo letter='blank'/>
-            )
-        })
+        }) : blank.map(e => { return <Photo letter='blank' key={e}/>})
         let pWidth = config.length * 70;
         let iWidth = config.length >=3 ? 300 : 150;
         return (
