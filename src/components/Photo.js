@@ -16,7 +16,8 @@ function Photo (props) {
         props.update(props.index, arr.join(''));
     }
 
-    return props.letter === 'blank' ? <div className='letter blank'/>
+    return props.letter === 'blank' ? 
+    <div className='letter blank'/>
     :
     <div className='letter'>
         <i onClick={handleUp} className="fas fa-angle-up"></i>

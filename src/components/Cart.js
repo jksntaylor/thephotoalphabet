@@ -22,7 +22,7 @@ class Cart extends React.Component {
         })
     }
 
-    deleteFromCart = (id) => {axios.delete(`/cart/${id}`).then(() => {this.getCart();})}
+    deleteFromCart = (id) => {axios.delete(`/cart/${id}`).then(() => {this.getCart(); this.props.updateCart();})}
 
     render() {
         const {cart, price} = this.state;

@@ -43,6 +43,17 @@ body {
         i {
             margin: 20px;
             font-size: 24px;
+            position: relative;
+
+            h6 {
+                position: absolute;
+                color: black;
+                font: $f3;
+                font-size: 10px;
+                left: 48%;
+                top: 2px;
+                text-shadow: none;
+            }
         }
     }
 
@@ -50,7 +61,8 @@ body {
         position: absolute;
         bottom: 10px;
         left: 20px;
-        color: black;
+        color: white;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         h4 {
             font: $f2;
             font-size: 12px;

@@ -1,14 +1,17 @@
 import React from 'react';
 import Photo from './Photo';
 import axios from 'axios';
+import {connect} from 'react-redux';
 import SlidingPane from 'react-sliding-pane';
-import Modal from 'react-modal';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
-import Auth from './Auth';
+import Modal from 'react-modal';
+import Admin from './Admin';
+import User from './User';
+import Login from './Login';
 import Cart from './Cart';
 import '../styling/main.scss';
 
-export default class Home extends React.Component {
+class Home extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -16,12 +19,14 @@ export default class Home extends React.Component {
             inputWord: '',
             price: 0,
             isPaneOpen: false,
-            isPaneOpenLeft: false
+            isPaneOpenLeft: false,
+            cartSize: 0
         }
     }
 
     componentDidMount() {
         Modal.setAppElement(this.el);
+        this.getCart();
     }
 
     clearState = () => {
@@ -70,11 +75,18 @@ export default class Home extends React.Component {
         const {config, price} = this.state
         axios.post(`/cart/${config}`, {price: price}).then(() => {
             this.clearState();
+            this.getCart();
         }) 
     }
 
+    getCart = () => {
+        axios.get('/cart').then(res => {
+            this.setState({cartSize: res.data.length})
+        })
+    }
+
     render() {
-        const {config, inputWord, price, isPaneOpen, isPaneOpenLeft} = this.state;
+        const {config, inputWord, price, isPaneOpen, isPaneOpenLeft, cartSize} = this.state;
         const blank = [1,2,3]
         let photos = config.length>=3 ? 
         config.map((letter, index) => {
@@ -92,13 +104,13 @@ export default class Home extends React.Component {
                         <h1>The Photo Alphabet</h1>
                         <h2>Custom Letter Photography Prints</h2>
                     </div>
-                    <i className='fas fa-shopping-cart' onClick={() => {this.setState({isPaneOpen: true})}}/>
+                    <i className='fas fa-shopping-cart' onClick={() => {this.setState({isPaneOpen: true})}}><h6>{cartSize > 0 ? cartSize : null}</h6></i>
                 </header>
                 <SlidingPane title="Cart" isOpen={ isPaneOpen } width='25%' onRequestClose={() => {this.setState({ isPaneOpen: false })}}>
-                    <Cart/>
+                    <Cart updateCart={this.getCart}/>
                 </SlidingPane>
                 <SlidingPane isOpen={ isPaneOpenLeft } from='left' width='25%' onRequestClose={() => this.setState({ isPaneOpenLeft: false })}>
-                    <Auth/>
+                    {this.props.isAdmin ? <Admin/> : this.props.isLoggedIn ? <User/> : <Login/>}
                 </SlidingPane>
                 <div className='photos' style={{width: `${pWidth}px`}}>
                     {photos}
@@ -119,3 +131,12 @@ export default class Home extends React.Component {
         )
     }
 }
+
+let mapStateToProps = (state) => {
+    return {
+        isLoggedIn: state.isLoggedIn,
+        isAdmin: state.isAdmin
+    }
+}
+
+export default connect(mapStateToProps)(Home)
