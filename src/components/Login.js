@@ -77,7 +77,7 @@ class Login extends Component {
                     <h1>Register</h1>
                     <input onChange={e => {this.handleChange('fullName', e.target.value)}} value={this.state.fullName} className='register-name-input' placeholder='Name'/>
                     <input onChange={e => {this.handleChange('email', e.target.value)}} value={this.state.email} className='register-email-input' placeholder='Email'/>
-                    <input type='password' onChange={e => {this.handleChange('password', e.target.value)}} value={this.state.password}  className='register-password-input' placeholder='Create Password'/>
+                    <input type='password' onChange={e => {this.handleChange('password', e.target.value)}} value={this.state.password}  className='register-password-input' placeholder='Password'/>
                     <input type='password' onChange={e => {this.handleChange('confirmedpassword', e.target.value)}} value={this.state.confirmedpassword} className='register-password2-input' placeholder='Confirm Password'/>
                     <button className='authButton' onClick={this.register}>Register</button>
                 </div>
@@ -87,6 +87,7 @@ class Login extends Component {
                     <input type='password' value={this.state.loginPassword} onChange={e => this.handleChange('loginPassword', e.target.value)} placeholder='Password'/>
                     <button className='authButton' onClick={this.login}>Login</button>
                 </div>
+                <h6>Registering allows you to track current orders and store shipping information for future purchases</h6>
             </div>
         )
     }

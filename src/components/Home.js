@@ -106,10 +106,10 @@ class Home extends React.Component {
                     </div>
                     <i className='fas fa-shopping-cart' onClick={() => {this.setState({isPaneOpen: true})}}><h6>{cartSize > 0 ? cartSize : null}</h6></i>
                 </header>
-                <SlidingPane title="Cart" isOpen={ isPaneOpen } width='25%' onRequestClose={() => {this.setState({ isPaneOpen: false })}}>
+                <SlidingPane title="Cart" isOpen={ isPaneOpen } width='300px' onRequestClose={() => {this.setState({ isPaneOpen: false })}}>
                     <Cart updateCart={this.getCart}/>
                 </SlidingPane>
-                <SlidingPane isOpen={ isPaneOpenLeft } from='left' width='25%' onRequestClose={() => this.setState({ isPaneOpenLeft: false })}>
+                <SlidingPane isOpen={ isPaneOpenLeft } from='left' width='300px' onRequestClose={() => this.setState({ isPaneOpenLeft: false })}>
                     {this.props.isAdmin ? <Admin/> : this.props.isLoggedIn ? <User/> : <Login/>}
                 </SlidingPane>
                 <div className='photos' style={{width: `${pWidth}px`}}>
