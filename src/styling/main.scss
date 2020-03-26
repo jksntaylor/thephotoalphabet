@@ -41,7 +41,7 @@ body {
         }
 
         i {
-            margin: 20px;
+            margin: 25px;
             font-size: 24px;
             position: relative;
 
@@ -62,7 +62,7 @@ body {
         bottom: 10px;
         left: 20px;
         color: white;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
         h4 {
             font: $f2;
             font-size: 12px;
@@ -146,9 +146,9 @@ body {
     justify-content: space-evenly;
     background-color: white;
     border: 10px solid black;
-    box-shadow: -8px 4px 3px rgba(54, 34, 0, 0.3),
-                -12px 6px 4px rgba(54, 34, 3,0.2),
-                -13px 6px 20px rgba(54, 34, 3,0.1);
+    box-shadow: -8px 2px 3px rgba(54, 34, 0, 0.3),
+                -12px 3px 4px rgba(54, 34, 3,0.2),
+                -13px 3px 20px rgba(54, 34, 3,0.1);
     display: flex;
     
     i {
@@ -207,6 +207,7 @@ body {
 
     h6 {
         font: 800 12px "Poppins";
+        text-align: right;
     }
 
     .registration-form, .login-form {
@@ -222,17 +223,20 @@ body {
         }
 
         input {
-            background-color: #ddd;
+            border: 1px solid #ddd;
+            border-radius: 5px;
             margin-bottom: 10px;
             padding: 0 10px;
         }
         button {
             width: 50%;
+            background-color: black;
+            color: white;
+            border-radius: 5px;
             margin-left: 50%;
             transition: all 350ms ease;
             box-shadow: 1px 1px 2px rgba(0,0,0,0.1),
-                        2px 2px 4px rgba(0,0,0,0.1),
-                        4px 4px 8px rgba(0,0,0,0.1);
+                        2px 2px 4px rgba(0,0,0,0.1);
         }
 
         button:active {
