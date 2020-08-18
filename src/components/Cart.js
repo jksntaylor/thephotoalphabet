@@ -12,7 +12,7 @@ class Cart extends React.Component {
             price: 0
         }
     }
-    
+
     componentDidMount() {this.getCart()}
 
     getCart = () => {
@@ -45,9 +45,11 @@ class Cart extends React.Component {
                         {cart.length !== 0 ? orders : <h2>No Orders in Cart</h2>}
                     </div>
                     <div className='checkout'>
-                        <h4>{cart.length} Items</h4>
-                        <h4>{price}</h4>
-                        <i className="fas fa-credit-card fa-2x"></i>
+                        <div className="cart-info">
+                            <h4>Cart:</h4>
+                            <h4>{cart.length} Items</h4>
+                            <h4>${price}</h4>
+                        </div>
                         <Checkout orders={cart} totalPrice={price}/>
                     </div>
                 </div>

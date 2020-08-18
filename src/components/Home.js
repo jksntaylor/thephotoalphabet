@@ -71,12 +71,12 @@ class Home extends React.Component {
         this.setState({config: temp})
     }
 
-    addToCart = () => { 
+    addToCart = () => {
         const {config, price} = this.state
         axios.post(`/cart/${config}`, {price: price}).then(() => {
             this.clearState();
             this.getCart();
-        }) 
+        })
     }
 
     getCart = () => {
@@ -88,7 +88,7 @@ class Home extends React.Component {
     render() {
         const {config, inputWord, price, isPaneOpen, isPaneOpenLeft, cartSize} = this.state;
         const blank = [1,2,3]
-        let photos = config.length>=3 ? 
+        let photos = config.length>=3 ?
         config.map((letter, index) => {
             return (
                 <Photo letter={letter} index={index} key={index} update={this.updateInput}/>
@@ -112,18 +112,18 @@ class Home extends React.Component {
                 <SlidingPane isOpen={ isPaneOpenLeft } from='left' width='300px' onRequestClose={() => this.setState({ isPaneOpenLeft: false })}>
                     {this.props.isAdmin ? <Admin/> : this.props.isLoggedIn ? <User/> : <Login/>}
                 </SlidingPane>
-                <div className='photos' style={{width: `${pWidth}px`}}>
+                <div className='photos' style={{width: `${pWidth}px`, '--photos': config.length}}>
                     {photos}
                 </div>
                 <div className='input' style={{width: iWidth}}>
                     <input placeholder='Type Here!' value={inputWord} onChange={e => this.handleInputChange(e.target.value)} type="text" />
-                    {config.length>=3 ? 
+                    {config.length>=3 ?
                     <div className='add'>
                         <h4>${price}</h4>
                         <i onClick={this.clearState} className='fas fa-times'></i>
                         <i onClick={this.addToCart}className='fas fa-cart-plus'></i>
-                    </div> 
-                    : 
+                    </div>
+                    :
                     <div className='add'><h5>*3 Letter Minimum</h5></div>}
                 </div>
                 <footer><h4>*custom framing available upon request</h4></footer>
